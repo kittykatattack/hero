@@ -1,0 +1,78 @@
+var _user$project$Choice_ops = _user$project$Choice_ops || {};
+_user$project$Choice_ops['=>'] = F2(
+	function (v0, v1) {
+		return {ctor: '_Tuple2', _0: v0, _1: v1};
+	});
+var _user$project$Choice$containerStyle = _elm_lang$html$Html_Attributes$style(
+	_elm_lang$core$Native_List.fromArray(
+		[
+			A2(_user$project$Choice_ops['=>'], 'text-align', 'center'),
+			A2(_user$project$Choice_ops['=>'], 'width', '50%'),
+			A2(_user$project$Choice_ops['=>'], 'padding', '0 0.3em 0 0.3em'),
+			A2(_user$project$Choice_ops['=>'], '-webkit-user-select', 'none'),
+			A2(_user$project$Choice_ops['=>'], '-moz-user-select', 'none'),
+			A2(_user$project$Choice_ops['=>'], '-khtml-user-select', 'none'),
+			A2(_user$project$Choice_ops['=>'], '-ms-user-select', 'none'),
+			A2(_user$project$Choice_ops['=>'], 'userSelect', 'none'),
+			A2(_user$project$Choice_ops['=>'], 'line-height', '1.3em')
+		]));
+var _user$project$Choice$paragraphStyle = _elm_lang$html$Html_Attributes$style(
+	_elm_lang$core$Native_List.fromArray(
+		[
+			A2(_user$project$Choice_ops['=>'], 'font-size', '0.8em'),
+			A2(_user$project$Choice_ops['=>'], 'font-family', 'Helvetica, Arial, sans-serif'),
+			A2(_user$project$Choice_ops['=>'], 'padding', '0.2em 1em 1.3em 1em'),
+			A2(_user$project$Choice_ops['=>'], 'margin', '0'),
+			A2(_user$project$Choice_ops['=>'], 'line-height', '1.3em')
+		]));
+var _user$project$Choice$update = F2(
+	function (msg, model) {
+		var _p0 = msg;
+		var button$ = A2(_user$project$ImageButton$update, _p0._0, model.button);
+		var currentMsg$ = function (_) {
+			return _.currentMsg;
+		}(button$);
+		return _elm_lang$core$Native_Utils.update(
+			model,
+			{button: button$});
+	});
+var _user$project$Choice$noFx = function (model) {
+	return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
+};
+var _user$project$Choice$model = {label: 'X', button: _user$project$ImageButton$choice};
+var _user$project$Choice$init = function (label$) {
+	return _elm_lang$core$Native_Utils.update(
+		_user$project$Choice$model,
+		{label: label$});
+};
+var _user$project$Choice$Model = F2(
+	function (a, b) {
+		return {label: a, button: b};
+	});
+var _user$project$Choice$UpdateButton = function (a) {
+	return {ctor: 'UpdateButton', _0: a};
+};
+var _user$project$Choice$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		_elm_lang$core$Native_List.fromArray(
+			[_user$project$Choice$containerStyle]),
+		_elm_lang$core$Native_List.fromArray(
+			[
+				A2(
+				_elm_lang$html$Html_App$map,
+				_user$project$Choice$UpdateButton,
+				_user$project$ImageButton$view(model.button)),
+				A2(
+				_elm_lang$html$Html$p,
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html_Attributes$class('choiceText'),
+						_user$project$Choice$paragraphStyle
+					]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html$text(model.label)
+					]))
+			]));
+};

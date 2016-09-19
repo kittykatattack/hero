@@ -1,0 +1,860 @@
+var _user$project$InfoBox$backgroundImage = function (imageName) {
+	return A2(
+		_elm_lang$core$Basics_ops['++'],
+		'url(\'',
+		A2(
+			_elm_lang$core$Basics_ops['++'],
+			_user$project$Defaults$imagesLocation,
+			A2(
+				_elm_lang$core$Basics_ops['++'],
+				imageName,
+				A2(_elm_lang$core$Basics_ops['++'], '.png', '\')'))));
+};
+var _user$project$InfoBox$px = function (number) {
+	return A2(
+		_elm_lang$core$Basics_ops['++'],
+		_elm_lang$core$Basics$toString(number),
+		'px');
+};
+var _user$project$InfoBox_ops = _user$project$InfoBox_ops || {};
+_user$project$InfoBox_ops['=>'] = F2(
+	function (v0, v1) {
+		return {ctor: '_Tuple2', _0: v0, _1: v1};
+	});
+var _user$project$InfoBox$mainAnimationContainerStyle = _elm_lang$html$Html_Attributes$style(
+	_elm_lang$core$Native_List.fromArray(
+		[
+			A2(_user$project$InfoBox_ops['=>'], 'z-index', '2'),
+			A2(_user$project$InfoBox_ops['=>'], 'position', 'relative'),
+			A2(
+			_user$project$InfoBox_ops['=>'],
+			'background-image',
+			_user$project$InfoBox$backgroundImage('watercolorTexture')),
+			A2(_user$project$InfoBox_ops['=>'], 'userSelect', 'none'),
+			A2(_user$project$InfoBox_ops['=>'], 'border-top', '1px darkGray solid'),
+			A2(_user$project$InfoBox_ops['=>'], '-webkit-box-shadow', '0px -1px 6px 0px rgba(50, 50, 50, 0.50)'),
+			A2(_user$project$InfoBox_ops['=>'], '-moz-box-shadow', '0px -1px 6px 0px rgba(50, 50, 50, 0.50)'),
+			A2(_user$project$InfoBox_ops['=>'], 'box-shadow', '0px -1px 6px 0px rgba(50, 50, 50, 0.50)')
+		]));
+var _user$project$InfoBox$infoContainer = _elm_lang$html$Html_Attributes$style(
+	_elm_lang$core$Native_List.fromArray(
+		[
+			A2(_user$project$InfoBox_ops['=>'], 'position', 'absolute'),
+			A2(
+			_user$project$InfoBox_ops['=>'],
+			'width',
+			_user$project$InfoBox$px(_user$project$Defaults$width - 60)),
+			A2(
+			_user$project$InfoBox_ops['=>'],
+			'height',
+			_user$project$InfoBox$px(500)),
+			A2(_user$project$InfoBox_ops['=>'], 'z-index', '1'),
+			A2(_user$project$InfoBox_ops['=>'], 'border-top', '1px darkGray solid'),
+			A2(_user$project$InfoBox_ops['=>'], 'padding', '20px 30px 0px 30px'),
+			A2(_user$project$InfoBox_ops['=>'], 'font-family', _user$project$Defaults$fontFamily),
+			A2(_user$project$InfoBox_ops['=>'], 'font-size', '0.9em'),
+			A2(
+			_user$project$InfoBox_ops['=>'],
+			'background-image',
+			_user$project$InfoBox$backgroundImage('watercolorTexture2'))
+		]));
+var _user$project$InfoBox$infoButtonContainerStyle = _elm_lang$html$Html_Attributes$style(
+	_elm_lang$core$Native_List.fromArray(
+		[
+			A2(_user$project$InfoBox_ops['=>'], 'position', 'absolute'),
+			A2(
+			_user$project$InfoBox_ops['=>'],
+			'top',
+			_user$project$InfoBox$px(0)),
+			A2(
+			_user$project$InfoBox_ops['=>'],
+			'right',
+			_user$project$InfoBox$px(0))
+		]));
+var _user$project$InfoBox$chapterHeadingContainerStyle = _elm_lang$html$Html_Attributes$style(
+	_elm_lang$core$Native_List.fromArray(
+		[
+			A2(_user$project$InfoBox_ops['=>'], 'width', '470px'),
+			A2(_user$project$InfoBox_ops['=>'], 'position', 'absolute'),
+			A2(_user$project$InfoBox_ops['=>'], 'padding-top', '75px'),
+			A2(_user$project$InfoBox_ops['=>'], 'user-select', 'none'),
+			A2(
+			_user$project$InfoBox_ops['=>'],
+			'left',
+			_user$project$InfoBox$px(45))
+		]));
+var _user$project$InfoBox$containerStyle = function (model) {
+	return _elm_lang$html$Html_Attributes$style(
+		_elm_lang$core$Native_List.fromArray(
+			[
+				A2(_user$project$InfoBox_ops['=>'], 'position', 'relative'),
+				A2(_user$project$InfoBox_ops['=>'], 'bottom', '0px'),
+				A2(_user$project$InfoBox_ops['=>'], 'left', '0px'),
+				A2(
+				_user$project$InfoBox_ops['=>'],
+				'width',
+				_user$project$InfoBox$px(model.width)),
+				A2(
+				_user$project$InfoBox_ops['=>'],
+				'height',
+				_user$project$InfoBox$px(model.height))
+			]));
+};
+var _user$project$InfoBox$meterContainerStyle = _elm_lang$html$Html_Attributes$style(
+	_elm_lang$core$Native_List.fromArray(
+		[
+			A2(_user$project$InfoBox_ops['=>'], 'width', '528px'),
+			A2(_user$project$InfoBox_ops['=>'], 'height', '121px'),
+			A2(_user$project$InfoBox_ops['=>'], 'position', 'absolute'),
+			A2(_user$project$InfoBox_ops['=>'], 'top', '0px'),
+			A2(_user$project$InfoBox_ops['=>'], 'right', '0px')
+		]));
+var _user$project$InfoBox$meterBackgroundStyle = function (model) {
+	return _elm_lang$html$Html_Attributes$style(
+		_elm_lang$core$Native_List.fromArray(
+			[
+				A2(
+				_user$project$InfoBox_ops['=>'],
+				'width',
+				_user$project$InfoBox$px(model.meterWidth)),
+				A2(
+				_user$project$InfoBox_ops['=>'],
+				'height',
+				_user$project$InfoBox$px(model.meterHeight)),
+				A2(_user$project$InfoBox_ops['=>'], 'background-color', 'white'),
+				A2(_user$project$InfoBox_ops['=>'], 'position', 'absolute'),
+				A2(
+				_user$project$InfoBox_ops['=>'],
+				'top',
+				_user$project$InfoBox$px(model.meterY)),
+				A2(
+				_user$project$InfoBox_ops['=>'],
+				'left',
+				_user$project$InfoBox$px(model.meterX)),
+				A2(
+				_user$project$InfoBox_ops['=>'],
+				'border-radius',
+				_user$project$InfoBox$px(model.meterBorderRadius))
+			]));
+};
+var _user$project$InfoBox$meterForeground = function (model) {
+	return _elm_lang$html$Html_Attributes$style(
+		_elm_lang$core$Native_List.fromArray(
+			[
+				A2(
+				_user$project$InfoBox_ops['=>'],
+				'height',
+				_user$project$InfoBox$px(model.meterHeight)),
+				A2(_user$project$InfoBox_ops['=>'], 'position', 'absolute'),
+				A2(
+				_user$project$InfoBox_ops['=>'],
+				'top',
+				_user$project$InfoBox$px(model.meterY)),
+				A2(
+				_user$project$InfoBox_ops['=>'],
+				'left',
+				_user$project$InfoBox$px(model.meterX)),
+				A2(
+				_user$project$InfoBox_ops['=>'],
+				'border-radius',
+				_user$project$InfoBox$px(model.meterBorderRadius)),
+				A2(_user$project$InfoBox_ops['=>'], 'background', '#7abcff'),
+				A2(_user$project$InfoBox_ops['=>'], 'background', '-moz-linear-gradient(top, #7abcff 0%, #60abf8 44%, #4096ee 100%)'),
+				A2(_user$project$InfoBox_ops['=>'], 'background', '-webkit-linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%)'),
+				A2(_user$project$InfoBox_ops['=>'], 'background', 'linear-gradient(to bottom, #7abcff 0%,#60abf8 44%,#4096ee 100%)')
+			]));
+};
+var _user$project$InfoBox$meterForegroundStyle = function (model) {
+	return _elm_lang$html$Html_Attributes$style(
+		_elm_lang$core$Native_List.fromArray(
+			[
+				A2(
+				_user$project$InfoBox_ops['=>'],
+				'height',
+				_user$project$InfoBox$px(model.meterHeight)),
+				A2(_user$project$InfoBox_ops['=>'], 'position', 'absolute'),
+				A2(
+				_user$project$InfoBox_ops['=>'],
+				'top',
+				_user$project$InfoBox$px(model.meterY)),
+				A2(
+				_user$project$InfoBox_ops['=>'],
+				'left',
+				_user$project$InfoBox$px(model.meterX)),
+				A2(
+				_user$project$InfoBox_ops['=>'],
+				'border-radius',
+				_user$project$InfoBox$px(model.meterBorderRadius)),
+				A2(_user$project$InfoBox_ops['=>'], 'background', '#7abcff'),
+				A2(_user$project$InfoBox_ops['=>'], 'background', '-moz-linear-gradient(top, #7abcff 0%, #60abf8 44%, #4096ee 100%)'),
+				A2(_user$project$InfoBox_ops['=>'], 'background', '-webkit-linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%)'),
+				A2(_user$project$InfoBox_ops['=>'], 'background', 'linear-gradient(to bottom, #7abcff 0%,#60abf8 44%,#4096ee 100%)')
+			]));
+};
+var _user$project$InfoBox$inventoryItemStyle = function (item) {
+	var chooseCorrectImage = function () {
+		var _p0 = item.name;
+		switch (_p0) {
+			case 'Magic Pills':
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					'pill_',
+					_elm_lang$core$Basics$toString(item.quantity));
+			case 'Transformations':
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					'wand_',
+					_elm_lang$core$Basics$toString(item.quantity));
+			default:
+				return item.image;
+		}
+	}();
+	return _elm_lang$html$Html_Attributes$style(
+		_elm_lang$core$Native_List.fromArray(
+			[
+				A2(_user$project$InfoBox_ops['=>'], 'width', '121px'),
+				A2(_user$project$InfoBox_ops['=>'], 'height', '121px'),
+				A2(_user$project$InfoBox_ops['=>'], 'display', 'inline-block'),
+				A2(_user$project$InfoBox_ops['=>'], 'font-family', 'Helvetica, Arial, sans-serif'),
+				A2(
+				_user$project$InfoBox_ops['=>'],
+				'background-image',
+				_user$project$InfoBox$backgroundImage(chooseCorrectImage)),
+				A2(_user$project$InfoBox_ops['=>'], 'border-right', '1px darkGray solid'),
+				A2(_user$project$InfoBox_ops['=>'], 'user-select', 'none')
+			]));
+};
+var _user$project$InfoBox$inventoryContainerStyle = _elm_lang$html$Html_Attributes$style(
+	_elm_lang$core$Native_List.fromArray(
+		[
+			A2(_user$project$InfoBox_ops['=>'], 'z-index', '3'),
+			A2(_user$project$InfoBox_ops['=>'], 'width', '242px'),
+			A2(_user$project$InfoBox_ops['=>'], 'height', '121px'),
+			A2(_user$project$InfoBox_ops['=>'], 'position', 'absolute'),
+			A2(_user$project$InfoBox_ops['=>'], 'user-select', 'none')
+		]));
+var _user$project$InfoBox$paragraphStyle = _elm_lang$html$Html_Attributes$style(
+	_elm_lang$core$Native_List.fromArray(
+		[
+			A2(_user$project$InfoBox_ops['=>'], 'font-size', '0.7em'),
+			A2(_user$project$InfoBox_ops['=>'], 'text-align', 'center'),
+			A2(_user$project$InfoBox_ops['=>'], 'padding-top', '98px'),
+			A2(_user$project$InfoBox_ops['=>'], 'user-select', 'none')
+		]));
+var _user$project$InfoBox$currentStoryPhase = function (model) {
+	return A2(
+		_elm_lang$core$Maybe$withDefault,
+		'No story phase selected',
+		A2(_elm_community$list_extra$List_Extra$getAt, model.storyLevel, model.storyPhases));
+};
+var _user$project$InfoBox$meterSegmentWidth = function (model) {
+	return (model.meterWidth / model.totalStoryLevels) | 0;
+};
+var _user$project$InfoBox$meterWidth = function (model) {
+	return _user$project$InfoBox$meterSegmentWidth(model) * (model.storyLevel + 1);
+};
+var _user$project$InfoBox$smoothstep = function (x) {
+	return (x * x) * (3 - (2 * x));
+};
+var _user$project$InfoBox$model = {
+	width: _user$project$Defaults$width,
+	height: 120,
+	inventory: _user$project$Data$inventory,
+	meterWidth: 450,
+	meterHeight: 16,
+	meterBorderRadius: 4,
+	meterX: 38,
+	meterY: 52,
+	storyLevel: 1,
+	storyChapter: 'No Chapter Selected',
+	totalStoryLevels: 0,
+	totalStoryChapters: 0,
+	storyPhases: _user$project$Data$storyPhases,
+	storyPhaseChapters: _user$project$Data$storyPhaseChapters,
+	currentStoryPhaseChapter: 1,
+	infoPages: _user$project$Data$infoPages,
+	infoButton: _user$project$ImageButton$info,
+	infoBoxIsOpen: false,
+	styleInfo: A2(
+		_mdgriffith$elm_style_animation$Animation$styleWith,
+		_mdgriffith$elm_style_animation$Animation$spring(
+			{stiffness: 400, damping: 23}),
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_mdgriffith$elm_style_animation$Animation$top(
+				_mdgriffith$elm_style_animation$Animation$px(-10.0))
+			])),
+	styleMeter: A2(
+		_mdgriffith$elm_style_animation$Animation$styleWith,
+		_mdgriffith$elm_style_animation$Animation$easing(
+			{duration: 0.3 * _elm_lang$core$Time$second, ease: _user$project$InfoBox$smoothstep}),
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_mdgriffith$elm_style_animation$Animation$width(
+				_mdgriffith$elm_style_animation$Animation$px(450.0))
+			]))
+};
+var _user$project$InfoBox$init = F6(
+	function (inventory$, storyLevel$, storyChapter$, storyPhases$, storyPhaseChapters$, infoPages$) {
+		var totalStoryLevels$ = _elm_lang$core$List$length(storyPhases$);
+		return _elm_lang$core$Native_Utils.update(
+			_user$project$InfoBox$model,
+			{
+				inventory: inventory$,
+				storyLevel: storyLevel$,
+				storyChapter: storyChapter$,
+				storyPhases: storyPhases$,
+				totalStoryLevels: totalStoryLevels$,
+				totalStoryChapters: _elm_lang$core$List$length(storyPhaseChapters$),
+				storyPhaseChapters: storyPhaseChapters$,
+				infoPages: infoPages$,
+				styleMeter: _mdgriffith$elm_style_animation$Animation$style(
+					_elm_lang$core$Native_List.fromArray(
+						[
+							_mdgriffith$elm_style_animation$Animation$width(
+							_mdgriffith$elm_style_animation$Animation$px(
+								_elm_lang$core$Basics$toFloat((_user$project$InfoBox$model.meterWidth / totalStoryLevels$) | 0)))
+						]))
+			});
+	});
+var _user$project$InfoBox$currentStoryChapter = F2(
+	function (level, totalStoryChapters) {
+		var chapterNumber = (level / totalStoryChapters) | 0;
+		return A2(
+			_elm_lang$core$Maybe$withDefault,
+			'No story chapter selected',
+			A2(_elm_community$list_extra$List_Extra$getAt, chapterNumber, _user$project$InfoBox$model.storyPhaseChapters));
+	});
+var _user$project$InfoBox$Model = function (a) {
+	return function (b) {
+		return function (c) {
+			return function (d) {
+				return function (e) {
+					return function (f) {
+						return function (g) {
+							return function (h) {
+								return function (i) {
+									return function (j) {
+										return function (k) {
+											return function (l) {
+												return function (m) {
+													return function (n) {
+														return function (o) {
+															return function (p) {
+																return function (q) {
+																	return function (r) {
+																		return function (s) {
+																			return function (t) {
+																				return {width: a, height: b, inventory: c, meterWidth: d, meterHeight: e, meterBorderRadius: f, meterX: g, meterY: h, storyLevel: i, storyChapter: j, totalStoryLevels: k, totalStoryChapters: l, storyPhases: m, storyPhaseChapters: n, currentStoryPhaseChapter: o, infoPages: p, infoButton: q, infoBoxIsOpen: r, styleInfo: s, styleMeter: t};
+																			};
+																		};
+																	};
+																};
+															};
+														};
+													};
+												};
+											};
+										};
+									};
+								};
+							};
+						};
+					};
+				};
+			};
+		};
+	};
+};
+var _user$project$InfoBox$NoOp = {ctor: 'NoOp'};
+var _user$project$InfoBox$UpdateData = F3(
+	function (a, b, c) {
+		return {ctor: 'UpdateData', _0: a, _1: b, _2: c};
+	});
+var _user$project$InfoBox$Animate = function (a) {
+	return {ctor: 'Animate', _0: a};
+};
+var _user$project$InfoBox$subscriptions = function (model) {
+	return A2(
+		_mdgriffith$elm_style_animation$Animation$subscription,
+		_user$project$InfoBox$Animate,
+		_elm_lang$core$Native_List.fromArray(
+			[model.styleInfo, model.styleMeter]));
+};
+var _user$project$InfoBox$HideInfo = {ctor: 'HideInfo'};
+var _user$project$InfoBox$ShowInfo = {ctor: 'ShowInfo'};
+var _user$project$InfoBox$update = F2(
+	function (msg, model) {
+		var infoButton$ = function (buttonMsg) {
+			return A2(_user$project$ImageButton$update, buttonMsg, model.infoButton);
+		};
+		var runCorrectEffect = F2(
+			function (buttonMsg, model) {
+				var _p1 = {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.eq(
+						function (_) {
+							return _.currentMsg;
+						}(
+							infoButton$(buttonMsg)),
+						_user$project$ImageButton$Down),
+					_1: _elm_lang$core$Native_Utils.eq(model.infoBoxIsOpen, false)
+				};
+				if ((_p1.ctor === '_Tuple2') && (_p1._0 === true)) {
+					if (_p1._1 === true) {
+						return A2(_user$project$InfoBox$update, _user$project$InfoBox$ShowInfo, model);
+					} else {
+						return A2(_user$project$InfoBox$update, _user$project$InfoBox$HideInfo, model);
+					}
+				} else {
+					return A2(
+						_elm_lang$core$Platform_Cmd_ops['!'],
+						model,
+						_elm_lang$core$Native_List.fromArray(
+							[]));
+				}
+			});
+		var _p2 = msg;
+		switch (_p2.ctor) {
+			case 'Animate':
+				var _p3 = _p2._0;
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{
+							styleInfo: A2(_mdgriffith$elm_style_animation$Animation$update, _p3, model.styleInfo),
+							styleMeter: A2(_mdgriffith$elm_style_animation$Animation$update, _p3, model.styleMeter)
+						}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			case 'UpdateButton':
+				var _p4 = _p2._0;
+				var model$ = _elm_lang$core$Native_Utils.update(
+					model,
+					{
+						infoButton: infoButton$(_p4)
+					});
+				return A2(runCorrectEffect, _p4, model$);
+			case 'ShowInfo':
+				var model$ = _elm_lang$core$Native_Utils.update(
+					model,
+					{
+						infoBoxIsOpen: true,
+						styleInfo: A2(
+							_mdgriffith$elm_style_animation$Animation$interrupt,
+							_elm_lang$core$Native_List.fromArray(
+								[
+									_mdgriffith$elm_style_animation$Animation$to(
+									_elm_lang$core$Native_List.fromArray(
+										[
+											_mdgriffith$elm_style_animation$Animation$top(
+											_mdgriffith$elm_style_animation$Animation$px(-300))
+										]))
+								]),
+							model.styleInfo)
+					});
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					model$,
+					_elm_lang$core$Native_List.fromArray(
+						[]));
+			case 'HideInfo':
+				var model$ = _elm_lang$core$Native_Utils.update(
+					model,
+					{
+						infoBoxIsOpen: false,
+						styleInfo: A2(
+							_mdgriffith$elm_style_animation$Animation$interrupt,
+							_elm_lang$core$Native_List.fromArray(
+								[
+									_mdgriffith$elm_style_animation$Animation$to(
+									_elm_lang$core$Native_List.fromArray(
+										[
+											_mdgriffith$elm_style_animation$Animation$top(
+											_mdgriffith$elm_style_animation$Animation$px(-10))
+										]))
+								]),
+							model.styleInfo)
+					});
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					model$,
+					_elm_lang$core$Native_List.fromArray(
+						[]));
+			case 'UpdateData':
+				var _p5 = _p2._0;
+				var item$ = F2(
+					function (item, id) {
+						return _elm_lang$core$Native_Utils.update(
+							item,
+							{
+								quantity: A2(
+									_elm_lang$core$Maybe$withDefault,
+									0,
+									A2(_elm_community$list_extra$List_Extra$getAt, id, _p2._1))
+							});
+					});
+				var inventory$ = A2(
+					_elm_lang$core$List$indexedMap,
+					F2(
+						function (id, item) {
+							return A2(item$, item, id);
+						}),
+					model.inventory);
+				var model$ = _elm_lang$core$Native_Utils.update(
+					model,
+					{
+						storyLevel: _p5,
+						storyChapter: A2(_user$project$InfoBox$currentStoryChapter, _p5, model.totalStoryChapters),
+						inventory: inventory$,
+						currentStoryPhaseChapter: _p2._2,
+						styleMeter: A2(
+							_mdgriffith$elm_style_animation$Animation$interrupt,
+							_elm_lang$core$Native_List.fromArray(
+								[
+									_mdgriffith$elm_style_animation$Animation$to(
+									_elm_lang$core$Native_List.fromArray(
+										[
+											_mdgriffith$elm_style_animation$Animation$width(
+											_mdgriffith$elm_style_animation$Animation$px(
+												_elm_lang$core$Basics$toFloat(
+													_user$project$InfoBox$meterWidth(model))))
+										]))
+								]),
+							model.styleMeter)
+					});
+				var model$$ = _elm_lang$core$Native_Utils.update(
+					model$,
+					{
+						styleMeter: A2(
+							_mdgriffith$elm_style_animation$Animation$interrupt,
+							_elm_lang$core$Native_List.fromArray(
+								[
+									_mdgriffith$elm_style_animation$Animation$to(
+									_elm_lang$core$Native_List.fromArray(
+										[
+											_mdgriffith$elm_style_animation$Animation$width(
+											_mdgriffith$elm_style_animation$Animation$px(
+												_elm_lang$core$Basics$toFloat(
+													_user$project$InfoBox$meterWidth(model$))))
+										]))
+								]),
+							model$.styleMeter)
+					});
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					model$$,
+					_elm_lang$core$Native_List.fromArray(
+						[]));
+			default:
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					model,
+					_elm_lang$core$Native_List.fromArray(
+						[]));
+		}
+	});
+var _user$project$InfoBox$UpdateButton = function (a) {
+	return {ctor: 'UpdateButton', _0: a};
+};
+var _user$project$InfoBox$view = function (model) {
+	var infoPageContent = A2(
+		_elm_lang$core$Maybe$withDefault,
+		'No info page selected',
+		A2(_elm_community$list_extra$List_Extra$getAt, model.currentStoryPhaseChapter - 1, model.infoPages));
+	var chapterHeadingStyle = function (heading) {
+		var isChapter = function (heading) {
+			return _elm_lang$core$Native_Utils.eq(heading, model.storyChapter);
+		};
+		var fontWeight = isChapter(heading) ? 'bold' : 'normal';
+		var fontColor = isChapter(heading) ? 'black' : 'darkGray';
+		return _elm_lang$html$Html_Attributes$style(
+			_elm_lang$core$Native_List.fromArray(
+				[
+					A2(
+					_user$project$InfoBox_ops['=>'],
+					'width',
+					_user$project$InfoBox$px(
+						(450 / _elm_lang$core$List$length(model.storyPhaseChapters)) | 0)),
+					A2(_user$project$InfoBox_ops['=>'], 'display', 'inline-block'),
+					A2(_user$project$InfoBox_ops['=>'], 'text-align', 'center'),
+					A2(_user$project$InfoBox_ops['=>'], 'font-size', '0.7em'),
+					A2(_user$project$InfoBox_ops['=>'], 'font-weight', fontWeight),
+					A2(_user$project$InfoBox_ops['=>'], 'color', fontColor),
+					A2(_user$project$InfoBox_ops['=>'], 'font-family', 'Helvetica, Arial, sans-serif')
+				]));
+	};
+	var storyPhaseChapters = function () {
+		var chapterHeading = function (heading) {
+			return A2(
+				_elm_lang$html$Html$div,
+				_elm_lang$core$Native_List.fromArray(
+					[
+						chapterHeadingStyle(heading)
+					]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html$text(heading)
+					]));
+		};
+		return A2(_elm_lang$core$List$map, chapterHeading, model.storyPhaseChapters);
+	}();
+	var storyPhaseStyle = _elm_lang$html$Html_Attributes$style(
+		_elm_lang$core$Native_List.fromArray(
+			[
+				A2(_user$project$InfoBox_ops['=>'], 'font-weight', 'bold'),
+				A2(_user$project$InfoBox_ops['=>'], 'font-size', '0.7em'),
+				A2(_user$project$InfoBox_ops['=>'], 'font-family', 'Helvetica, Arial, sans-serif')
+			]));
+	var storyPhaseTitleStyle = function (level) {
+		var width = 250;
+		var meterX = (model.meterX + (_user$project$InfoBox$meterSegmentWidth(model) * (level + 1))) - ((width / 2) | 0);
+		var height = 30;
+		var meterY = model.meterY - height;
+		return _elm_lang$html$Html_Attributes$style(
+			_elm_lang$core$Native_List.fromArray(
+				[
+					A2(
+					_user$project$InfoBox_ops['=>'],
+					'width',
+					_user$project$InfoBox$px(width)),
+					A2(
+					_user$project$InfoBox_ops['=>'],
+					'height',
+					_user$project$InfoBox$px(height)),
+					A2(_user$project$InfoBox_ops['=>'], 'position', 'absolute'),
+					A2(
+					_user$project$InfoBox_ops['=>'],
+					'top',
+					_user$project$InfoBox$px(meterY)),
+					A2(
+					_user$project$InfoBox_ops['=>'],
+					'left',
+					_user$project$InfoBox$px(meterX)),
+					A2(_user$project$InfoBox_ops['=>'], 'text-align', 'center')
+				]));
+	};
+	var storyPhaseTitle = function (storyPhase) {
+		return A2(
+			_elm_lang$html$Html$div,
+			_elm_lang$core$Native_List.fromArray(
+				[
+					storyPhaseTitleStyle(model.storyLevel)
+				]),
+			_elm_lang$core$Native_List.fromArray(
+				[
+					A2(
+					_elm_lang$html$Html$p,
+					_elm_lang$core$Native_List.fromArray(
+						[storyPhaseStyle]),
+					_elm_lang$core$Native_List.fromArray(
+						[
+							_elm_lang$html$Html$text(storyPhase)
+						]))
+				]));
+	};
+	var storyPhaseMarkerStyle = function (level) {
+		var meterX = (model.meterX - _user$project$InfoBox$meterWidth(model)) + (_user$project$InfoBox$meterSegmentWidth(model) * (level + 1));
+		return _elm_lang$html$Html_Attributes$style(
+			_elm_lang$core$Native_List.fromArray(
+				[
+					A2(
+					_user$project$InfoBox_ops['=>'],
+					'width',
+					_user$project$InfoBox$px(
+						_user$project$InfoBox$meterWidth(model))),
+					A2(
+					_user$project$InfoBox_ops['=>'],
+					'height',
+					_user$project$InfoBox$px(6)),
+					A2(_user$project$InfoBox_ops['=>'], 'border-right', '1px solid darkGray'),
+					A2(_user$project$InfoBox_ops['=>'], 'position', 'absolute'),
+					A2(
+					_user$project$InfoBox_ops['=>'],
+					'top',
+					_user$project$InfoBox$px(model.meterY - 6)),
+					A2(
+					_user$project$InfoBox_ops['=>'],
+					'left',
+					_user$project$InfoBox$px(meterX))
+				]));
+	};
+	var storyPhaseMarker = A2(
+		_elm_lang$html$Html$div,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				storyPhaseMarkerStyle(model.storyLevel)
+			]),
+		_elm_lang$core$Native_List.fromArray(
+			[]));
+	var markerStyle = F2(
+		function (model, level) {
+			var meterX = (model.meterX - _user$project$InfoBox$meterWidth(model)) + (_user$project$InfoBox$meterSegmentWidth(model) * level);
+			return _elm_lang$html$Html_Attributes$style(
+				_elm_lang$core$Native_List.fromArray(
+					[
+						A2(
+						_user$project$InfoBox_ops['=>'],
+						'width',
+						_user$project$InfoBox$px(
+							_user$project$InfoBox$meterWidth(model))),
+						A2(_user$project$InfoBox_ops['=>'], 'height', '6px'),
+						A2(_user$project$InfoBox_ops['=>'], 'border-right', '1px solid darkGray'),
+						A2(_user$project$InfoBox_ops['=>'], 'position', 'absolute'),
+						A2(
+						_user$project$InfoBox_ops['=>'],
+						'top',
+						_user$project$InfoBox$px(model.meterY + model.meterHeight)),
+						A2(
+						_user$project$InfoBox_ops['=>'],
+						'left',
+						_user$project$InfoBox$px(meterX))
+					]));
+		});
+	var marker = function (level) {
+		return A2(
+			_elm_lang$html$Html$div,
+			_elm_lang$core$Native_List.fromArray(
+				[
+					A2(markerStyle, model, level)
+				]),
+			_elm_lang$core$Native_List.fromArray(
+				[]));
+	};
+	var meterMarkers = A2(
+		_elm_lang$core$List$map,
+		marker,
+		_elm_lang$core$Native_List.range(1, model.totalStoryLevels - 1));
+	var inventoryItem = function (item) {
+		return A2(
+			_elm_lang$html$Html$div,
+			_elm_lang$core$Native_List.fromArray(
+				[
+					_user$project$InfoBox$inventoryItemStyle(item)
+				]),
+			_elm_lang$core$Native_List.fromArray(
+				[
+					A2(
+					_elm_lang$html$Html$div,
+					_elm_lang$core$Native_List.fromArray(
+						[_user$project$InfoBox$paragraphStyle]),
+					_elm_lang$core$Native_List.fromArray(
+						[
+							_elm_lang$html$Html$text(
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								item.name,
+								A2(
+									_elm_lang$core$Basics_ops['++'],
+									': ',
+									_elm_lang$core$Basics$toString(item.quantity))))
+						]))
+				]));
+	};
+	var inventoryItemList = A2(_elm_lang$core$List$map, inventoryItem, model.inventory);
+	return A2(
+		_elm_lang$html$Html$div,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_user$project$InfoBox$containerStyle(model)
+			]),
+		_elm_lang$core$Native_List.fromArray(
+			[
+				A2(
+				_elm_lang$html$Html$div,
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_mdgriffith$elm_style_animation$Animation$render(model.styleInfo),
+						_elm_lang$core$Native_List.fromArray(
+							[_user$project$InfoBox$infoContainer])),
+					_elm_lang$core$Native_List.fromArray(
+						[
+							_elm_lang$html$Html_Events$onMouseLeave(_user$project$InfoBox$HideInfo)
+						])),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						A2(
+						_evancz$elm_markdown$Markdown$toHtml,
+						_elm_lang$core$Native_List.fromArray(
+							[]),
+						infoPageContent)
+					])),
+				A2(
+				_elm_lang$html$Html$div,
+				_elm_lang$core$Native_List.fromArray(
+					[_user$project$InfoBox$mainAnimationContainerStyle]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						A2(
+						_elm_lang$html$Html$div,
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html_Attributes$class('inventoryItemList')
+							]),
+						inventoryItemList),
+						A2(
+						_elm_lang$html$Html$div,
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html_Attributes$class('meter'),
+								_user$project$InfoBox$meterContainerStyle
+							]),
+						_elm_lang$core$Native_List.fromArray(
+							[
+								A2(
+								_elm_lang$html$Html$div,
+								_elm_lang$core$Native_List.fromArray(
+									[
+										_elm_lang$html$Html_Attributes$class('meterBackground'),
+										_user$project$InfoBox$meterBackgroundStyle(model)
+									]),
+								_elm_lang$core$Native_List.fromArray(
+									[])),
+								A2(
+								_elm_lang$html$Html$div,
+								A2(
+									_elm_lang$core$Basics_ops['++'],
+									A2(
+										_elm_lang$core$Basics_ops['++'],
+										_mdgriffith$elm_style_animation$Animation$render(model.styleMeter),
+										_elm_lang$core$Native_List.fromArray(
+											[
+												_user$project$InfoBox$meterForeground(model)
+											])),
+									_elm_lang$core$Native_List.fromArray(
+										[
+											_elm_lang$html$Html_Attributes$class('meterForeground')
+										])),
+								_elm_lang$core$Native_List.fromArray(
+									[])),
+								A2(
+								_elm_lang$html$Html$div,
+								_elm_lang$core$Native_List.fromArray(
+									[]),
+								meterMarkers),
+								storyPhaseMarker,
+								storyPhaseTitle(
+								_user$project$InfoBox$currentStoryPhase(model)),
+								A2(
+								_elm_lang$html$Html$div,
+								_elm_lang$core$Native_List.fromArray(
+									[_user$project$InfoBox$chapterHeadingContainerStyle]),
+								storyPhaseChapters)
+							])),
+						A2(
+						_elm_lang$html$Html$div,
+						_elm_lang$core$Native_List.fromArray(
+							[_user$project$InfoBox$infoButtonContainerStyle]),
+						_elm_lang$core$Native_List.fromArray(
+							[
+								A2(
+								_elm_lang$html$Html_App$map,
+								_user$project$InfoBox$UpdateButton,
+								_user$project$ImageButton$view(model.infoButton))
+							]))
+					]))
+			]));
+};
