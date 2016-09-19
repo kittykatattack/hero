@@ -1,7 +1,7 @@
 Hero Quest
 ===========
 
-Hero Quest's source files were written in Elm 0.16 and compiled with elm-webpack-starter:
+Hero Quest's source files were written in Elm 0.17 and compiled with elm-webpack-starter:
 
 https://github.com/moarwick/elm-webpack-starter
 
@@ -71,7 +71,7 @@ Takes the Data from Data.elm and uses it to build:
 - The page: the upper part of the game that describes the story events.
 - The info box: The lower part of the game that displays the inventory and game progress data.
 
-It also manages the page fade in/out transition effect using `elm-html-animation`.
+It also manages the page fade in/out transition effect using `elm-style-animation`.
 
 New pages are requested whenever the current model's `activeLink` value is different from its previous `activeLink` value. From the `update` function:
 ```
@@ -102,59 +102,50 @@ newPage =
 
 The `update` function is also prepared use 2 versions of the model. The first is just used to update the model when the page doesn't need to change. The second updates the model and performs a fade in/out transition between the new and old page.
 ```
--- The version of the model which is only used when
--- the current page is being updated
-model' =
-  { model 
-      | currentPage = newPage 
-      , currentPageData = currentPageData'
-  }
+ -- The version of the model which is only used when
+  -- the current page is being updated
+  model' =
+    { model 
+        | currentPage = newPage 
+        , currentPageData = currentPageData'
+        , pageMsg = pageMsg
+    }
 
--- The version of the model which is used when a
--- new page is requested. It copies the model's
--- last recent version of the current page into the 
--- `previousPage` property. It also set the starting 
--- opacity values needed to fade the previous page from
--- 1 to 0 and the current page from 0 to 1
-model'' =
-  { model 
-      | currentPage = newPage 
-      , currentPageData = currentPageData'
+  -- The version of the model which is used when a
+  -- new page is requested. It copies the model's
+  -- last recent version of the current page into the 
+  -- `previousPage` property. It also set the starting 
+  -- opacity values needed to fade the previous page from
+  -- 1 to 0 and the current page from 0 to 1
+  model'' =
+    { model 
+        | currentPage = newPage 
+        , currentPageData = currentPageData'
 
-      -- Set the `previousPage` to the model's `currentPage`
-      -- This is the page that will be fade out in the page transition
-      , previousPage = model.currentPage
+        -- Set the `previousPage` to the model's `currentPage`
+        -- This is the page that will be faded out in the page transition
+        , previousPage = model.currentPage
 
-      -- Flip the start opacity values for the prevoius and current page.
-      -- This is what creates the fade in/out effect  
-      , stylePreviousPage = UI.init [ Opacity 1.0 ]
-      , styleCurrentPage = UI.init [ Opacity 0.0 ]
-  }
+        -- Flip the start opacity values for the previous and current page.
+        -- This is what creates the fade in/out effect  
+        , stylePreviousPage = Animation.style [ Animation.opacity 1.0 ]
+        , styleCurrentPage = Animation.style [ Animation.opacity 0.0 ]
+    }
 
 in
 if newPageRequested then
 
 -- Return a new model with the new page, perform a transition and update the 
 -- infoBox
-(
-  model''
-, Effects.batch
-    [ Effects.task <| Task.succeed FadeOutOldPage 
-    , Effects.task <| Task.succeed FadeInNewPage 
-    , Effects.task 
-        <| Task.succeed (UpdateInfoBox (InfoBox.UpdateData storyLevel inventoryQuantities storyPhaseChapter))
-    ]
-)
+  update FadeOutOldPage model''
 else
 
 -- Return a new model with the same page and update the infoBox
-(
+update 
+  (UpdateInfoBox 
+    (InfoBox.UpdateData storyLevel inventoryQuantities storyPhaseChapter)
+  ) 
   model'
-, Effects.batch
-    [ Effects.task 
-        <| Task.succeed (UpdateInfoBox (InfoBox.UpdateData storyLevel inventoryQuantities storyPhaseChapter)) 
-    ]
-)
 ```
 
 #### The page transition effect
@@ -164,32 +155,39 @@ The page transition works because the model has access to both the current page 
 , currentPage = getCurrentPage pageData
 , previousPage = getCurrentPage pageData 
 ```
-The model also stores two `elm-html-animation` styles for the same pages. Significantly, the opacity for the previous page is set to 0, while the opacity for the current page is set to one.
+The model also stores two `elm-style-animation` styles for the same pages. 
 ```
-, stylePreviousPage = UI.init [ Opacity 0.0 ]
-, styleCurrentPage = UI.init [ Opacity 1.0 ]
+, stylePreviousPage : Animation.State
+, styleCurrentPage : Animation.State
 ```
+The initial model initializes the opacity of `stylePreviousPage` to `1` and `styleCurrentPage` to 0.  
+```
+, stylePreviousPage = Animation.style [ Animation.opacity 1.0 ]
+, styleCurrentPage = Animation.style [ Animation.opacity 0.0 ]
+```
+
 The `view` displays displays both the previous page and, on a layer below, the current page. But because the previous page's opacity is 0, it's not visible.
 ```
 div
-  [ adventureStyle ]
-  [ 
-    
-    -- A holding div for the previous page, which is used to create the fade effect. 
-    -- It's opacity is 0 when the game starts,
-    -- but it's set to 1 in the update function and then faded out with each page transition
-    div [ style ((previousPage) ++ (UI.render model.stylePreviousPage)) ] [ (Page.view (forward UpdatePage) model.previousPage) ]
+  div
+    [ adventureStyle ]
+    [ 
+      
+      -- A holding div for the previous page, which is used to create the fade effect. 
+      -- It's opacity is 0 when the game starts,
+      -- but it's set to 1 in the update function and then faded out with each page transition 
+      div (Animation.render model.stylePreviousPage ++ [ previousPageStyle ]) [ (Html.App.map UpdatePage (Page.view model.previousPage)) ]
 
-    -- The currently active page. It's opacity is 1 when the game starts, but is set to 
-    -- 0 in the update function and then faded in with
-    -- each page transition 
-  , div [ style ((currentPage) ++ (UI.render model.styleCurrentPage)) ] [ (Page.view (forward UpdatePage) model.currentPage) ] 
-  , div [ style infoBox ] [ InfoBox.view (forward UpdateInfoBox) model.infoBox ] 
-  ]
+      -- The currently active page. It's opacity is 1 when the game starts, but is set to 
+      -- 0 in the update function and then faded in with
+      -- each page transition 
+    , div (Animation.render model.styleCurrentPage ++ [ currentPageStyle ]) [ (Html.App.map UpdatePage (Page.view model.currentPage)) ] 
+    , div [ infoBoxStyle ] [ Html.App.map UpdateInfoBox (InfoBox.view model.infoBox) ] 
+    ]
 ```
 When the `update` function detects that a new page has been requested, it uses the 2nd model. Here's the important part! The 2nd model flips opacity values of the previous and current page. That means the current page (the brand new page) is set to 0, and the previous page (the former current page) is set to 1.
 ```
-model'' =
+ model'' =
   { model 
       | currentPage = newPage 
       , currentPageData = currentPageData'
@@ -200,58 +198,57 @@ model'' =
 
       -- Flip the start opacity values for the previous and current page.
       -- This is what creates the fade in/out effect  
-      , stylePreviousPage = UI.init [ Opacity 1.0 ]
-      , styleCurrentPage = UI.init [ Opacity 0.0 ]
+      , stylePreviousPage = Animation.style [ Animation.opacity 1.0 ]
+      , styleCurrentPage = Animation.style [ Animation.opacity 0.0 ]
   }
 ```
 
-The `FadeOutOldPage` and `FadeInNewPage` actions then run as effects.
+The `FadeOutOldPage` update action then runs.
 ```
 if newPageRequested then
 
--- Return a new model with the new page, perform a transition and update the 
--- infoBox
-(
-  model''
-, Effects.batch
-    [ Effects.task <| Task.succeed FadeOutOldPage 
-    , Effects.task <| Task.succeed FadeInNewPage 
-    , Effects.task 
-        <| Task.succeed (UpdateInfoBox (InfoBox.UpdateData storyLevel inventoryQuantities storyPhaseChapter))
-    ]
-)
+  -- Return a new model with the new page, perform a transition and update 
+  -- the infoBox
+    update FadeOutOldPage model
 ```
-Those actions use `elm-html-animation` fade out the old page and fade in the new one.
+
+`FadeOutOldPage` runs `FadeInNewPage`, which in turn runs 
+
+Those actions use `elm-style-animation` fade out the old page and fade in the new one.
 ```
     FadeOutOldPage ->
-        UI.animate
-          |> UI.duration (0.5 * second)
-          |> UI.props
-              [ Opacity (UI.to 0.0)
-              ]
-          |> onOldPage model
+      let
+        model' = 
+          { model
+            | stylePreviousPage =
+              Animation.interrupt
+                  [ Animation.to
+                    [ Animation.opacity 0
+                    ]
+                  ]
+                  model.stylePreviousPage
+          }
+
+      in 
+        update FadeInNewPage model'
 
     FadeInNewPage ->
-        UI.animate
-          |> UI.duration (0.5 * second)
-          |> UI.props
-              [ Opacity (UI.to 1.0)
-              ]
-          |> onNewPage model
+      let
+        model' = 
+          { model
+            | styleCurrentPage =
+              Animation.interrupt
+                  [ Animation.to
+                    [ Animation.opacity 1
+                    ]
+                  ]
+                  model.styleCurrentPage
+          }
 
-    AnimateOldPage action ->
-      onOldPage model action
-
-    AnimateNewPage action ->
-      onNewPage model action
-
-onOldPage =
-  UI.forwardTo AnimateOldPage .stylePreviousPage (\w stylePreviousPage -> { w | stylePreviousPage = stylePreviousPage })
-
-onNewPage =
-  UI.forwardTo AnimateNewPage .styleCurrentPage (\w styleCurrentPage -> { w | styleCurrentPage = styleCurrentPage })
+      in
+        update (UpdatePage model'.pageMsg) model
 ```
-An unexpected benefit to this is that the old page is never updated by the model, which means its buttons are always non-functioning. That's great because it means the user can't ever click on a button while it's fading-out, and that protects against all kind of possible bugs.
+An unexpected benefit to this is that the old page is never updated by the model, which means its buttons are always non-functioning. That's great because it means the user can't ever click on a button while it's fading-out, and that protects it against all kinds of possible bugs.
 
 ###Page.elm
 
@@ -324,7 +321,7 @@ eventBox =
       -- A container for holding the choices
       div 
         [ class "multipleChoiceBox", defaultStyle, multipleChoiceBoxStyle ]
-        [ GameEvent.view (forward UpdateGameEventBox) model.gameEventBox 
+        [ Html.App.map UpdateGameEventBox (GameEvent.view model.gameEventBox) 
         , img [ src (Defaults.imagesLocation ++ arrowImage), arrowStyle ] []
         ] 
 
@@ -389,8 +386,8 @@ type EventType
 ```
 The button type will be chosen based on the value of `buttonEventType` from the `Data.Page` record. It basically just selects for a different image to appear next to the button based on this type.
 ```
-view : Signal.Address Action -> Model -> Html
-view address model =
+view : Model -> Html Msg
+view model =
   let
     buttonAddress = Signal.forwardTo address <| UpdateButton
 
@@ -426,7 +423,7 @@ view address model =
     [ p [ paragraphStyle ] [ text model.description ]
     , div [ class "imageAndButtonContainer", imageAndButtonContainer ]
         [ image 
-        , LabeledButton.view buttonAddress model.button
+        , Html.App.map UpdateButton (LabeledButton.view model.button)
         ]
     ]
 ```
@@ -491,10 +488,10 @@ view : Signal.Address Action -> Model -> Html
 view address model =
   button 
     [ buttonStyle model
-    , onMouseOver address Over
-    , onMouseOut address Up
-    , onMouseDown address Down
-    , onClick address Click
+    , onMouseOver Over
+    , onMouseOut Up
+    , onMouseDown Down
+    , onClick Click
     ] 
     [ text model.label ]
 ```
@@ -623,49 +620,53 @@ getStoryLevel : Data.ID -> Int
 getStoryLevel id =
   (truncate id) - 1
 ```
-The `Adventure` module's `update` function calculates a new story level like this:
+The `Adventure` module's `UpdatePage` message calculates a new story level like this:
 ```
 storyLevel =
    getStoryLevel (.id currentPageData')
 ```
 And then uses that to update the `InfoBox` with an `UpdateData` action, like this:
 ```
-, Effects.task 
-    <| Task.succeed 
-          (UpdateInfoBox 
-            (InfoBox.UpdateData 
-                storyLevel 
-                inventoryQuantities 
-                storyPhaseChapter
-            )
-          )
+update 
+  (UpdateInfoBox 
+    (InfoBox.UpdateData storyLevel inventoryQuantities storyPhaseChapter)
+  ) 
+  model'
 ```
 Here's the `InfoBox`'s `UpdateData` action that handles the updates.
 ```
 UpdateData level quantities currentStoryPhaseChapter' ->
-  let
-    item' item id =
-      { item
-          | quantity = List.Extra.getAt quantities id |> Maybe.withDefault 0
-      }
+      let
+        item' item id =
+          { item
+              | quantity = List.Extra.getAt id quantities |> Maybe.withDefault 0
+          }
 
-    inventory' =
-      List.indexedMap (\id item -> item' item id) model.inventory
+        inventory' =
+          List.indexedMap (\id item -> item' item id) model.inventory
 
-    model' =
-      { model 
-         | storyLevel = level
-         , storyChapter = currentStoryChapter level model.totalStoryChapters
-         , inventory = inventory'
-         , currentStoryPhaseChapter = currentStoryPhaseChapter'
-      }
-  in
-    UI.animate
-      |> UI.spring UI.noWobble
-      |> UI.props
-          [ Width (UI.to (toFloat (meterWidth model'))) Px
-          ]
-      |> onMeter model'
+        model' =
+          { model 
+             | storyLevel = level
+             , storyChapter = currentStoryChapter level model.totalStoryChapters
+             , inventory = inventory'
+             , currentStoryPhaseChapter = currentStoryPhaseChapter'
+          }
+
+        -- Update the animation using the newly calculated model values
+        model'' =
+          { model' 
+             | styleMeter =
+                 Animation.interrupt
+                   [ Animation.to
+                     [ Animation.width (Animation.px (toFloat (meterWidth model')))
+                     ]
+                   ]
+                   model'.styleMeter
+          }
+           
+      in
+        model'' ! []
 ```
 (You can see that it also handles the animation of the meter - we'll get to that soon!)
 The correct story chapter is displayed with the help of the `currentStoryPhase` function.
@@ -731,12 +732,16 @@ meterSegmentWidth model =
 ```
 The blue progress meter's width is animated dynamically in the `UpdateData` action using the `meterWidth` function.
 ```
-UI.animate
-  |> UI.spring UI.noWobble
-  |> UI.props
-      [ Width (UI.to (toFloat (meterWidth model'))) Px
-      ]
-  |> onMeter model'
+model'' =
+  { model' 
+     | styleMeter =
+         Animation.interrupt
+           [ Animation.to
+             [ Animation.width (Animation.px (toFloat (meterWidth model')))
+             ]
+           ]
+           model'.styleMeter
+  }
 ```
 The `meterWidth` function figures out how wide the meter should be by multiplying the segment length by the story level
 
@@ -748,9 +753,9 @@ meterWidth model =
 The meter is actually displayed in as two long rectangles: a fixed-width white rectangle as the background, and the blue foreground rectangle which changes in width. The foreground meter is being rendered by elm-html-animation, which is why it animates when the width changes.
 ```
 , div
-    [ class "meter", meterContainerStyle ] 
-    [ div [ class "meterBackground",  meterBackgroundStyle model ] []
-    , div [ class "meterForeground", style ((meterForeground model) ++ (UI.render model.styleMeter)) ] []
+  [ class "meter", meterContainerStyle ] 
+  [ div [ class "meterBackground",  meterBackgroundStyle model ] []
+  , div ((Animation.render model.styleMeter ++ [ meterForeground model ]) ++ [class "meterForeground"]) []
 ```
 
 The last major feature of the story meter is the story phase chapters: the three main headings that define the major story sections.
@@ -861,63 +866,71 @@ the info page is opened by a toggle button that sits at the top right corner of 
 The `infoButton` is an `ImageButton` which runs the `UpdateButton` action when it's clicked in the `view`
 ```
 , div [ infoButtonContainerStyle ] 
-  [ ImageButton.view (forward UpdateButton) model.infoButton ] 
-```
-(It uses the custom `forward` function to handle signal forwarding.)
-```
-forward toAction =
-  Signal.forwardTo address toAction
+  [ Html.App.map UpdateButton (ImageButton.view model.infoButton) ] 
 ```
 
 When `UpdateButton` runs, it runs the correct effect depending on the state of the toggle button. If the button is `Down`  and the infoBox is closed, then the effect runs `ShowInfo`. If the button is `Down` and the info box is open, the effect runs `HideInfo`. `ShowInfo` and `HideInfo` open and close the info box using elm-html-animation to animate the box's position with a spring wobble effect.
 
 ```
-update : Action -> Model -> (Model, Effects Action)
-update action model =
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
 
   -- This code sets up a toggle button effect on the `infoButton`
   let
 
     -- The current, updated version of the model's `infoButton`
-    infoButton' buttonAction =
-      ImageButton.update buttonAction model.infoButton
+    infoButton' buttonMsg =
+      ImageButton.update buttonMsg model.infoButton
 
     {-
-    `runCorrectEffect` will choose three possible effects to run:
+    `runCorrectEffect` will choose three possible Cmd to run:
     1. If the button is `Down`, and the infoBox is closed, then the effect
        runs `ShowInfo`
     2. If the button is `Down` and the info box is open, the the effect runs
        `HideInfo`
-    3. In any other condition, don't run any effects
+    3. In any other condition, don't run any Cmd
     This forms the basis of the toggle effect
     -}
 
-    runCorrectEffect buttonAction =
+    runCorrectEffect buttonMsg model =
       case
-        ( .currentAction (infoButton' buttonAction) == ImageButton.Down 
+        ( .currentMsg (infoButton' buttonMsg) == ImageButton.Down 
         , model.infoBoxIsOpen == False
         )
       of 
         (True, True) ->
-          Effects.task <| Task.succeed ShowInfo
+          --Cmd.task <| Task.succeed ShowInfo
+          --Cmd.batch [ Task.Extra.performFailproof ShowInfo ]
+          update ShowInfo model
 
         (True, False) ->
-          Effects.task <| Task.succeed HideInfo
+          --Cmd.task <| Task.succeed HideInfo
+          --Cmd.batch [ Task.Extra.performFailproof HideInfo ]
+          update HideInfo model
 
         _ -> 
-          Effects.none
+          --Cmd.none
+          model ! []
   in
-  case action of
+  case msg of
+    Animate animMsg ->
+      ( { model
+          | styleInfo = Animation.update animMsg model.styleInfo
+          , styleMeter = Animation.update animMsg model.styleMeter
+        }
+      , Cmd.none
+      )
 
     -- Update the `infoButton` toggle button, and run an animation to 
     -- display the `infoBox` if the button is in the correct toggle state
-    UpdateButton buttonAction ->
-      (
-        { model 
-            | infoButton = infoButton' buttonAction
-        }
-      , runCorrectEffect buttonAction
-      )
+    UpdateButton buttonMsg ->
+      let
+        model' =
+          { model 
+              | infoButton = infoButton' buttonMsg
+          }
+      in
+        runCorrectEffect buttonMsg model'
 
     -- An animation to show the `infoBox`
     ShowInfo ->
@@ -927,16 +940,17 @@ update action model =
         model' =
           { model 
               | infoBoxIsOpen = True
+              , styleInfo =
+              Animation.interrupt
+                  [ Animation.to
+                    [ Animation.top (Animation.px -300)
+                    ]
+                  ]
+                  model.styleInfo
           }
       in
-        UI.animate
-          |> UI.spring UI.wobbly
-          |> UI.props
-              [ Top (UI.to -300) Px
-              , Opacity (UI.to 1)
-              ]
-          |> onMenu model'
-
+        model' ! []
+        
     -- An animation to hide the `infoBox`
     HideInfo ->
       let
@@ -945,39 +959,27 @@ update action model =
         model' =
           { model 
               | infoBoxIsOpen = False
+              , styleInfo =
+              Animation.interrupt
+                  [ Animation.to
+                    [ Animation.top (Animation.px -10)
+                    ]
+                  ]
+                  model.styleInfo
           }
       in
-      UI.animate
-        |> UI.spring UI.wobbly
-        |> UI.props
-            [ Top (UI.to -10) Px
-            , Opacity (UI.to 0.5)
-            ]
-        |> onMenu model'
-
-    AnimateMeter action ->
-      onMeter model action
-
-    AnimateInfoBox action ->
-      onMenu model action
+        model' ! []
 ```
 Another feature of the info box is that it will close when the mouse leaves it. This is simply a matter of running the `HideInfo` action when the mouse leaves it.
 ```
 div 
-   [ style (infoContainer ++ (UI.render model.styleInfo)) 
-   , onMouseLeave address HideInfo
-   ] 
-   [ infoPageContent ]
-```
-By the way, the `Data.infoPages` content is in markdown format, so elm-markdown is used to convert it to HTML. It chooses the correct content to display based on the current story phase chapter.
-```
-infoPageContent =
-  List.Extra.getAt model.infoPages (model.currentStoryPhaseChapter - 1)
-    |> Maybe.withDefault "No info page selected"
-    |> Markdown.toHtml
+  [ containerStyle model ] 
+  [ div 
+  ((Animation.render model.styleInfo ++ [ infoContainer ]) ++ [ onMouseLeave HideInfo ]) 
+  [ Markdown.toHtml [] infoPageContent ]
 ```
 And that's it! Hero Quest done!
 
 Lessons learned?
 ----------------
-Don't make your modules too big! The `Page.elm` and `InfoBox.elm` do far too much on their own, which makes the code look more complex than it needs to. Better to make lots of smaller modules and hook them up in a parent module. The `ImageButton` and `LabeledButton` are good examples of properly scoped modules.
+Don't nest lots of modules! It's better to make one bit M/V/U system for the entire application, and turn each component into a sub view function.

@@ -508,21 +508,7 @@ var _user$project$InfoBox$update = F2(
 						storyLevel: _p5,
 						storyChapter: A2(_user$project$InfoBox$currentStoryChapter, _p5, model.totalStoryChapters),
 						inventory: inventory$,
-						currentStoryPhaseChapter: _p2._2,
-						styleMeter: A2(
-							_mdgriffith$elm_style_animation$Animation$interrupt,
-							_elm_lang$core$Native_List.fromArray(
-								[
-									_mdgriffith$elm_style_animation$Animation$to(
-									_elm_lang$core$Native_List.fromArray(
-										[
-											_mdgriffith$elm_style_animation$Animation$width(
-											_mdgriffith$elm_style_animation$Animation$px(
-												_elm_lang$core$Basics$toFloat(
-													_user$project$InfoBox$meterWidth(model))))
-										]))
-								]),
-							model.styleMeter)
+						currentStoryPhaseChapter: _p2._2
 					});
 				var model$$ = _elm_lang$core$Native_Utils.update(
 					model$,

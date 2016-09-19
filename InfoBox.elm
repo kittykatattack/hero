@@ -272,13 +272,6 @@ update msg model =
              , storyChapter = currentStoryChapter level model.totalStoryChapters
              , inventory = inventory'
              , currentStoryPhaseChapter = currentStoryPhaseChapter'
-             , styleMeter =
-                 Animation.interrupt
-                   [ Animation.to
-                     [ Animation.width (Animation.px (toFloat (meterWidth model)))
-                     ]
-                   ]
-                   model.styleMeter
           }
 
         -- Update the animation using the newly calculated model values
@@ -461,9 +454,7 @@ view model =
         , div
             [ class "meter", meterContainerStyle ] 
             [ div [ class "meterBackground",  meterBackgroundStyle model ] []
-            --, div [ class "meterForeground", style ((meterForeground model) ++ (Animation.render model.styleMeter)) ] []
             , div ((Animation.render model.styleMeter ++ [ meterForeground model ]) ++ [class "meterForeground"]) []
-            --, div [ meterForeground model, class "meterForeground"] []
             , div [] meterMarkers
             , storyPhaseMarker
 
