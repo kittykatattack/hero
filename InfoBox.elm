@@ -1,7 +1,7 @@
 module InfoBox exposing (..)
 
 import Html exposing (..)
-import Html.App
+import Html
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import String
@@ -10,7 +10,7 @@ import Data
 import List.Extra
 import ImageButton
 import Task
-import Task.Extra
+-- import Task.Extra
 import Markdown
 
 
@@ -466,7 +466,7 @@ view model =
                       -- The 3 main story phase chapter headings
                     , div [ chapterHeadingContainerStyle ] storyPhaseChapters
                     ]
-                , div [ infoButtonContainerStyle ] [ Html.App.map UpdateButton (ImageButton.view model.infoButton) ]
+                , div [ infoButtonContainerStyle ] [ Html.map UpdateButton (ImageButton.view model.infoButton) ]
                 ]
             ]
 

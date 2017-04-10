@@ -1,0 +1,4 @@
+var _user$project$Defaults$fontFamily = 'Helvetica, Arial, sans-serif';
+var _user$project$Defaults$height = 600;
+var _user$project$Defaults$width = 770;
+var _user$project$Defaults$imagesLocation = '../images/';

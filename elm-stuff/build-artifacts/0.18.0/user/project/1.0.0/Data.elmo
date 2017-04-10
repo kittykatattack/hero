@@ -1,0 +1,1351 @@
+var _user$project$Data$chapter3 = 'Phase 3: The Return';
+var _user$project$Data$chapter2 = 'Phase 2: The Journey';
+var _user$project$Data$chapter1 = 'Phase 1: The Departure';
+var _user$project$Data$storyPhaseChapters = {
+	ctor: '::',
+	_0: _user$project$Data$chapter1,
+	_1: {
+		ctor: '::',
+		_0: _user$project$Data$chapter2,
+		_1: {
+			ctor: '::',
+			_0: _user$project$Data$chapter3,
+			_1: {ctor: '[]'}
+		}
+	}
+};
+var _user$project$Data$story = {
+	ctor: '::',
+	_0: {
+		id: 1.1,
+		heading: 'Introduction',
+		subheading: '',
+		storyChapter: _user$project$Data$chapter1,
+		storyPhaseChapter: 1,
+		description: '\r\n  You are 19 years old and bored with life in your small medieval town. \r\n  Your parents run a general store and your job is to make deliveries to \r\n  their wealthy customers. One day your parents send you out on a long \r\n  delivery that will take several days journey to complete. They suggest \r\n  you invite some friends along for protection and to make the journey \r\n  more fun. You choose your three best friends to take the trip with you. \r\n  ',
+		pillsLeft: 0,
+		transformations: 0,
+		image: 'illustration_1-1.png',
+		alignment: 'top',
+		choices: {ctor: '[]'},
+		choiceLinks: {ctor: '[]'},
+		buttonLabel: 'Start',
+		buttonEventDescription: 'Start your journey',
+		buttonEventType: 'any',
+		buttonLink: 1.2
+	},
+	_1: {
+		ctor: '::',
+		_0: {
+			id: 1.2,
+			heading: 'Call to Adventure',
+			subheading: '',
+			storyChapter: _user$project$Data$chapter1,
+			storyPhaseChapter: 1,
+			description: '\r\n  Along the way your party is attacked by bandits on horseback. \r\n  They kill one of your friends and club you on the head. \r\n  They leave you for dead and kidnap your other two friends to hold them for ransom.\r\n      ',
+			pillsLeft: 0,
+			transformations: 0,
+			image: 'illustration_1-2.png',
+			alignment: 'top',
+			choices: {ctor: '[]'},
+			choiceLinks: {ctor: '[]'},
+			buttonLabel: 'Next',
+			buttonEventDescription: '',
+			buttonEventType: 'any',
+			buttonLink: 1.3
+		},
+		_1: {
+			ctor: '::',
+			_0: {
+				id: 1.3,
+				heading: 'Call to Adventure',
+				subheading: '',
+				storyChapter: _user$project$Data$chapter1,
+				storyPhaseChapter: 1,
+				description: '\r\n  As you wake up alone and injured in the dark forest you hear something \r\n  approaching. You can either try to hide from it or confront it. What do you do?\r\n      ',
+				pillsLeft: 0,
+				transformations: 0,
+				image: 'illustration_1-3.png',
+				alignment: 'left',
+				choices: {
+					ctor: '::',
+					_0: 'Try to hide from it',
+					_1: {
+						ctor: '::',
+						_0: 'Confront it',
+						_1: {ctor: '[]'}
+					}
+				},
+				choiceLinks: {
+					ctor: '::',
+					_0: 1.4,
+					_1: {
+						ctor: '::',
+						_0: 2.1,
+						_1: {ctor: '[]'}
+					}
+				},
+				buttonLabel: '',
+				buttonEventDescription: '',
+				buttonEventType: 'any',
+				buttonLink: 0
+			},
+			_1: {
+				ctor: '::',
+				_0: {
+					id: 1.4,
+					heading: 'Call to Adventure',
+					subheading: '',
+					storyChapter: _user$project$Data$chapter1,
+					storyPhaseChapter: 1,
+					description: '\r\n  **You die alone in a dirt hole under a tree.**\r\n      ',
+					pillsLeft: 0,
+					transformations: 0,
+					image: 'illustration_1-4.png',
+					alignment: 'left',
+					choices: {ctor: '[]'},
+					choiceLinks: {ctor: '[]'},
+					buttonLabel: 'Go Back',
+					buttonEventDescription: '',
+					buttonEventType: 'gameover',
+					buttonLink: 1.3
+				},
+				_1: {
+					ctor: '::',
+					_0: {
+						id: 2.1,
+						heading: 'Supernatural Aid and Quest Begins',
+						subheading: 'The Story (page 1 of 5)',
+						storyChapter: _user$project$Data$chapter1,
+						storyPhaseChapter: 1,
+						description: '\r\n  You are greeted by a shimmering spirit who heals your injuries and tells \r\n  you that your friends are being held in the Warlord’s castle. She also tells \r\n  you a mysterious story about a deadly threat to your entire village along with \r\n  a prophecy explaining how it can be saved.  \r\n      ',
+						pillsLeft: 0,
+						transformations: 0,
+						image: 'illustration_2-1.png',
+						alignment: 'left',
+						choices: {ctor: '[]'},
+						choiceLinks: {ctor: '[]'},
+						buttonLabel: 'Next',
+						buttonEventDescription: '',
+						buttonEventType: 'any',
+						buttonLink: 2.2
+					},
+					_1: {
+						ctor: '::',
+						_0: {
+							id: 2.2,
+							heading: 'Supernatural Aid and Quest Begins',
+							subheading: 'The Story (page 2 of 5)',
+							storyChapter: _user$project$Data$chapter1,
+							storyPhaseChapter: 1,
+							description: '\r\n Before you were born, your village went through very hard times. People were starving and \r\n all seemed lost. In desperation, they agreed to a secret deal with the evil Warlord. He \r\n promised them prosperity for 20 years but in return they would owe him a fortune. If the \r\n debt were not paid in full by the 20th anniversary, the evil Warlord and his bandits would \r\n destroy the village and kill or enslave all the young people. The only way to prevent \r\n losing their children was to pay him off or destroy him.\r\n      ',
+							pillsLeft: 0,
+							transformations: 0,
+							image: 'illustration_2-2.png',
+							alignment: 'top',
+							choices: {ctor: '[]'},
+							choiceLinks: {ctor: '[]'},
+							buttonLabel: 'Next',
+							buttonEventDescription: '',
+							buttonEventType: 'any',
+							buttonLink: 2.3
+						},
+						_1: {
+							ctor: '::',
+							_0: {
+								id: 2.3,
+								heading: 'Supernatural Aid and Quest Begins',
+								subheading: 'The Story (page 3 of 5)',
+								storyChapter: _user$project$Data$chapter1,
+								storyPhaseChapter: 1,
+								description: '\r\n  The villagers thought that they could raise the money in the years of \r\n  prosperity promised by the Warlord. Their riches should be more than \r\n  enough to pay him back. But several unexpected disease epidemics set them \r\n  back. After 20 years, they did not have enough to pay the Warlord his ransom. \r\n  Time was up and in a few days the Warlord wanted his payment. Knowing this, \r\n  your parents sent you away on an errand far outside the village in the hopes \r\n  you could escape the fate of capture and enslavement.\r\n      ',
+								pillsLeft: 0,
+								transformations: 0,
+								image: 'illustration_2-3.png',
+								alignment: 'top',
+								choices: {ctor: '[]'},
+								choiceLinks: {ctor: '[]'},
+								buttonLabel: 'Next',
+								buttonEventDescription: '',
+								buttonEventType: 'any',
+								buttonLink: 2.4
+							},
+							_1: {
+								ctor: '::',
+								_0: {
+									id: 2.4,
+									heading: 'Supernatural Aid and Quest Begins',
+									subheading: 'The Story (page 4 of 5)',
+									storyChapter: _user$project$Data$chapter1,
+									storyPhaseChapter: 1,
+									description: '\r\n  The Gods prophesized that the Warlord could be only be destroyed by his most \r\n  trusted generals acting together to kill him. But he was constantly surrounded \r\n  by his most loyal generals. None seemed willing to betray him. It was unlikely \r\n  this prophecy could ever come true.\r\n      ',
+									pillsLeft: 0,
+									transformations: 0,
+									image: 'illustration_2-4.png',
+									alignment: 'top',
+									choices: {ctor: '[]'},
+									choiceLinks: {ctor: '[]'},
+									buttonLabel: 'Next',
+									buttonEventDescription: '',
+									buttonEventType: 'any',
+									buttonLink: 3.1
+								},
+								_1: {
+									ctor: '::',
+									_0: {
+										id: 3.1,
+										heading: 'Supernatural Aid and Quest Begins',
+										subheading: 'The Story (page 5 of 5)',
+										storyChapter: _user$project$Data$chapter1,
+										storyPhaseChapter: 1,
+										description: '\r\n  The spirit also gives you 5 magic pills. Each pill temporarily turns you into \r\n  someone or something else for about 15 minutes. When the pill wears off you \r\n  quickly revert back to being yourself. **But be warned! Anyone who takes a pill \r\n  more than twice will remain what they transformed into**. If you take a pill for \r\n  a third time, you can never go back to being who you were. You are forever \r\n  changed and must live out your life in your new form, whatever that may be - \r\n  a bird, a bandit, or a king. After hearing the spirit’s story, what do you decide to do?\r\n      ',
+										pillsLeft: 5,
+										transformations: 0,
+										image: 'illustration_3-1.png',
+										alignment: 'top',
+										choices: {
+											ctor: '::',
+											_0: 'Run home to save your parents.',
+											_1: {
+												ctor: '::',
+												_0: 'Accept the magic pills and begin journey.',
+												_1: {ctor: '[]'}
+											}
+										},
+										choiceLinks: {
+											ctor: '::',
+											_0: 3.2,
+											_1: {
+												ctor: '::',
+												_0: 4.1,
+												_1: {ctor: '[]'}
+											}
+										},
+										buttonLabel: '',
+										buttonEventDescription: '',
+										buttonEventType: 'any',
+										buttonLink: 0
+									},
+									_1: {
+										ctor: '::',
+										_0: {
+											id: 3.2,
+											heading: 'Supernatural Aid and Quest Begins',
+											subheading: '',
+											storyChapter: _user$project$Data$chapter1,
+											storyPhaseChapter: 1,
+											description: '\r\n  **You return home and are killed by the bandits** \r\n      ',
+											pillsLeft: 5,
+											transformations: 0,
+											image: 'illustration_3-2.png',
+											alignment: 'top',
+											choices: {ctor: '[]'},
+											choiceLinks: {ctor: '[]'},
+											buttonLabel: 'Go Back',
+											buttonEventDescription: '',
+											buttonEventType: 'gameover',
+											buttonLink: 3.1
+										},
+										_1: {
+											ctor: '::',
+											_0: {
+												id: 4.1,
+												heading: 'Trial #1',
+												subheading: '',
+												storyChapter: _user$project$Data$chapter2,
+												storyPhaseChapter: 2,
+												description: '\r\n  You are travelling alone through the forest on a mission to rescue your friends. \r\n  Along the way you meet a talking crow who says he knows a safe route to the Warlord’s \r\n  castle. He can fly ahead and lead you there quickly. But there is a price. \r\n  He wants one of your magic pills.\r\n      ',
+												pillsLeft: 5,
+												transformations: 0,
+												image: 'illustration_4-1.png',
+												alignment: 'top',
+												choices: {
+													ctor: '::',
+													_0: 'You think the crow is trying to trick you so you tell him to leave you alone and you make your way on your own.',
+													_1: {
+														ctor: '::',
+														_0: 'You accept the crow’s offer and he starts to lead you.',
+														_1: {ctor: '[]'}
+													}
+												},
+												choiceLinks: {
+													ctor: '::',
+													_0: 4.3,
+													_1: {
+														ctor: '::',
+														_0: 4.2,
+														_1: {ctor: '[]'}
+													}
+												},
+												buttonLabel: '',
+												buttonEventDescription: '',
+												buttonEventType: 'any',
+												buttonLink: 0
+											},
+											_1: {
+												ctor: '::',
+												_0: {
+													id: 4.2,
+													heading: 'Trial #1',
+													subheading: '',
+													storyChapter: _user$project$Data$chapter2,
+													storyPhaseChapter: 2,
+													description: '\r\n  **The crow leads you into a trap and you are killed by bandits. The crow steals all of your pills.**\r\n      ',
+													pillsLeft: 0,
+													transformations: 0,
+													image: 'illustration_4-2.png',
+													alignment: 'top',
+													choices: {ctor: '[]'},
+													choiceLinks: {ctor: '[]'},
+													buttonLabel: 'Go Back',
+													buttonEventDescription: '',
+													buttonEventType: 'gameover',
+													buttonLink: 4.1
+												},
+												_1: {
+													ctor: '::',
+													_0: {
+														id: 4.3,
+														heading: 'Trial #2',
+														subheading: '',
+														storyChapter: _user$project$Data$chapter2,
+														storyPhaseChapter: 2,
+														description: '\r\n  In the evening, as it is getting dark, you are alone and stumbling along the forest trail. \r\n  You hear a camp of bandits and see their fires in the distance. You think you can hear \r\n  them talking about your friends but aren’t sure.      \r\n      ',
+														pillsLeft: 5,
+														transformations: 0,
+														image: 'illustration_4-3.png',
+														alignment: 'top',
+														choices: {
+															ctor: '::',
+															_0: 'You crawl to the edge of their camp, hiding in the trees just beyond the light of their fires, to listen to them.',
+															_1: {
+																ctor: '::',
+																_0: 'You decide to skirt around the camp and avoid them.',
+																_1: {ctor: '[]'}
+															}
+														},
+														choiceLinks: {
+															ctor: '::',
+															_0: 4.4,
+															_1: {
+																ctor: '::',
+																_0: 4.5,
+																_1: {ctor: '[]'}
+															}
+														},
+														buttonLabel: '',
+														buttonEventDescription: '',
+														buttonEventType: 'any',
+														buttonLink: 0
+													},
+													_1: {
+														ctor: '::',
+														_0: {
+															id: 4.4,
+															heading: 'Trial #2',
+															subheading: '',
+															storyChapter: _user$project$Data$chapter2,
+															storyPhaseChapter: 2,
+															description: '\r\n  **You stumble upon a couple of guards out on patrol. They kill you.**\r\n      ',
+															pillsLeft: 5,
+															transformations: 0,
+															image: 'illustration_4-4.png',
+															alignment: 'top',
+															choices: {ctor: '[]'},
+															choiceLinks: {ctor: '[]'},
+															buttonLabel: 'Go Back',
+															buttonEventDescription: '',
+															buttonEventType: 'gameover',
+															buttonLink: 4.3
+														},
+														_1: {
+															ctor: '::',
+															_0: {
+																id: 4.5,
+																heading: 'Trial #3',
+																subheading: '',
+																storyChapter: _user$project$Data$chapter2,
+																storyPhaseChapter: 2,
+																description: '\r\n  You overhear where your friends are being held. It is in the tower of the heavily guarded castle. \r\n  The castle is about a 6 hour hike through the forest and then across some open fields.\r\n\r\n  Unfortunately, the guards on the castle walls will be able to see you coming from any direction \r\n  as you cross the open fields towards them. When you reach the edge of the fields surrounding \r\n  the castle you must find a way to get past the guards. You decide to take one of your 5 magic \r\n  pills and temporarily become:      \r\n      ',
+																pillsLeft: 5,
+																transformations: 0,
+																image: 'illustration_4-5.png',
+																alignment: 'top',
+																choices: {
+																	ctor: '::',
+																	_0: 'A small bird who can fly over the walls and into the castle tower undetected by the guards.',
+																	_1: {
+																		ctor: '::',
+																		_0: 'One of the senior generals so you can walk past the guards and into the prison tower where your friends are held.',
+																		_1: {ctor: '[]'}
+																	}
+																},
+																choiceLinks: {
+																	ctor: '::',
+																	_0: 5.1,
+																	_1: {
+																		ctor: '::',
+																		_0: 5.2,
+																		_1: {ctor: '[]'}
+																	}
+																},
+																buttonLabel: '',
+																buttonEventDescription: '',
+																buttonEventType: 'any',
+																buttonLink: 0
+															},
+															_1: {
+																ctor: '::',
+																_0: {
+																	id: 5.1,
+																	heading: 'Confronting the goal',
+																	subheading: 'Rescuing your friends',
+																	storyChapter: _user$project$Data$chapter2,
+																	storyPhaseChapter: 2,
+																	description: '\r\n  You land beside your friends but have to wait until your bird shape wears off. \r\n  When you reappear as yourself, you untie your two friends and discuss an escape \r\n  plan with them. You decide:      \r\n      ',
+																	pillsLeft: 4,
+																	transformations: 1,
+																	image: 'illustration_5-1.png',
+																	alignment: 'top',
+																	choices: {
+																		ctor: '::',
+																		_0: 'that all three of you will take a pill, become small birds, and fly out the window to the forest and safety.',
+																		_1: {
+																			ctor: '::',
+																			_0: 'only you will take a pill and become a general and walk your “prisoners” past the guards.',
+																			_1: {ctor: '[]'}
+																		}
+																	},
+																	choiceLinks: {
+																		ctor: '::',
+																		_0: 9.8,
+																		_1: {
+																			ctor: '::',
+																			_0: 6.1,
+																			_1: {ctor: '[]'}
+																		}
+																	},
+																	buttonLabel: '',
+																	buttonEventDescription: '',
+																	buttonEventType: 'any',
+																	buttonLink: 0
+																},
+																_1: {
+																	ctor: '::',
+																	_0: {
+																		id: 5.2,
+																		heading: 'Confronting the goal',
+																		subheading: 'Rescuing your friends',
+																		storyChapter: _user$project$Data$chapter2,
+																		storyPhaseChapter: 2,
+																		description: '\r\n  You untie your two surprised friends, explain who you are, and quickly hatch \r\n  an escape plan. You decide:       \r\n      ',
+																		pillsLeft: 4,
+																		transformations: 1,
+																		image: 'illustration_5-2.png',
+																		alignment: 'top',
+																		choices: {
+																			ctor: '::',
+																			_0: 'That you will quickly walk your “prisoners” past the guards while you are still disguised as a General.',
+																			_1: {
+																				ctor: '::',
+																				_0: 'That all of you will take a pill, become birds, and fly out the window to the forest and safety.',
+																				_1: {ctor: '[]'}
+																			}
+																		},
+																		choiceLinks: {
+																			ctor: '::',
+																			_0: 6.2,
+																			_1: {
+																				ctor: '::',
+																				_0: 9.8,
+																				_1: {ctor: '[]'}
+																			}
+																		},
+																		buttonLabel: '',
+																		buttonEventDescription: '',
+																		buttonEventType: 'any',
+																		buttonLink: 0
+																	},
+																	_1: {
+																		ctor: '::',
+																		_0: {
+																			id: 6.1,
+																			heading: 'Fulfilling the Quest',
+																			subheading: 'Rescuing your friends',
+																			storyChapter: _user$project$Data$chapter2,
+																			storyPhaseChapter: 2,
+																			description: '\r\n  On your way out you pass near the Warlord’s bedroom where he lays sleeping protected \r\n  by two guards. You decide:      \r\n      ',
+																			pillsLeft: 3,
+																			transformations: 2,
+																			image: 'illustration_6-1.png',
+																			alignment: 'top',
+																			choices: {
+																				ctor: '::',
+																				_0: 'To walk past and continue your escape.',
+																				_1: {
+																					ctor: '::',
+																					_0: 'Transform all your friends into Generals and kill the Warlord by surprise.',
+																					_1: {ctor: '[]'}
+																				}
+																			},
+																			choiceLinks: {
+																				ctor: '::',
+																				_0: 7.1,
+																				_1: {
+																					ctor: '::',
+																					_0: 7.2,
+																					_1: {ctor: '[]'}
+																				}
+																			},
+																			buttonLabel: '',
+																			buttonEventDescription: '',
+																			buttonEventType: 'any',
+																			buttonLink: 0
+																		},
+																		_1: {
+																			ctor: '::',
+																			_0: {
+																				id: 9.8,
+																				heading: 'Adjusting to Normal Life',
+																				subheading: '',
+																				storyChapter: _user$project$Data$chapter3,
+																				storyPhaseChapter: 3,
+																				description: '\r\n  You get home safely. But your village is soon attacked by the Warlord’s bandits and destroyed. You are captured and enslaved and the Warlord steals the last pill you have left.\r\n      ',
+																				pillsLeft: 1,
+																				transformations: 2,
+																				image: 'illustration_9-8.png',
+																				alignment: 'top',
+																				choices: {ctor: '[]'},
+																				choiceLinks: {ctor: '[]'},
+																				buttonLabel: 'Start Again',
+																				buttonEventDescription: 'Your quest is over. Did it end the way you wanted?',
+																				buttonEventType: 'any',
+																				buttonLink: 1.1
+																			},
+																			_1: {
+																				ctor: '::',
+																				_0: {
+																					id: 6.2,
+																					heading: 'Fulfilling the Quest',
+																					subheading: 'Rescuing your friends',
+																					storyChapter: _user$project$Data$chapter2,
+																					storyPhaseChapter: 2,
+																					description: '\r\n  On your way out you pass near the Warlord’s bedroom where he lays sleeping protected \r\n  by two guards. You decide:      \r\n      ',
+																					pillsLeft: 4,
+																					transformations: 1,
+																					image: 'illustration_6-1.png',
+																					alignment: 'top',
+																					choices: {
+																						ctor: '::',
+																						_0: 'To walk past and continue your escape.',
+																						_1: {
+																							ctor: '::',
+																							_0: 'Transform all your friends into Generals and kill the Warlord by surprise.',
+																							_1: {ctor: '[]'}
+																						}
+																					},
+																					choiceLinks: {
+																						ctor: '::',
+																						_0: 7.3,
+																						_1: {
+																							ctor: '::',
+																							_0: 7.4,
+																							_1: {ctor: '[]'}
+																						}
+																					},
+																					buttonLabel: '',
+																					buttonEventDescription: '',
+																					buttonEventType: 'any',
+																					buttonLink: 0
+																				},
+																				_1: {
+																					ctor: '::',
+																					_0: {
+																						id: 7.1,
+																						heading: 'Magic Flight',
+																						subheading: 'Escaping the castle',
+																						storyChapter: _user$project$Data$chapter2,
+																						storyPhaseChapter: 3,
+																						description: '\r\n  The pill is starting to wear off. You only have a minute or two left and you \r\n  are not out of the castle yet. You decide:     \r\n      ',
+																						pillsLeft: 3,
+																						transformations: 2,
+																						image: 'illustration_7-1.png',
+																						alignment: 'top',
+																						choices: {
+																							ctor: '::',
+																							_0: 'That all of you should take a pill and fly out as birds. But this would be your last transformation so you must live the rest of your life as a bird.',
+																							_1: {
+																								ctor: '::',
+																								_0: 'That your two friends should each take a pill and fly to safety as birds. You will try running out of the castle while you are still disguised as a General.',
+																								_1: {ctor: '[]'}
+																							}
+																						},
+																						choiceLinks: {
+																							ctor: '::',
+																							_0: 9.1,
+																							_1: {
+																								ctor: '::',
+																								_0: 8.1,
+																								_1: {ctor: '[]'}
+																							}
+																						},
+																						buttonLabel: '',
+																						buttonEventDescription: '',
+																						buttonEventType: 'any',
+																						buttonLink: 0
+																					},
+																					_1: {
+																						ctor: '::',
+																						_0: {
+																							id: 7.2,
+																							heading: 'Magic Flight',
+																							subheading: '',
+																							storyChapter: _user$project$Data$chapter2,
+																							storyPhaseChapter: 3,
+																							description: '\r\n  Two guards rush into the bedroom to confront you three over the dead body of the Warlord. You decide:   \r\n      ',
+																							pillsLeft: 1,
+																							transformations: 2,
+																							image: 'illustration_7-2.png',
+																							alignment: 'top',
+																							choices: {
+																								ctor: '::',
+																								_0: 'To kill the guards and take the last pill and become the Warlord yourself.',
+																								_1: {
+																									ctor: '::',
+																									_0: 'To kill the guards and offer the one remaining pill to one of your two friends.',
+																									_1: {ctor: '[]'}
+																								}
+																							},
+																							choiceLinks: {
+																								ctor: '::',
+																								_0: 8.2,
+																								_1: {
+																									ctor: '::',
+																									_0: 8.3,
+																									_1: {ctor: '[]'}
+																								}
+																							},
+																							buttonLabel: '',
+																							buttonEventDescription: '',
+																							buttonEventType: 'any',
+																							buttonLink: 0
+																						},
+																						_1: {
+																							ctor: '::',
+																							_0: {
+																								id: 7.3,
+																								heading: 'Magic Flight',
+																								subheading: 'Escaping the castle',
+																								storyChapter: _user$project$Data$chapter2,
+																								storyPhaseChapter: 3,
+																								description: '\r\n  The pill is starting to wear off. You only have a minute or two left and you are not out of the castle yet. You decide:   \r\n      ',
+																								pillsLeft: 4,
+																								transformations: 1,
+																								image: 'illustration_7-3.png',
+																								alignment: 'top',
+																								choices: {
+																									ctor: '::',
+																									_0: 'That all three of you take a pill to transform into Generals.',
+																									_1: {
+																										ctor: '::',
+																										_0: 'That all three of you take a pill to transform into birds.',
+																										_1: {ctor: '[]'}
+																									}
+																								},
+																								choiceLinks: {
+																									ctor: '::',
+																									_0: 8.4,
+																									_1: {
+																										ctor: '::',
+																										_0: 8.5,
+																										_1: {ctor: '[]'}
+																									}
+																								},
+																								buttonLabel: '',
+																								buttonEventDescription: '',
+																								buttonEventType: 'any',
+																								buttonLink: 0
+																							},
+																							_1: {
+																								ctor: '::',
+																								_0: {
+																									id: 7.4,
+																									heading: 'Magic Flight',
+																									subheading: '',
+																									storyChapter: _user$project$Data$chapter2,
+																									storyPhaseChapter: 3,
+																									description: '\r\n  Two guards rush into the bedroom to confront you three over the dead body of the Warlord. You decide:   \r\n      ',
+																									pillsLeft: 1,
+																									transformations: 2,
+																									image: 'illustration_7-2.png',
+																									alignment: 'top',
+																									choices: {
+																										ctor: '::',
+																										_0: 'kill the guards and take the last pill and become the Warlord yourself.',
+																										_1: {
+																											ctor: '::',
+																											_0: 'kill the guards and offer the one remaining pill to your two friends.',
+																											_1: {ctor: '[]'}
+																										}
+																									},
+																									choiceLinks: {
+																										ctor: '::',
+																										_0: 8.6,
+																										_1: {
+																											ctor: '::',
+																											_0: 8.7,
+																											_1: {ctor: '[]'}
+																										}
+																									},
+																									buttonLabel: '',
+																									buttonEventDescription: '',
+																									buttonEventType: 'any',
+																									buttonLink: 0
+																								},
+																								_1: {
+																									ctor: '::',
+																									_0: {
+																										id: 8.1,
+																										heading: 'Returning Home',
+																										subheading: '',
+																										storyChapter: _user$project$Data$chapter2,
+																										storyPhaseChapter: 3,
+																										description: '\r\n  Your disguise wears off just before you can escape the castle. You will certainly be captured and killed \r\n  unless you can transform again. But you have already taken 2 pills so whatever you choose to become will \r\n  be your form for the rest of your life. You decide:   \r\n      ',
+																										pillsLeft: 1,
+																										transformations: 2,
+																										image: 'illustration_7-3.png',
+																										alignment: 'top',
+																										choices: {
+																											ctor: '::',
+																											_0: 'To become a bird and escape.',
+																											_1: {
+																												ctor: '::',
+																												_0: 'To become the Warlord, kill the Generals, and attempt to stop the evil.',
+																												_1: {ctor: '[]'}
+																											}
+																										},
+																										choiceLinks: {
+																											ctor: '::',
+																											_0: 9.2,
+																											_1: {
+																												ctor: '::',
+																												_0: 9.3,
+																												_1: {ctor: '[]'}
+																											}
+																										},
+																										buttonLabel: '',
+																										buttonEventDescription: '',
+																										buttonEventType: 'any',
+																										buttonLink: 0
+																									},
+																									_1: {
+																										ctor: '::',
+																										_0: {
+																											id: 8.2,
+																											heading: 'Returning Home',
+																											subheading: '',
+																											storyChapter: _user$project$Data$chapter2,
+																											storyPhaseChapter: 3,
+																											description: '\r\n  Your friends have reverted back to their normal form but you are now disguised as the Warlord. \r\n  You order your generals to:  \r\n      ',
+																											pillsLeft: 0,
+																											transformations: 3,
+																											image: 'illustration_8-2.png',
+																											alignment: 'top',
+																											choices: {
+																												ctor: '::',
+																												_0: 'Release your two friends safely back to their village.',
+																												_1: {
+																													ctor: '::',
+																													_0: 'Release your two friends safely back to their village then have the generals executed as conspirators.',
+																													_1: {ctor: '[]'}
+																												}
+																											},
+																											choiceLinks: {
+																												ctor: '::',
+																												_0: 9.4,
+																												_1: {
+																													ctor: '::',
+																													_0: 9.5,
+																													_1: {ctor: '[]'}
+																												}
+																											},
+																											buttonLabel: '',
+																											buttonEventDescription: '',
+																											buttonEventType: 'any',
+																											buttonLink: 0
+																										},
+																										_1: {
+																											ctor: '::',
+																											_0: {
+																												id: 8.3,
+																												heading: 'Returning Home',
+																												subheading: '',
+																												storyChapter: _user$project$Data$chapter2,
+																												storyPhaseChapter: 3,
+																												description: '\r\n  You and your friends decide that:  \r\n      ',
+																												pillsLeft: 1,
+																												transformations: 2,
+																												image: 'illustration_7-3.png',
+																												alignment: 'top',
+																												choices: {
+																													ctor: '::',
+																													_0: 'One of them will take the last pill and fly away to save themself.',
+																													_1: {
+																														ctor: '::',
+																														_0: 'One of them will take the last pill to become a General.',
+																														_1: {ctor: '[]'}
+																													}
+																												},
+																												choiceLinks: {
+																													ctor: '::',
+																													_0: 9.6,
+																													_1: {
+																														ctor: '::',
+																														_0: 9.7,
+																														_1: {ctor: '[]'}
+																													}
+																												},
+																												buttonLabel: '',
+																												buttonEventDescription: '',
+																												buttonEventType: 'any',
+																												buttonLink: 0
+																											},
+																											_1: {
+																												ctor: '::',
+																												_0: {
+																													id: 8.4,
+																													heading: 'Returning Home',
+																													subheading: '',
+																													storyChapter: _user$project$Data$chapter2,
+																													storyPhaseChapter: 3,
+																													description: '\r\n  Disguised as Generals you three decide to: \r\n      ',
+																													pillsLeft: 1,
+																													transformations: 2,
+																													image: 'illustration_8-4.png',
+																													alignment: 'top',
+																													choices: {
+																														ctor: '::',
+																														_0: 'Escape the castle and flee back to your village.',
+																														_1: {
+																															ctor: '::',
+																															_0: 'Go back and kill the Warlord in his bed, then one of your friends takes the last pill to temporarily become a General.',
+																															_1: {ctor: '[]'}
+																														}
+																													},
+																													choiceLinks: {
+																														ctor: '::',
+																														_0: 9.8,
+																														_1: {
+																															ctor: '::',
+																															_0: 9.9,
+																															_1: {ctor: '[]'}
+																														}
+																													},
+																													buttonLabel: '',
+																													buttonEventDescription: '',
+																													buttonEventType: 'any',
+																													buttonLink: 0
+																												},
+																												_1: {
+																													ctor: '::',
+																													_0: {
+																														id: 8.5,
+																														heading: 'Returning Home',
+																														subheading: '',
+																														storyChapter: _user$project$Data$chapter2,
+																														storyPhaseChapter: 3,
+																														description: '\r\n  As birds you decide to fly out of the castle into the forest where you all safely \r\n  revert back to human form. With one pill remaining you decide to: \r\n      ',
+																														pillsLeft: 2,
+																														transformations: 2,
+																														image: 'illustration_8-5.png',
+																														alignment: 'top',
+																														choices: {
+																															ctor: '::',
+																															_0: 'Not take it and journey back to your village.',
+																															_1: {
+																																ctor: '::',
+																																_0: 'Take the last pill and transform permanently into the Warlord. Your friends journey back to the village.',
+																																_1: {ctor: '[]'}
+																															}
+																														},
+																														choiceLinks: {
+																															ctor: '::',
+																															_0: 9.8,
+																															_1: {
+																																ctor: '::',
+																																_0: 9.11,
+																																_1: {ctor: '[]'}
+																															}
+																														},
+																														buttonLabel: '',
+																														buttonEventDescription: '',
+																														buttonEventType: 'any',
+																														buttonLink: 0
+																													},
+																													_1: {
+																														ctor: '::',
+																														_0: {
+																															id: 8.6,
+																															heading: 'Returning Home',
+																															subheading: '',
+																															storyChapter: _user$project$Data$chapter2,
+																															storyPhaseChapter: 3,
+																															description: '\r\n  Your friends have reverted back to their normal form but you are now permanently \r\n  transformed into the Warlord. You order your generals to:\r\n      ',
+																															pillsLeft: 0,
+																															transformations: 3,
+																															image: 'illustration_8-2.png',
+																															alignment: 'top',
+																															choices: {
+																																ctor: '::',
+																																_0: 'Release your two friends safely back to their village.',
+																																_1: {
+																																	ctor: '::',
+																																	_0: 'Release your two friends safely back to their village then have the generals executed as conspirators.',
+																																	_1: {ctor: '[]'}
+																																}
+																															},
+																															choiceLinks: {
+																																ctor: '::',
+																																_0: 9.4,
+																																_1: {
+																																	ctor: '::',
+																																	_0: 9.5,
+																																	_1: {ctor: '[]'}
+																																}
+																															},
+																															buttonLabel: '',
+																															buttonEventDescription: '',
+																															buttonEventType: 'any',
+																															buttonLink: 0
+																														},
+																														_1: {
+																															ctor: '::',
+																															_0: {
+																																id: 8.7,
+																																heading: 'Returning Home',
+																																subheading: '',
+																																storyChapter: _user$project$Data$chapter2,
+																																storyPhaseChapter: 3,
+																																description: '\r\n  With only one pill remaining, you and your friends decide that:\r\n      ',
+																																pillsLeft: 1,
+																																transformations: 2,
+																																image: 'illustration_7-3.png',
+																																alignment: 'top',
+																																choices: {
+																																	ctor: '::',
+																																	_0: 'One of them will take it and fly away to save themself.',
+																																	_1: {
+																																		ctor: '::',
+																																		_0: 'One of them will take it to become a General.',
+																																		_1: {ctor: '[]'}
+																																	}
+																																},
+																																choiceLinks: {
+																																	ctor: '::',
+																																	_0: 9.6,
+																																	_1: {
+																																		ctor: '::',
+																																		_0: 9.7,
+																																		_1: {ctor: '[]'}
+																																	}
+																																},
+																																buttonLabel: '',
+																																buttonEventDescription: '',
+																																buttonEventType: 'any',
+																																buttonLink: 0
+																															},
+																															_1: {
+																																ctor: '::',
+																																_0: {
+																																	id: 9.1,
+																																	heading: 'Adjusting to Normal Life',
+																																	subheading: '',
+																																	storyChapter: _user$project$Data$chapter3,
+																																	storyPhaseChapter: 3,
+																																	description: '\r\n  You all fly safely to the forest where your friends revert back to human form. \r\n  But you are now a bird for the rest of your life. You safely guide your friends back \r\n  home only to find your village is under attack. Your friends are eventually captured and enslaved. \r\n      ',
+																																	pillsLeft: 0,
+																																	transformations: 3,
+																																	image: 'illustration_9-1.png',
+																																	alignment: 'top',
+																																	choices: {ctor: '[]'},
+																																	choiceLinks: {ctor: '[]'},
+																																	buttonLabel: 'Start Again',
+																																	buttonEventDescription: 'Your quest is over. Did it end the way you wanted?',
+																																	buttonEventType: 'any',
+																																	buttonLink: 1.1
+																																},
+																																_1: {
+																																	ctor: '::',
+																																	_0: {
+																																		id: 6.2,
+																																		heading: 'Fulfilling the Quest',
+																																		subheading: 'Rescuing your friends',
+																																		storyChapter: _user$project$Data$chapter2,
+																																		storyPhaseChapter: 2,
+																																		description: '\r\n  On your way out you pass near the Warlord’s bedroom where he lays sleeping protected \r\n  by two guards. You decide:      \r\n      ',
+																																		pillsLeft: 1,
+																																		transformations: 1,
+																																		image: 'illustration_6-1.png',
+																																		alignment: 'top',
+																																		choices: {
+																																			ctor: '::',
+																																			_0: 'To walk past and continue your escape.',
+																																			_1: {
+																																				ctor: '::',
+																																				_0: 'Transform all your friends into Generals and kill the Warlord by surprise.',
+																																				_1: {ctor: '[]'}
+																																			}
+																																		},
+																																		choiceLinks: {
+																																			ctor: '::',
+																																			_0: 7.3,
+																																			_1: {
+																																				ctor: '::',
+																																				_0: 7.4,
+																																				_1: {ctor: '[]'}
+																																			}
+																																		},
+																																		buttonLabel: '',
+																																		buttonEventDescription: '',
+																																		buttonEventType: 'any',
+																																		buttonLink: 0
+																																	},
+																																	_1: {
+																																		ctor: '::',
+																																		_0: {
+																																			id: 9.2,
+																																			heading: 'Adjusting to Normal Life',
+																																			subheading: '',
+																																			storyChapter: _user$project$Data$chapter3,
+																																			storyPhaseChapter: 3,
+																																			description: '\r\n  You escape into the forest and make your way home in the body of a bird. You return to \r\n  find your village in ruins and everyone you knew either dead or enslaved. You live \r\n  out the rest of your life as a bird. \r\n      ',
+																																			pillsLeft: 0,
+																																			transformations: 3,
+																																			image: 'illustration_9-2.png',
+																																			alignment: 'top',
+																																			choices: {ctor: '[]'},
+																																			choiceLinks: {ctor: '[]'},
+																																			buttonLabel: 'Start Again',
+																																			buttonEventDescription: 'Your quest is over. Did it end the way you wanted?',
+																																			buttonEventType: 'any',
+																																			buttonLink: 1.1
+																																		},
+																																		_1: {
+																																			ctor: '::',
+																																			_0: {
+																																				id: 9.3,
+																																				heading: 'Adjusting to Normal Life',
+																																				subheading: '',
+																																				storyChapter: _user$project$Data$chapter3,
+																																				storyPhaseChapter: 3,
+																																				description: '\r\n  You live in the castle as the imposter Warlord and rule with absolute authority. \r\n  You change the laws and prevent the destruction of your village. Your family and \r\n  friends are safe, but you are forever doomed to live out your life in the body of the Warlord.\r\n      ',
+																																				pillsLeft: 0,
+																																				transformations: 3,
+																																				image: 'illustration_8-2.png',
+																																				alignment: 'top',
+																																				choices: {ctor: '[]'},
+																																				choiceLinks: {ctor: '[]'},
+																																				buttonLabel: 'Start Again',
+																																				buttonEventDescription: 'Your quest is over. Did it end the way you wanted?',
+																																				buttonEventType: 'any',
+																																				buttonLink: 1.1
+																																			},
+																																			_1: {
+																																				ctor: '::',
+																																				_0: {
+																																					id: 9.4,
+																																					heading: 'Adjusting to Normal Life',
+																																					subheading: '',
+																																					storyChapter: _user$project$Data$chapter3,
+																																					storyPhaseChapter: 3,
+																																					description: '\r\n  You must live your life disguised as the Warlord, but your ruthless Generals soon kill \r\n  you so that they can take over. Your village is eventually destroyed and your family and friends enslaved.\r\n      ',
+																																					pillsLeft: 0,
+																																					transformations: 3,
+																																					image: 'illustration_9-4.png',
+																																					alignment: 'top',
+																																					choices: {ctor: '[]'},
+																																					choiceLinks: {ctor: '[]'},
+																																					buttonLabel: 'Start Again',
+																																					buttonEventDescription: 'Your quest is over. Did it end the way you wanted?',
+																																					buttonEventType: 'any',
+																																					buttonLink: 1.1
+																																				},
+																																				_1: {
+																																					ctor: '::',
+																																					_0: {
+																																						id: 9.5,
+																																						heading: 'Adjusting to Normal Life',
+																																						subheading: '',
+																																						storyChapter: _user$project$Data$chapter3,
+																																						storyPhaseChapter: 3,
+																																						description: '\r\n  You live in the castle as the imposter Warlord. Your evil Generals have been killed so you \r\n  can rule with absolute authority. You change the laws and prevent the destruction of your village. \r\n  Your family and friends are safe, but you must live out your life in the body of the Warlord.\r\n      ',
+																																						pillsLeft: 0,
+																																						transformations: 3,
+																																						image: 'illustration_8-2.png',
+																																						alignment: 'top',
+																																						choices: {ctor: '[]'},
+																																						choiceLinks: {ctor: '[]'},
+																																						buttonLabel: 'Start Again',
+																																						buttonEventDescription: 'Your quest is over. Did it end the way you wanted?',
+																																						buttonEventType: 'any',
+																																						buttonLink: 1.1
+																																					},
+																																					_1: {
+																																						ctor: '::',
+																																						_0: {
+																																							id: 9.6,
+																																							heading: 'Adjusting to Normal Life',
+																																							subheading: '',
+																																							storyChapter: _user$project$Data$chapter3,
+																																							storyPhaseChapter: 3,
+																																							description: '\r\n  Your friend saves themself and makes it into the forest. When they revert back to \r\n  human form they run to the village to get help. But the village is under attack and \r\n  there is no one left to help storm the castle. Eventually they are enslaved and the \r\n  village is destroyed by the Warlord.\r\n      ',
+																																							pillsLeft: 0,
+																																							transformations: 2,
+																																							image: 'illustration_9-1.png',
+																																							alignment: 'top',
+																																							choices: {ctor: '[]'},
+																																							choiceLinks: {ctor: '[]'},
+																																							buttonLabel: 'Start Again',
+																																							buttonEventDescription: 'Your quest is over. Did it end the way you wanted?',
+																																							buttonEventType: 'any',
+																																							buttonLink: 1.1
+																																						},
+																																						_1: {
+																																							ctor: '::',
+																																							_0: {
+																																								id: 9.7,
+																																								heading: 'Adjusting to Normal Life',
+																																								subheading: '',
+																																								storyChapter: _user$project$Data$chapter3,
+																																								storyPhaseChapter: 3,
+																																								description: '\r\n  Disguised as a General, your friend leads you two out of the castle as his prisoners. \r\n  All of you escape safely back to your village. But your village is eventually \r\n  destroyed and you and your friends are enslaved.\r\n      ',
+																																								pillsLeft: 0,
+																																								transformations: 2,
+																																								image: 'illustration_9-7.png',
+																																								alignment: 'top',
+																																								choices: {ctor: '[]'},
+																																								choiceLinks: {ctor: '[]'},
+																																								buttonLabel: 'Start Again',
+																																								buttonEventDescription: 'Your quest is over. Did it end the way you wanted?',
+																																								buttonEventType: 'any',
+																																								buttonLink: 1.1
+																																							},
+																																							_1: {
+																																								ctor: '::',
+																																								_0: {
+																																									id: 9.11,
+																																									heading: 'Adjusting to Normal Life',
+																																									subheading: '',
+																																									storyChapter: _user$project$Data$chapter3,
+																																									storyPhaseChapter: 3,
+																																									description: '\r\n  Permanently transformed into the Warlord, you find the army of bandits sent to destroy the \r\n  village and convince them to instead help you fight off a coup by your traitorous generals. \r\n  You invade the castle and kill all the generals. You are now the supreme ruler and pass \r\n  laws to save your village. \r\n      ',
+																																									pillsLeft: 0,
+																																									transformations: 3,
+																																									image: 'illustration_9-11.png',
+																																									alignment: 'top',
+																																									choices: {ctor: '[]'},
+																																									choiceLinks: {ctor: '[]'},
+																																									buttonLabel: 'Start Again',
+																																									buttonEventDescription: 'Your quest is over. Did it end the way you wanted?',
+																																									buttonEventType: 'any',
+																																									buttonLink: 1.1
+																																								},
+																																								_1: {
+																																									ctor: '::',
+																																									_0: {
+																																										id: 9.9,
+																																										heading: 'Adjusting to Normal Life',
+																																										subheading: '',
+																																										storyChapter: _user$project$Data$chapter3,
+																																										storyPhaseChapter: 3,
+																																										description: '\r\n  Disguised as a General, your friend leads you two out of the castle as his prisoners. \r\n  All of you escape safely back to your village. But your village is eventually destroyed \r\n  and you and your friends are enslaved.\r\n      ',
+																																										pillsLeft: 0,
+																																										transformations: 2,
+																																										image: 'illustration_9-9.png',
+																																										alignment: 'top',
+																																										choices: {ctor: '[]'},
+																																										choiceLinks: {ctor: '[]'},
+																																										buttonLabel: 'Start Again',
+																																										buttonEventDescription: 'Your quest is over. Did it end the way you wanted?',
+																																										buttonEventType: 'any',
+																																										buttonLink: 1.1
+																																									},
+																																									_1: {ctor: '[]'}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+};
+var _user$project$Data$pageOne = {
+	id: 1.1,
+	heading: 'Adventure - From Data',
+	subheading: 'The Quest Begins - From Data',
+	storyChapter: _user$project$Data$chapter1,
+	storyPhaseChapter: 1,
+	description: '\r\n        From data: Lorem ipsum dolor sit amet, \r\n        volutpat eros massa ut, vel semper bibendum pharetra fringilla ullamcorper cras, \r\n        volutpat eros massa ut, vel semper bibendum pharetra fringilla ullamcorper cras, \r\n        volutpat eros massa ut, vel semper bibendum pharetra fringilla ullamcorper cras, \r\n      ',
+	pillsLeft: 5,
+	transformations: 0,
+	image: 'test.png',
+	alignment: 'left',
+	choices: {
+		ctor: '::',
+		_0: 'Data choice one.',
+		_1: {
+			ctor: '::',
+			_0: 'Data choice two',
+			_1: {
+				ctor: '::',
+				_0: 'Data choice three',
+				_1: {ctor: '[]'}
+			}
+		}
+	},
+	choiceLinks: {
+		ctor: '::',
+		_0: 1.1,
+		_1: {
+			ctor: '::',
+			_0: 1.2,
+			_1: {ctor: '[]'}
+		}
+	},
+	buttonLabel: 'Data label',
+	buttonEventDescription: 'Data: Click the button to perform an event',
+	buttonEventType: 'gameover',
+	buttonLink: 1.1
+};
+var _user$project$Data$storyPhases = {
+	ctor: '::',
+	_0: 'Call to Adventure',
+	_1: {
+		ctor: '::',
+		_0: 'Supernatural Aid',
+		_1: {
+			ctor: '::',
+			_0: 'The Journey Begins',
+			_1: {
+				ctor: '::',
+				_0: 'Tests and Ordeals',
+				_1: {
+					ctor: '::',
+					_0: 'Confronting the Goal',
+					_1: {
+						ctor: '::',
+						_0: 'Transformation',
+						_1: {
+							ctor: '::',
+							_0: 'Fulfilling the Quest',
+							_1: {
+								ctor: '::',
+								_0: 'Returning Home',
+								_1: {
+									ctor: '::',
+									_0: 'Adjusting',
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+};
+var _user$project$Data$infoPageThree = '\r\n  ## Phase III: The Return \r\n\r\n  A. **The \"Magic Flight\"** – the journey back home often involves some magic or special event to break the spell of the quest.\r\n  \r\n  B. **Returning home** - to face family and friends again, but now as a changed person, perhaps also to seek revenge or to fulfill a prophecy.\r\n  \r\n  C. **Adjusting to a normal life** - finding a way to return to living as a normal person again after the adventures of the heroic journey.\r\n  ';
+var _user$project$Data$infoPageTwo = '\r\n  ## Phase II: The Journey \r\n\r\n  A. **Tests and ordeals** – the hero has to face many challenges and ordeals along the way. In doing so, the hero tests the strength of their character.\r\n  \r\n  B. **Confronting their goal** – eventually the hero faces the thing they have been looking for. They must either defeat it or make peace with it\r\n  \r\n  C. **Transformation** – the character of the hero is forever changed by their experiences along the journey. It could be by falling in love or by realizing something about the true nature of themselves or the world.\r\n  \r\n  D. **Fulfilling the quest** – the goal of the quest has been achieved.  The hero feels purified and renewed.\r\n  ';
+var _user$project$Data$infoPageOne = '\r\n  ## Phase I: The Departure\r\n\r\n  A. **Call to adventure** – the hero learns what he/she must do.\r\n\r\n  B. **Supernatural aid** – something magical happens that gives the hero supernatural powers and/or weapons\r\n  \r\n  C. **The Journey begins** – the hero faces his or her fears and takes the first steps into the unknown.    \r\n  ';
+var _user$project$Data$infoPages = {
+	ctor: '::',
+	_0: _user$project$Data$infoPageOne,
+	_1: {
+		ctor: '::',
+		_0: _user$project$Data$infoPageTwo,
+		_1: {
+			ctor: '::',
+			_0: _user$project$Data$infoPageThree,
+			_1: {ctor: '[]'}
+		}
+	}
+};
+var _user$project$Data$inventory = {
+	ctor: '::',
+	_0: {name: 'Magic Pills', image: 'pill.png', quantity: 0},
+	_1: {
+		ctor: '::',
+		_0: {name: 'Transformations', image: 'wand.png', quantity: 0},
+		_1: {ctor: '[]'}
+	}
+};
+var _user$project$Data$Item = F3(
+	function (a, b, c) {
+		return {name: a, image: b, quantity: c};
+	});
+var _user$project$Data$Page = function (a) {
+	return function (b) {
+		return function (c) {
+			return function (d) {
+				return function (e) {
+					return function (f) {
+						return function (g) {
+							return function (h) {
+								return function (i) {
+									return function (j) {
+										return function (k) {
+											return function (l) {
+												return function (m) {
+													return function (n) {
+														return function (o) {
+															return function (p) {
+																return {id: a, heading: b, subheading: c, storyChapter: d, storyPhaseChapter: e, description: f, pillsLeft: g, transformations: h, image: i, alignment: j, choices: k, choiceLinks: l, buttonLabel: m, buttonEventDescription: n, buttonEventType: o, buttonLink: p};
+															};
+														};
+													};
+												};
+											};
+										};
+									};
+								};
+							};
+						};
+					};
+				};
+			};
+		};
+	};
+};

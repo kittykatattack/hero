@@ -4,9 +4,12 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import Html
+
+
 -- import String
 -- import Task
 -- import Defaults
+
 import Choice
 import GameEvent
 import Data
@@ -14,6 +17,7 @@ import LabeledButton
 import ImageButton
 import List.Extra
 import Markdown
+import Defaults
 
 
 -- MODEL
@@ -363,7 +367,7 @@ view model =
             List.indexedMap (viewChoice) model.choiceBoxes
 
         forward toMsg =
-            Html.App.map toMsg
+            Html.map toMsg
 
         -- The kind of event box that's generated, depending on what type
         -- of page this is
@@ -386,7 +390,7 @@ view model =
                         [ class "multipleChoiceBox", defaultStyle, multipleChoiceBoxStyle ]
                         -- [ div [] [ GameEvent.view gameEventAddress model.gameEventBox ]
                         -- [ GameEvent.view gameEventAddress model.gameEventBox
-                        [ Html.App.map UpdateGameEventBox (GameEvent.view model.gameEventBox)
+                        [ Html.map UpdateGameEventBox (GameEvent.view model.gameEventBox)
                         , img [ src (Defaults.imagesLocation ++ arrowImage), arrowStyle ] []
                           -- , p [] [ text <| toString model.activeLink ]
                         ]
@@ -440,7 +444,7 @@ view model =
 
 viewChoice : Id -> Choice.Model -> Html Msg
 viewChoice id model =
-    Html.App.map (UpdateChoices id) (Choice.view model)
+    Html.map (UpdateChoices id) (Choice.view model)
 
 
 

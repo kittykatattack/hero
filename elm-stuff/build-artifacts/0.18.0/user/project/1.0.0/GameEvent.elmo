@@ -1,0 +1,246 @@
+var _user$project$GameEvent_ops = _user$project$GameEvent_ops || {};
+_user$project$GameEvent_ops['=>'] = F2(
+	function (v0, v1) {
+		return {ctor: '_Tuple2', _0: v0, _1: v1};
+	});
+var _user$project$GameEvent$noDisplay = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$GameEvent_ops['=>'], 'display', 'none'),
+		_1: {ctor: '[]'}
+	});
+var _user$project$GameEvent$containerStyle = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$GameEvent_ops['=>'], 'padding', '5% 0.3em 5% 0em'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$GameEvent_ops['=>'], 'width', '100%'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$GameEvent_ops['=>'], 'display', '-ms-flexbox'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$GameEvent_ops['=>'], '-ms-flex-direction', 'row'),
+					_1: {
+						ctor: '::',
+						_0: A2(_user$project$GameEvent_ops['=>'], '-ms-flex-pack', 'center'),
+						_1: {
+							ctor: '::',
+							_0: A2(_user$project$GameEvent_ops['=>'], '-ms-justify-content', 'center'),
+							_1: {
+								ctor: '::',
+								_0: A2(_user$project$GameEvent_ops['=>'], 'display', 'flex'),
+								_1: {
+									ctor: '::',
+									_0: A2(_user$project$GameEvent_ops['=>'], 'flex-direction', 'row'),
+									_1: {
+										ctor: '::',
+										_0: A2(_user$project$GameEvent_ops['=>'], 'align-items', 'center'),
+										_1: {
+											ctor: '::',
+											_0: A2(_user$project$GameEvent_ops['=>'], 'justify-content', 'center'),
+											_1: {ctor: '[]'}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	});
+var _user$project$GameEvent$imageStyle = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$GameEvent_ops['=>'], 'margin', '0% 0% 0% 0%'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$GameEvent_ops['=>'], 'padding', '0px 40px 0 0'),
+			_1: {ctor: '[]'}
+		}
+	});
+var _user$project$GameEvent$paragraphStyle = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$GameEvent_ops['=>'], 'padding', '0% 10% 0% 10%'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$GameEvent_ops['=>'], 'display', 'block'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$GameEvent_ops['=>'], 'font-size', '0.9em'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$GameEvent_ops['=>'], 'font-weight', 'bold'),
+					_1: {
+						ctor: '::',
+						_0: A2(_user$project$GameEvent_ops['=>'], 'font-family', 'Helvetica, Arial, sans-serif'),
+						_1: {
+							ctor: '::',
+							_0: A2(_user$project$GameEvent_ops['=>'], 'text-align', 'center'),
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			}
+		}
+	});
+var _user$project$GameEvent$imageAndButtonContainer = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$GameEvent_ops['=>'], 'text-align', 'justify'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$GameEvent_ops['=>'], 'text-justify', 'distribute-all-lines'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$GameEvent_ops['=>'], 'display', 'flex'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$GameEvent_ops['=>'], 'justify-content', 'center'),
+					_1: {ctor: '[]'}
+				}
+			}
+		}
+	});
+var _user$project$GameEvent$update = F2(
+	function (msg, model) {
+		var _p0 = msg;
+		if (_p0.ctor === 'UpdateButton') {
+			var button_ = A2(_user$project$LabeledButton$update, _p0._0, model.button);
+			return _elm_lang$core$Native_Utils.update(
+				model,
+				{button: button_});
+		} else {
+			return model;
+		}
+	});
+var _user$project$GameEvent$noFx = function (model) {
+	return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
+};
+var _user$project$GameEvent$init = F3(
+	function (buttonLabel_, description_, eventType_) {
+		return {
+			button: A3(_user$project$LabeledButton$init, buttonLabel_, 30, 50),
+			description: description_,
+			eventType: eventType_
+		};
+	});
+var _user$project$GameEvent$Model = F3(
+	function (a, b, c) {
+		return {description: a, button: b, eventType: c};
+	});
+var _user$project$GameEvent$Any = {ctor: 'Any'};
+var _user$project$GameEvent$NextPage = {ctor: 'NextPage'};
+var _user$project$GameEvent$Question = {ctor: 'Question'};
+var _user$project$GameEvent$TakeMsg = {ctor: 'TakeMsg'};
+var _user$project$GameEvent$GameOver = {ctor: 'GameOver'};
+var _user$project$GameEvent$NoOp = {ctor: 'NoOp'};
+var _user$project$GameEvent$UpdateButton = function (a) {
+	return {ctor: 'UpdateButton', _0: a};
+};
+var _user$project$GameEvent$view = function (model) {
+	var eventText = function () {
+		var _p1 = model.description;
+		if (_p1 === '') {
+			return A2(
+				_elm_lang$html$Html$p,
+				{
+					ctor: '::',
+					_0: _user$project$GameEvent$noDisplay,
+					_1: {ctor: '[]'}
+				},
+				{ctor: '[]'});
+		} else {
+			return A2(
+				_elm_lang$html$Html$p,
+				{
+					ctor: '::',
+					_0: _user$project$GameEvent$paragraphStyle,
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text(model.description),
+					_1: {ctor: '[]'}
+				});
+		}
+	}();
+	var eventImageSource = function () {
+		var _p2 = model.eventType;
+		switch (_p2.ctor) {
+			case 'GameOver':
+				return A2(_elm_lang$core$Basics_ops['++'], _user$project$Defaults$imagesLocation, 'skull.png');
+			case 'TakeMsg':
+				return A2(_elm_lang$core$Basics_ops['++'], _user$project$Defaults$imagesLocation, 'exclamationMark.png');
+			case 'Question':
+				return A2(_elm_lang$core$Basics_ops['++'], _user$project$Defaults$imagesLocation, 'questionMark.png');
+			case 'NextPage':
+				return A2(_elm_lang$core$Basics_ops['++'], _user$project$Defaults$imagesLocation, 'nextIcon.png');
+			default:
+				return '';
+		}
+	}();
+	var image = function () {
+		var _p3 = model.eventType;
+		if (_p3.ctor === 'Any') {
+			return A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _user$project$GameEvent$noDisplay,
+					_1: {ctor: '[]'}
+				},
+				{ctor: '[]'});
+		} else {
+			return A2(
+				_elm_lang$html$Html$img,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$src(eventImageSource),
+					_1: {
+						ctor: '::',
+						_0: _user$project$GameEvent$imageStyle,
+						_1: {ctor: '[]'}
+					}
+				},
+				{ctor: '[]'});
+		}
+	}();
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: eventText,
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{
+						ctor: '::',
+						_0: _user$project$GameEvent$containerStyle,
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('gameEventBox'),
+							_1: {ctor: '[]'}
+						}
+					},
+					{
+						ctor: '::',
+						_0: image,
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$map,
+								_user$project$GameEvent$UpdateButton,
+								_user$project$LabeledButton$view(model.button)),
+							_1: {ctor: '[]'}
+						}
+					}),
+				_1: {ctor: '[]'}
+			}
+		});
+};

@@ -1,0 +1,283 @@
+var _user$project$LabeledButton_ops = _user$project$LabeledButton_ops || {};
+_user$project$LabeledButton_ops['=>'] = F2(
+	function (v0, v1) {
+		return {ctor: '_Tuple2', _0: v0, _1: v1};
+	});
+var _user$project$LabeledButton$buttonStyle = function (model) {
+	var over = {
+		ctor: '::',
+		_0: A2(_user$project$LabeledButton_ops['=>'], 'background', '#3cb0fd'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$LabeledButton_ops['=>'], 'background-image', '-webkit-linear-gradient(top, #3cb0fd, #3498db)'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$LabeledButton_ops['=>'], 'background-image', '-moz-linear-gradient(top, #3cb0fd, #3498db)'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$LabeledButton_ops['=>'], 'background-image', '-ms-linear-gradient(top, #3cb0fd, #3498db)'),
+					_1: {
+						ctor: '::',
+						_0: A2(_user$project$LabeledButton_ops['=>'], 'background-image', '-o-linear-gradient(top, #3cb0fd, #3498db)'),
+						_1: {
+							ctor: '::',
+							_0: A2(_user$project$LabeledButton_ops['=>'], 'background-image', 'linear-gradient(to bottom, #3cb0fd, #3498db)'),
+							_1: {
+								ctor: '::',
+								_0: A2(_user$project$LabeledButton_ops['=>'], 'height', '3em'),
+								_1: {
+									ctor: '::',
+									_0: A2(_user$project$LabeledButton_ops['=>'], 'text-decoration', 'none'),
+									_1: {
+										ctor: '::',
+										_0: A2(_user$project$LabeledButton_ops['=>'], 'webkit-border-radius', '5'),
+										_1: {
+											ctor: '::',
+											_0: A2(_user$project$LabeledButton_ops['=>'], '-moz-border-radius', '5'),
+											_1: {
+												ctor: '::',
+												_0: A2(_user$project$LabeledButton_ops['=>'], 'border-radius', '5px'),
+												_1: {
+													ctor: '::',
+													_0: A2(_user$project$LabeledButton_ops['=>'], 'font-family', 'Arial, Helvetica, sans'),
+													_1: {
+														ctor: '::',
+														_0: A2(_user$project$LabeledButton_ops['=>'], 'color', '#ffffff'),
+														_1: {
+															ctor: '::',
+															_0: A2(_user$project$LabeledButton_ops['=>'], 'font-size', '13px'),
+															_1: {
+																ctor: '::',
+																_0: A2(_user$project$LabeledButton_ops['=>'], 'padding', '10px 20px 10px 20px'),
+																_1: {
+																	ctor: '::',
+																	_0: A2(_user$project$LabeledButton_ops['=>'], 'text-decoration', 'none'),
+																	_1: {
+																		ctor: '::',
+																		_0: A2(_user$project$LabeledButton_ops['=>'], 'cursor', 'pointer'),
+																		_1: {
+																			ctor: '::',
+																			_0: A2(_user$project$LabeledButton_ops['=>'], '-webkit-user-select', 'none'),
+																			_1: {
+																				ctor: '::',
+																				_0: A2(_user$project$LabeledButton_ops['=>'], '-moz-user-select', 'none'),
+																				_1: {
+																					ctor: '::',
+																					_0: A2(_user$project$LabeledButton_ops['=>'], '-khtml-user-select', 'none'),
+																					_1: {
+																						ctor: '::',
+																						_0: A2(_user$project$LabeledButton_ops['=>'], '-ms-user-select', 'none'),
+																						_1: {
+																							ctor: '::',
+																							_0: A2(_user$project$LabeledButton_ops['=>'], 'userSelect', 'none'),
+																							_1: {
+																								ctor: '::',
+																								_0: A2(_user$project$LabeledButton_ops['=>'], 'outline', '0'),
+																								_1: {
+																									ctor: '::',
+																									_0: A2(_user$project$LabeledButton_ops['=>'], 'display', 'block'),
+																									_1: {ctor: '[]'}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	};
+	var up = {
+		ctor: '::',
+		_0: A2(_user$project$LabeledButton_ops['=>'], 'background', '#3498db'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$LabeledButton_ops['=>'], 'background-image', 'webkit-linear-gradient(top, #3498db, #2980b9)'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$LabeledButton_ops['=>'], 'background-image', '-moz-linear-gradient(top, #3498db, #2980b9)'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$LabeledButton_ops['=>'], 'background-image', '-ms-linear-gradient(top, #3498db, #2980b9)'),
+					_1: {
+						ctor: '::',
+						_0: A2(_user$project$LabeledButton_ops['=>'], 'background-image', '-o-linear-gradient(top, #3498db, #2980b9)'),
+						_1: {
+							ctor: '::',
+							_0: A2(_user$project$LabeledButton_ops['=>'], 'background-image', 'linear-gradient(to bottom, #3498db, #2980b9)'),
+							_1: {
+								ctor: '::',
+								_0: A2(_user$project$LabeledButton_ops['=>'], 'height', '3em'),
+								_1: {
+									ctor: '::',
+									_0: A2(_user$project$LabeledButton_ops['=>'], 'webkit-border-radius', '5'),
+									_1: {
+										ctor: '::',
+										_0: A2(_user$project$LabeledButton_ops['=>'], '-moz-border-radius', '5'),
+										_1: {
+											ctor: '::',
+											_0: A2(_user$project$LabeledButton_ops['=>'], 'border-radius', '5px'),
+											_1: {
+												ctor: '::',
+												_0: A2(_user$project$LabeledButton_ops['=>'], 'font-family', 'Arial, Helvetica, sans'),
+												_1: {
+													ctor: '::',
+													_0: A2(_user$project$LabeledButton_ops['=>'], 'color', '#ffffff'),
+													_1: {
+														ctor: '::',
+														_0: A2(_user$project$LabeledButton_ops['=>'], 'font-size', '13px'),
+														_1: {
+															ctor: '::',
+															_0: A2(_user$project$LabeledButton_ops['=>'], 'padding', '10px 20px 10px 20px'),
+															_1: {
+																ctor: '::',
+																_0: A2(_user$project$LabeledButton_ops['=>'], 'text-decoration', 'none'),
+																_1: {
+																	ctor: '::',
+																	_0: A2(_user$project$LabeledButton_ops['=>'], 'cursor', 'pointer'),
+																	_1: {
+																		ctor: '::',
+																		_0: A2(_user$project$LabeledButton_ops['=>'], '-webkit-user-select', 'none'),
+																		_1: {
+																			ctor: '::',
+																			_0: A2(_user$project$LabeledButton_ops['=>'], '-moz-user-select', 'none'),
+																			_1: {
+																				ctor: '::',
+																				_0: A2(_user$project$LabeledButton_ops['=>'], '-khtml-user-select', 'none'),
+																				_1: {
+																					ctor: '::',
+																					_0: A2(_user$project$LabeledButton_ops['=>'], '-ms-user-select', 'none'),
+																					_1: {
+																						ctor: '::',
+																						_0: A2(_user$project$LabeledButton_ops['=>'], 'userSelect', 'none'),
+																						_1: {
+																							ctor: '::',
+																							_0: A2(_user$project$LabeledButton_ops['=>'], 'outline', '0'),
+																							_1: {
+																								ctor: '::',
+																								_0: A2(_user$project$LabeledButton_ops['=>'], 'display', 'block'),
+																								_1: {ctor: '[]'}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	};
+	var _p0 = model.currentMsg;
+	switch (_p0.ctor) {
+		case 'Up':
+			return _elm_lang$html$Html_Attributes$style(up);
+		case 'Over':
+			return _elm_lang$html$Html_Attributes$style(over);
+		case 'Down':
+			return _elm_lang$html$Html_Attributes$style(over);
+		case 'Click':
+			return _elm_lang$html$Html_Attributes$style(up);
+		default:
+			return _elm_lang$html$Html_Attributes$style(up);
+	}
+};
+var _user$project$LabeledButton$update = F2(
+	function (msg, model) {
+		var _p1 = msg;
+		switch (_p1.ctor) {
+			case 'Up':
+				return _elm_lang$core$Native_Utils.update(
+					model,
+					{currentMsg: msg});
+			case 'Over':
+				return _elm_lang$core$Native_Utils.update(
+					model,
+					{currentMsg: msg});
+			case 'Down':
+				return _elm_lang$core$Native_Utils.update(
+					model,
+					{currentMsg: msg});
+			case 'Click':
+				return _elm_lang$core$Native_Utils.update(
+					model,
+					{currentMsg: msg});
+			default:
+				return model;
+		}
+	});
+var _user$project$LabeledButton$noFx = function (model) {
+	return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
+};
+var _user$project$LabeledButton$Model = F4(
+	function (a, b, c, d) {
+		return {label: a, currentMsg: b, x: c, y: d};
+	});
+var _user$project$LabeledButton$NoOp = {ctor: 'NoOp'};
+var _user$project$LabeledButton$Click = {ctor: 'Click'};
+var _user$project$LabeledButton$Down = {ctor: 'Down'};
+var _user$project$LabeledButton$Over = {ctor: 'Over'};
+var _user$project$LabeledButton$Up = {ctor: 'Up'};
+var _user$project$LabeledButton$model = {label: 'X', currentMsg: _user$project$LabeledButton$Up, x: 0, y: 0};
+var _user$project$LabeledButton$init = F3(
+	function (label_, x_, y_) {
+		return _elm_lang$core$Native_Utils.update(
+			_user$project$LabeledButton$model,
+			{label: label_, x: x_, y: y_});
+	});
+var _user$project$LabeledButton$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$button,
+		{
+			ctor: '::',
+			_0: _user$project$LabeledButton$buttonStyle(model),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$html$Html_Events$onMouseOver(_user$project$LabeledButton$Over),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$html$Html_Events$onMouseOut(_user$project$LabeledButton$Up),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html_Events$onMouseDown(_user$project$LabeledButton$Down),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Events$onClick(_user$project$LabeledButton$Click),
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			}
+		},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html$text(model.label),
+			_1: {ctor: '[]'}
+		});
+};

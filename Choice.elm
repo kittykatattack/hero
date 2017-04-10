@@ -4,8 +4,11 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import Html
+
+
 -- import String
 --import Defaults
+
 import ImageButton
 
 
@@ -70,7 +73,7 @@ view model =
     div
         [ containerStyle ]
         --[ ImageButton.view buttonAddress model.button
-        [ Html.App.map UpdateButton (ImageButton.view model.button)
+        [ Html.map UpdateButton (ImageButton.view model.button)
         , p [ class "choiceText", paragraphStyle ] [ text model.label ]
         ]
 

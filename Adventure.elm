@@ -3,13 +3,19 @@ module Adventure exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
+
+
 -- import String
 -- import Task
 -- import Task.Extra
+
 import Page
 import InfoBox
 import Data
--- import Defaults
+
+
+import Defaults
+
 import LabeledButton
 import GameEvent
 
@@ -322,12 +328,12 @@ view model =
         [ -- A holding div for the previous page, which is used to create the fade effect.
           -- It's opacity is 0 when the game starts,
           -- but it's set to 1 in the update function and then faded out with each page transition
-          div (Animation.render model.stylePreviousPage ++ [ previousPageStyle ]) [ (Html.App.map UpdatePage (Page.view model.previousPage)) ]
+          div (Animation.render model.stylePreviousPage ++ [ previousPageStyle ]) [ (Html.map UpdatePage (Page.view model.previousPage)) ]
           -- The currently active page. It's opacity is 1 when the game starts, but is set to
           -- 0 in the update function and then faded in with
           -- each page transition
-        , div (Animation.render model.styleCurrentPage ++ [ currentPageStyle ]) [ (Html.App.map UpdatePage (Page.view model.currentPage)) ]
-        , div [ infoBoxStyle ] [ Html.App.map UpdateInfoBox (InfoBox.view model.infoBox) ]
+        , div (Animation.render model.styleCurrentPage ++ [ currentPageStyle ]) [ (Html.map UpdatePage (Page.view model.currentPage)) ]
+        , div [ infoBoxStyle ] [ Html.map UpdateInfoBox (InfoBox.view model.infoBox) ]
         ]
 
 

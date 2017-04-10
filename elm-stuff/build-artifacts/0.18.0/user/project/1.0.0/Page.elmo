@@ -1,0 +1,1164 @@
+var _user$project$Page_ops = _user$project$Page_ops || {};
+_user$project$Page_ops['=>'] = F2(
+	function (v0, v1) {
+		return {ctor: '_Tuple2', _0: v0, _1: v1};
+	});
+var _user$project$Page$defaultStyle = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$Page_ops['=>'], 'font-size', '1em'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Page_ops['=>'], 'color', 'black'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Page_ops['=>'], 'font-family', 'Helvetica, Arial, sans-serif'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$Page_ops['=>'], 'padding', '0'),
+					_1: {
+						ctor: '::',
+						_0: A2(_user$project$Page_ops['=>'], 'margin', '0'),
+						_1: {ctor: '[]'}
+					}
+				}
+			}
+		}
+	});
+var _user$project$Page$contentBoxStyleTop = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$Page_ops['=>'], 'width', '100%'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Page_ops['=>'], 'min-height', '20%'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Page_ops['=>'], 'border', '1px solid darkgray'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$Page_ops['=>'], 'padding', '0'),
+					_1: {
+						ctor: '::',
+						_0: A2(_user$project$Page_ops['=>'], 'margin', '0'),
+						_1: {
+							ctor: '::',
+							_0: A2(_user$project$Page_ops['=>'], 'background-color', 'rgba(255, 255, 255, 0.9)'),
+							_1: {
+								ctor: '::',
+								_0: A2(_user$project$Page_ops['=>'], 'position', 'relative'),
+								_1: {
+									ctor: '::',
+									_0: A2(_user$project$Page_ops['=>'], 'overflow', 'hidden'),
+									_1: {
+										ctor: '::',
+										_0: A2(_user$project$Page_ops['=>'], 'user-select', 'none'),
+										_1: {
+											ctor: '::',
+											_0: A2(_user$project$Page_ops['=>'], 'display', 'flex'),
+											_1: {
+												ctor: '::',
+												_0: A2(_user$project$Page_ops['=>'], 'flex-direction', 'row'),
+												_1: {
+													ctor: '::',
+													_0: A2(_user$project$Page_ops['=>'], 'align-items', 'start'),
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	});
+var _user$project$Page$storyBoxStyleTop = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$Page_ops['=>'], 'background-repeat', 'no-repeat'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Page_ops['=>'], 'width', '350px'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Page_ops['=>'], 'padding', '0 10% 2% 2%'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$Page_ops['=>'], 'border-right', '1px solid darkgray'),
+					_1: {
+						ctor: '::',
+						_0: A2(_user$project$Page_ops['=>'], 'user-select', 'none'),
+						_1: {ctor: '[]'}
+					}
+				}
+			}
+		}
+	});
+var _user$project$Page$choiceBoxStyleTop = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$Page_ops['=>'], 'width', '40%'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Page_ops['=>'], 'min-height', '20%'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Page_ops['=>'], 'align-self', 'center'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$Page_ops['=>'], '-ms-flex-item-align', 'center'),
+					_1: {ctor: '[]'}
+				}
+			}
+		}
+	});
+var _user$project$Page$eventBoxStyleTop = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$Page_ops['=>'], 'float', 'right'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Page_ops['=>'], 'width', '48%'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Page_ops['=>'], 'height', '48%'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$Page_ops['=>'], 'float', 'left'),
+					_1: {
+						ctor: '::',
+						_0: A2(_user$project$Page_ops['=>'], 'border', '1px solid darkgray'),
+						_1: {
+							ctor: '::',
+							_0: A2(_user$project$Page_ops['=>'], 'display', 'flex'),
+							_1: {
+								ctor: '::',
+								_0: A2(_user$project$Page_ops['=>'], 'align-items', 'center'),
+								_1: {
+									ctor: '::',
+									_0: A2(_user$project$Page_ops['=>'], 'align-self', 'center'),
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	});
+var _user$project$Page$arrowStyleTop = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$Page_ops['=>'], 'position', 'absolute'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Page_ops['=>'], 'top', '35%'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Page_ops['=>'], 'left', '-4.8%'),
+				_1: {ctor: '[]'}
+			}
+		}
+	});
+var _user$project$Page$contentBoxStyleLeft = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$Page_ops['=>'], 'width', '50%'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Page_ops['=>'], 'height', 'auto'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Page_ops['=>'], 'min-height', '20%'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$Page_ops['=>'], 'border', '1px solid darkgray'),
+					_1: {
+						ctor: '::',
+						_0: A2(_user$project$Page_ops['=>'], 'padding', '0'),
+						_1: {
+							ctor: '::',
+							_0: A2(_user$project$Page_ops['=>'], 'margin', '0'),
+							_1: {
+								ctor: '::',
+								_0: A2(_user$project$Page_ops['=>'], 'background-color', 'rgba(255, 255, 255, 0.9'),
+								_1: {
+									ctor: '::',
+									_0: A2(_user$project$Page_ops['=>'], 'position', 'relative'),
+									_1: {
+										ctor: '::',
+										_0: A2(_user$project$Page_ops['=>'], 'overflow', 'hidden'),
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	});
+var _user$project$Page$storyBoxStyleLeft = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$Page_ops['=>'], 'width', '92%'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Page_ops['=>'], 'height', '45%'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Page_ops['=>'], 'padding', '0 4% 5% 4%'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$Page_ops['=>'], 'background-repeat', 'no-repeat'),
+					_1: {
+						ctor: '::',
+						_0: A2(_user$project$Page_ops['=>'], 'background-position', 'right 1em center'),
+						_1: {
+							ctor: '::',
+							_0: A2(_user$project$Page_ops['=>'], 'border-bottom', '1px solid darkgray'),
+							_1: {
+								ctor: '::',
+								_0: A2(_user$project$Page_ops['=>'], 'user-select', 'none'),
+								_1: {ctor: '[]'}
+							}
+						}
+					}
+				}
+			}
+		}
+	});
+var _user$project$Page$choiceBoxStyleLeft = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$Page_ops['=>'], 'width', '100%'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Page_ops['=>'], 'height', '45%'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Page_ops['=>'], 'padding', '5% 0 0 0'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$Page_ops['=>'], 'position', 'relative'),
+					_1: {ctor: '[]'}
+				}
+			}
+		}
+	});
+var _user$project$Page$eventBoxStyleLeft = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$Page_ops['=>'], 'width', '100%'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Page_ops['=>'], 'height', '45%'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Page_ops['=>'], 'padding', '5% 0 0 0'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$Page_ops['=>'], 'position', 'relative'),
+					_1: {ctor: '[]'}
+				}
+			}
+		}
+	});
+var _user$project$Page$arrowStyleLeft = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$Page_ops['=>'], 'position', 'absolute'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Page_ops['=>'], 'left', '47.3%'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Page_ops['=>'], 'top', '-20.0%'),
+				_1: {ctor: '[]'}
+			}
+		}
+	});
+var _user$project$Page$arrowStyleGameEventLeft = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$Page_ops['=>'], 'position', 'absolute'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Page_ops['=>'], 'left', '48%'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Page_ops['=>'], 'top', '-41%'),
+				_1: {ctor: '[]'}
+			}
+		}
+	});
+var _user$project$Page$multipleChoiceBoxStyle = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$Page_ops['=>'], 'width', '100%'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Page_ops['=>'], 'height', '100%'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Page_ops['=>'], 'float', 'left'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$Page_ops['=>'], 'position', 'relative'),
+					_1: {ctor: '[]'}
+				}
+			}
+		}
+	});
+var _user$project$Page$choicesContainer = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$Page_ops['=>'], 'padding', '5% 0.3em 5% 0em'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Page_ops['=>'], 'display', '-ms-flexbox'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Page_ops['=>'], '-ms-flex-direction', 'row'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$Page_ops['=>'], '-ms-flex-pack', 'center'),
+					_1: {
+						ctor: '::',
+						_0: A2(_user$project$Page_ops['=>'], '-ms-justify-content', 'center'),
+						_1: {
+							ctor: '::',
+							_0: A2(_user$project$Page_ops['=>'], 'display', 'flex'),
+							_1: {
+								ctor: '::',
+								_0: A2(_user$project$Page_ops['=>'], 'flex-direction', 'row'),
+								_1: {
+									ctor: '::',
+									_0: A2(_user$project$Page_ops['=>'], 'align-items', 'flex-start'),
+									_1: {
+										ctor: '::',
+										_0: A2(_user$project$Page_ops['=>'], 'justify-content', 'center'),
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	});
+var _user$project$Page$choiceBoxStyle = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$Page_ops['=>'], 'width', '50%'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Page_ops['=>'], 'height', '100%'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Page_ops['=>'], 'float', 'left'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$Page_ops['=>'], 'display', 'inline'),
+					_1: {
+						ctor: '::',
+						_0: A2(_user$project$Page_ops['=>'], 'background-color', 'olive'),
+						_1: {ctor: '[]'}
+					}
+				}
+			}
+		}
+	});
+var _user$project$Page$clearingDivStyle = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$Page_ops['=>'], 'clear', 'left'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Page_ops['=>'], 'height', '0'),
+			_1: {ctor: '[]'}
+		}
+	});
+var _user$project$Page$pageStyle = function (model) {
+	return _elm_lang$html$Html_Attributes$style(
+		{
+			ctor: '::',
+			_0: A2(
+				_user$project$Page_ops['=>'],
+				'width',
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					_elm_lang$core$Basics$toString(model.width - 37),
+					'px')),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_user$project$Page_ops['=>'],
+					'height',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(model.height - 15),
+						'px')),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$Page_ops['=>'], 'padding', '15px 20px 0px 17px'),
+					_1: {
+						ctor: '::',
+						_0: A2(_user$project$Page_ops['=>'], 'position', 'relative'),
+						_1: {ctor: '[]'}
+					}
+				}
+			}
+		});
+};
+var _user$project$Page$pageImageStyle = function (model) {
+	return _elm_lang$html$Html_Attributes$style(
+		{
+			ctor: '::',
+			_0: A2(
+				_user$project$Page_ops['=>'],
+				'width',
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					_elm_lang$core$Basics$toString(model.width),
+					'px')),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_user$project$Page_ops['=>'],
+					'height',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(model.height),
+						'px')),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_user$project$Page_ops['=>'],
+						'background-image',
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							'url(\'',
+							A2(_elm_lang$core$Basics_ops['++'], model.image, '\')'))),
+					_1: {
+						ctor: '::',
+						_0: A2(_user$project$Page_ops['=>'], 'background-repeat', 'no-repeat'),
+						_1: {
+							ctor: '::',
+							_0: A2(_user$project$Page_ops['=>'], 'position', 'absolute'),
+							_1: {
+								ctor: '::',
+								_0: A2(_user$project$Page_ops['=>'], 'top', '0px'),
+								_1: {
+									ctor: '::',
+									_0: A2(_user$project$Page_ops['=>'], 'left', '0px'),
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					}
+				}
+			}
+		});
+};
+var _user$project$Page$headingStyle = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$Page_ops['=>'], 'font-size', '1em'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Page_ops['=>'], 'font-weight', 'bold'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Page_ops['=>'], 'font-family', 'Helvetica, Arial, sans-serif'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$Page_ops['=>'], 'padding', '0.8em 0em 0.3em 0em'),
+					_1: {
+						ctor: '::',
+						_0: A2(_user$project$Page_ops['=>'], 'margin', '0'),
+						_1: {ctor: '[]'}
+					}
+				}
+			}
+		}
+	});
+var _user$project$Page$subheadingStyle = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$Page_ops['=>'], 'font-size', '0.8em'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Page_ops['=>'], 'font-weight', 'bold'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Page_ops['=>'], 'font-family', 'Helvetica, Arial, sans-serif'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$Page_ops['=>'], 'padding', '0em 0em 0.2em 0em'),
+					_1: {
+						ctor: '::',
+						_0: A2(_user$project$Page_ops['=>'], 'margin', '0'),
+						_1: {ctor: '[]'}
+					}
+				}
+			}
+		}
+	});
+var _user$project$Page$choicesHeadingStyle = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$Page_ops['=>'], 'font-size', '0.8em'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Page_ops['=>'], 'font-weight', 'bold'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Page_ops['=>'], 'font-family', 'Helvetica, Arial, sans-serif'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$Page_ops['=>'], 'padding', '1em 0em 1em 0em'),
+					_1: {
+						ctor: '::',
+						_0: A2(_user$project$Page_ops['=>'], 'margin', '0'),
+						_1: {
+							ctor: '::',
+							_0: A2(_user$project$Page_ops['=>'], 'text-align', 'center'),
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			}
+		}
+	});
+var _user$project$Page$paragraphStyle = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$Page_ops['=>'], 'font-size', '0.8em'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Page_ops['=>'], 'font-family', _user$project$Defaults$fontFamily),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Page_ops['=>'], 'line-height', '1.3em'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$Page_ops['=>'], 'user-select', 'none'),
+					_1: {
+						ctor: '::',
+						_0: A2(_user$project$Page_ops['=>'], '-moz-user-select', 'none'),
+						_1: {ctor: '[]'}
+					}
+				}
+			}
+		}
+	});
+var _user$project$Page$noFx = function (model) {
+	return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
+};
+var _user$project$Page$update = F2(
+	function (msg, model) {
+		var _p0 = msg;
+		switch (_p0.ctor) {
+			case 'NoOp':
+				return _user$project$Page$noFx(model);
+			case 'UpdateChoices':
+				var _p1 = _p0._0;
+				var choiceLink_ = A2(
+					_elm_lang$core$Maybe$withDefault,
+					1.1,
+					A2(_elm_community$list_extra$List_Extra$getAt, _p1, model.choiceLinks));
+				var updateChoice = F2(
+					function (choiceId, choiceModel) {
+						return _elm_lang$core$Native_Utils.eq(choiceId, _p1) ? A2(_user$project$Choice$update, _p0._1, choiceModel) : choiceModel;
+					});
+				var choiceBoxes_ = A2(_elm_lang$core$List$indexedMap, updateChoice, model.choiceBoxes);
+				var currentChoice_ = A2(
+					_elm_lang$core$Maybe$withDefault,
+					_user$project$Choice$model,
+					A2(_elm_community$list_extra$List_Extra$getAt, _p1, choiceBoxes_));
+				return _elm_lang$core$Native_Utils.eq(
+					function (_) {
+						return _.currentMsg;
+					}(
+						function (_) {
+							return _.button;
+						}(currentChoice_)),
+					_user$project$ImageButton$Click) ? {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{choiceBoxes: choiceBoxes_, activeLink: choiceLink_}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				} : {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{choiceBoxes: choiceBoxes_}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			default:
+				var gameEventBox_ = A2(_user$project$GameEvent$update, _p0._0, model.gameEventBox);
+				var button = function (_) {
+					return _.button;
+				}(gameEventBox_);
+				return _elm_lang$core$Native_Utils.eq(button.currentMsg, _user$project$LabeledButton$Click) ? {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{gameEventBox: gameEventBox_, activeLink: model.buttonLink}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				} : {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{gameEventBox: gameEventBox_}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+		}
+	});
+var _user$project$Page$Model = function (a) {
+	return function (b) {
+		return function (c) {
+			return function (d) {
+				return function (e) {
+					return function (f) {
+						return function (g) {
+							return function (h) {
+								return function (i) {
+									return function (j) {
+										return function (k) {
+											return function (l) {
+												return function (m) {
+													return {heading: a, subheading: b, description: c, image: d, width: e, height: f, choices: g, choiceLinks: h, choiceBoxes: i, pageType: j, gameEventBox: k, buttonLink: l, activeLink: m};
+												};
+											};
+										};
+									};
+								};
+							};
+						};
+					};
+				};
+			};
+		};
+	};
+};
+var _user$project$Page$Left = {ctor: 'Left'};
+var _user$project$Page$Top = {ctor: 'Top'};
+var _user$project$Page$GameEvent = function (a) {
+	return {ctor: 'GameEvent', _0: a};
+};
+var _user$project$Page$Choice = function (a) {
+	return {ctor: 'Choice', _0: a};
+};
+var _user$project$Page$model = function () {
+	var choiceLinks_ = {
+		ctor: '::',
+		_0: 1.1,
+		_1: {
+			ctor: '::',
+			_0: 2.1,
+			_1: {ctor: '[]'}
+		}
+	};
+	var choices_ = {
+		ctor: '::',
+		_0: 'This is the first choice that the player has.',
+		_1: {
+			ctor: '::',
+			_0: 'This is the second choice that the player has.',
+			_1: {ctor: '[]'}
+		}
+	};
+	var choiceBoxes_ = A2(
+		_elm_lang$core$List$map,
+		function (string) {
+			return _user$project$Choice$init(string);
+		},
+		choices_);
+	return {
+		heading: 'Adventure!',
+		subheading: 'The Quest Begins',
+		description: '\r\n        Lorem ipsum dolor sit amet, \r\n        volutpat eros massa ut, vel semper bibendum pharetra fringilla ullamcorper cras, \r\n        volutpat eros massa ut, vel semper bibendum pharetra fringilla ullamcorper cras, \r\n        volutpat eros massa ut, vel semper bibendum pharetra fringilla ullamcorper cras, \r\n     ',
+		image: A2(_elm_lang$core$Basics_ops['++'], _user$project$Defaults$imagesLocation, 'test.png'),
+		width: _user$project$Defaults$width,
+		height: 479,
+		choices: choices_,
+		choiceLinks: choiceLinks_,
+		choiceBoxes: choiceBoxes_,
+		pageType: _user$project$Page$Choice(_user$project$Page$Top),
+		gameEventBox: A3(_user$project$GameEvent$init, 'label', 'This is a really long description of a game event that might occur', _user$project$GameEvent$NextPage),
+		buttonLink: 1.1,
+		activeLink: 1.1
+	};
+}();
+var _user$project$Page$init = function (data) {
+	var gameEventBox_ = function () {
+		var buttonEventType_ = function () {
+			var _p2 = data.buttonEventType;
+			switch (_p2) {
+				case 'next':
+					return _user$project$GameEvent$NextPage;
+				case 'Msg':
+					return _user$project$GameEvent$TakeMsg;
+				case 'gameover':
+					return _user$project$GameEvent$GameOver;
+				case 'question':
+					return _user$project$GameEvent$Question;
+				default:
+					return _user$project$GameEvent$Any;
+			}
+		}();
+		return A3(_user$project$GameEvent$init, data.buttonLabel, data.buttonEventDescription, buttonEventType_);
+	}();
+	var choiceBoxes_ = A2(
+		_elm_lang$core$List$map,
+		function (string) {
+			return _user$project$Choice$init(string);
+		},
+		data.choices);
+	var typeOfPage = (_elm_lang$core$Native_Utils.cmp(
+		_elm_lang$core$List$length(data.choices),
+		1) > 0) ? _user$project$Page$Choice : _user$project$Page$GameEvent;
+	var alignment = function () {
+		var _p3 = data.alignment;
+		switch (_p3) {
+			case 'top':
+				return _user$project$Page$Top;
+			case 'left':
+				return _user$project$Page$Left;
+			default:
+				return _user$project$Page$Top;
+		}
+	}();
+	return _user$project$Page$noFx(
+		_elm_lang$core$Native_Utils.update(
+			_user$project$Page$model,
+			{
+				heading: data.heading,
+				subheading: data.subheading,
+				description: data.description,
+				choices: data.choices,
+				choiceLinks: data.choiceLinks,
+				choiceBoxes: choiceBoxes_,
+				pageType: typeOfPage(alignment),
+				image: A2(_elm_lang$core$Basics_ops['++'], _user$project$Defaults$imagesLocation, data.image),
+				gameEventBox: gameEventBox_,
+				buttonLink: data.buttonLink,
+				activeLink: data.id
+			}));
+};
+var _user$project$Page$UpdateGameEventBox = function (a) {
+	return {ctor: 'UpdateGameEventBox', _0: a};
+};
+var _user$project$Page$UpdateChoices = F2(
+	function (a, b) {
+		return {ctor: 'UpdateChoices', _0: a, _1: b};
+	});
+var _user$project$Page$viewChoice = F2(
+	function (id, model) {
+		return A2(
+			_elm_lang$html$Html$map,
+			_user$project$Page$UpdateChoices(id),
+			_user$project$Choice$view(model));
+	});
+var _user$project$Page$view = function (model) {
+	var forward = function (toMsg) {
+		return _elm_lang$html$Html$map(toMsg);
+	};
+	var choiceBoxes = A2(_elm_lang$core$List$indexedMap, _user$project$Page$viewChoice, model.choiceBoxes);
+	var contentBox = function () {
+		var _p4 = model.pageType;
+		if (_p4.ctor === 'Choice') {
+			if (_p4._0.ctor === 'Top') {
+				return 'contentBoxStyleTop';
+			} else {
+				return '';
+			}
+		} else {
+			if (_p4._0.ctor === 'Top') {
+				return 'contentBoxStyleTop';
+			} else {
+				return '';
+			}
+		}
+	}();
+	var arrowImage = function () {
+		var _p5 = model.pageType;
+		if (_p5.ctor === 'Choice') {
+			if (_p5._0.ctor === 'Top') {
+				return 'roundArrowRight.png';
+			} else {
+				return 'roundArrowDown.png';
+			}
+		} else {
+			if (_p5._0.ctor === 'Top') {
+				return 'roundArrowRight.png';
+			} else {
+				return 'roundArrowDown.png';
+			}
+		}
+	}();
+	var arrowStyle = function () {
+		var _p6 = model.pageType;
+		if (_p6.ctor === 'Choice') {
+			if (_p6._0.ctor === 'Top') {
+				return _user$project$Page$arrowStyleTop;
+			} else {
+				return _user$project$Page$arrowStyleLeft;
+			}
+		} else {
+			if (_p6._0.ctor === 'Top') {
+				return _user$project$Page$arrowStyleTop;
+			} else {
+				return _user$project$Page$arrowStyleGameEventLeft;
+			}
+		}
+	}();
+	var eventBox = function () {
+		var gameEventBox = A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('multipleChoiceBox'),
+				_1: {
+					ctor: '::',
+					_0: _user$project$Page$defaultStyle,
+					_1: {
+						ctor: '::',
+						_0: _user$project$Page$multipleChoiceBoxStyle,
+						_1: {ctor: '[]'}
+					}
+				}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$map,
+					_user$project$Page$UpdateGameEventBox,
+					_user$project$GameEvent$view(model.gameEventBox)),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$img,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$src(
+								A2(_elm_lang$core$Basics_ops['++'], _user$project$Defaults$imagesLocation, arrowImage)),
+							_1: {
+								ctor: '::',
+								_0: arrowStyle,
+								_1: {ctor: '[]'}
+							}
+						},
+						{ctor: '[]'}),
+					_1: {ctor: '[]'}
+				}
+			});
+		var multipleChoiceBox = A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('multipleChoiceBox'),
+				_1: {
+					ctor: '::',
+					_0: _user$project$Page$defaultStyle,
+					_1: {
+						ctor: '::',
+						_0: _user$project$Page$multipleChoiceBoxStyle,
+						_1: {ctor: '[]'}
+					}
+				}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$h2,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class('choicesHeading'),
+						_1: {
+							ctor: '::',
+							_0: _user$project$Page$defaultStyle,
+							_1: {
+								ctor: '::',
+								_0: _user$project$Page$choicesHeadingStyle,
+								_1: {ctor: '[]'}
+							}
+						}
+					},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Choices'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{
+							ctor: '::',
+							_0: _user$project$Page$choicesContainer,
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('choicesContainer'),
+								_1: {ctor: '[]'}
+							}
+						},
+						choiceBoxes),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$img,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$src(
+									A2(_elm_lang$core$Basics_ops['++'], _user$project$Defaults$imagesLocation, arrowImage)),
+								_1: {
+									ctor: '::',
+									_0: arrowStyle,
+									_1: {ctor: '[]'}
+								}
+							},
+							{ctor: '[]'}),
+						_1: {ctor: '[]'}
+					}
+				}
+			});
+		var _p7 = model.pageType;
+		if (_p7.ctor === 'Choice') {
+			if (_p7._0.ctor === 'Top') {
+				return multipleChoiceBox;
+			} else {
+				return multipleChoiceBox;
+			}
+		} else {
+			if (_p7._0.ctor === 'Top') {
+				return gameEventBox;
+			} else {
+				return gameEventBox;
+			}
+		}
+	}();
+	var userMsgBoxStyle = function () {
+		var _p8 = model.pageType;
+		if (_p8.ctor === 'Choice') {
+			if (_p8._0.ctor === 'Top') {
+				return _user$project$Page$choiceBoxStyleTop;
+			} else {
+				return _user$project$Page$choiceBoxStyleLeft;
+			}
+		} else {
+			if (_p8._0.ctor === 'Top') {
+				return _user$project$Page$choiceBoxStyleTop;
+			} else {
+				return _user$project$Page$choiceBoxStyleLeft;
+			}
+		}
+	}();
+	var storyBoxStyle = function () {
+		var _p9 = model.pageType;
+		if (_p9.ctor === 'Choice') {
+			if (_p9._0.ctor === 'Top') {
+				return _user$project$Page$storyBoxStyleTop;
+			} else {
+				return _user$project$Page$storyBoxStyleLeft;
+			}
+		} else {
+			if (_p9._0.ctor === 'Top') {
+				return _user$project$Page$storyBoxStyleTop;
+			} else {
+				return _user$project$Page$storyBoxStyleLeft;
+			}
+		}
+	}();
+	var contentBoxStyle = function () {
+		var _p10 = model.pageType;
+		if (_p10.ctor === 'Choice') {
+			if (_p10._0.ctor === 'Top') {
+				return _user$project$Page$contentBoxStyleTop;
+			} else {
+				return _user$project$Page$contentBoxStyleLeft;
+			}
+		} else {
+			if (_p10._0.ctor === 'Left') {
+				return _user$project$Page$contentBoxStyleLeft;
+			} else {
+				return _user$project$Page$contentBoxStyleTop;
+			}
+		}
+	}();
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('page'),
+			_1: {
+				ctor: '::',
+				_0: _user$project$Page$pageStyle(model),
+				_1: {ctor: '[]'}
+			}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('pageImage'),
+					_1: {
+						ctor: '::',
+						_0: _user$project$Page$pageImageStyle(model),
+						_1: {ctor: '[]'}
+					}
+				},
+				{ctor: '[]'}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class(contentBox),
+						_1: {
+							ctor: '::',
+							_0: contentBoxStyle,
+							_1: {ctor: '[]'}
+						}
+					},
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('storyBox'),
+								_1: {
+									ctor: '::',
+									_0: storyBoxStyle,
+									_1: {ctor: '[]'}
+								}
+							},
+							{
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$h1,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$class('storyHeading'),
+										_1: {
+											ctor: '::',
+											_0: _user$project$Page$defaultStyle,
+											_1: {
+												ctor: '::',
+												_0: _user$project$Page$headingStyle,
+												_1: {ctor: '[]'}
+											}
+										}
+									},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text(model.heading),
+										_1: {ctor: '[]'}
+									}),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$h2,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$class('storySubheading'),
+											_1: {
+												ctor: '::',
+												_0: _user$project$Page$defaultStyle,
+												_1: {
+													ctor: '::',
+													_0: _user$project$Page$subheadingStyle,
+													_1: {ctor: '[]'}
+												}
+											}
+										},
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html$text(model.subheading),
+											_1: {ctor: '[]'}
+										}),
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_elm_lang$html$Html$div,
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$class('storyParagraph'),
+												_1: {
+													ctor: '::',
+													_0: _user$project$Page$defaultStyle,
+													_1: {
+														ctor: '::',
+														_0: _user$project$Page$paragraphStyle,
+														_1: {ctor: '[]'}
+													}
+												}
+											},
+											{
+												ctor: '::',
+												_0: A2(
+													_evancz$elm_markdown$Markdown$toHtml,
+													{ctor: '[]'},
+													model.description),
+												_1: {ctor: '[]'}
+											}),
+										_1: {ctor: '[]'}
+									}
+								}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$div,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('eventBox'),
+									_1: {
+										ctor: '::',
+										_0: _user$project$Page$defaultStyle,
+										_1: {
+											ctor: '::',
+											_0: userMsgBoxStyle,
+											_1: {ctor: '[]'}
+										}
+									}
+								},
+								{
+									ctor: '::',
+									_0: eventBox,
+									_1: {ctor: '[]'}
+								}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$div,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$class('clearingDiv'),
+										_1: {
+											ctor: '::',
+											_0: _user$project$Page$clearingDivStyle,
+											_1: {ctor: '[]'}
+										}
+									},
+									{ctor: '[]'}),
+								_1: {ctor: '[]'}
+							}
+						}
+					}),
+				_1: {ctor: '[]'}
+			}
+		});
+};
+var _user$project$Page$NoOp = {ctor: 'NoOp'};

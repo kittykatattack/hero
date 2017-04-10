@@ -1,0 +1,441 @@
+var _user$project$Adventure_ops = _user$project$Adventure_ops || {};
+_user$project$Adventure_ops['=>'] = F2(
+	function (v0, v1) {
+		return {ctor: '_Tuple2', _0: v0, _1: v1};
+	});
+var _user$project$Adventure$adventureStyle = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(
+			_user$project$Adventure_ops['=>'],
+			'width',
+			A2(
+				_elm_lang$core$Basics_ops['++'],
+				_elm_lang$core$Basics$toString(_user$project$Defaults$width),
+				'px')),
+		_1: {
+			ctor: '::',
+			_0: A2(
+				_user$project$Adventure_ops['=>'],
+				'height',
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					_elm_lang$core$Basics$toString(_user$project$Defaults$height),
+					'px')),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Adventure_ops['=>'], 'border', '1px solid darkGray'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$Adventure_ops['=>'], 'position', 'relative'),
+					_1: {
+						ctor: '::',
+						_0: A2(_user$project$Adventure_ops['=>'], 'overflow', 'hidden'),
+						_1: {ctor: '[]'}
+					}
+				}
+			}
+		}
+	});
+var _user$project$Adventure$currentPageStyle = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$Adventure_ops['=>'], 'position', 'absolute'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Adventure_ops['=>'], 'top', '0px'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Adventure_ops['=>'], 'left', '0px'),
+				_1: {ctor: '[]'}
+			}
+		}
+	});
+var _user$project$Adventure$previousPageStyle = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$Adventure_ops['=>'], 'position', 'absolute'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Adventure_ops['=>'], 'top', '0px'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Adventure_ops['=>'], 'left', '0px'),
+				_1: {ctor: '[]'}
+			}
+		}
+	});
+var _user$project$Adventure$infoBoxStyle = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$Adventure_ops['=>'], 'position', 'absolute'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Adventure_ops['=>'], 'top', '480px'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Adventure_ops['=>'], 'left', '0px'),
+				_1: {ctor: '[]'}
+			}
+		}
+	});
+var _user$project$Adventure$getCurrentPage = function (data) {
+	return _elm_lang$core$Tuple$first(
+		_user$project$Page$init(data));
+};
+var _user$project$Adventure$getCurrentPageData = F2(
+	function (story, id) {
+		return A2(
+			_elm_lang$core$Maybe$withDefault,
+			_user$project$Data$pageOne,
+			_elm_lang$core$List$head(
+				A2(
+					_elm_lang$core$List$filter,
+					function (page) {
+						return _elm_lang$core$Native_Utils.eq(page.id, id);
+					},
+					story)));
+	});
+var _user$project$Adventure$getStoryLevel = function (id) {
+	return _elm_lang$core$Basics$truncate(id) - 1;
+};
+var _user$project$Adventure$model = function () {
+	var pageData = _user$project$Data$pageOne;
+	return {
+		story: _user$project$Data$story,
+		currentPageData: A2(_user$project$Adventure$getCurrentPageData, _user$project$Data$story, 1.1),
+		currentPageID: 1.1,
+		currentPage: _user$project$Adventure$getCurrentPage(pageData),
+		previousPage: _user$project$Adventure$getCurrentPage(pageData),
+		infoBox: A6(
+			_user$project$InfoBox$init,
+			_user$project$Data$inventory,
+			_user$project$Adventure$getStoryLevel(1.1),
+			pageData.storyChapter,
+			_user$project$Data$storyPhases,
+			_user$project$Data$storyPhaseChapters,
+			_user$project$Data$infoPages),
+		storyLevel: _user$project$Adventure$getStoryLevel(1.1),
+		storyChapter: pageData.storyChapter,
+		storyPhases: _user$project$Data$storyPhases,
+		storyPhaseChapters: _user$project$Data$storyPhaseChapters,
+		inventory: _user$project$Data$inventory,
+		infoPages: _user$project$Data$infoPages,
+		pageMsg: _user$project$Page$NoOp,
+		stylePreviousPage: _mdgriffith$elm_style_animation$Animation$style(
+			{
+				ctor: '::',
+				_0: _mdgriffith$elm_style_animation$Animation$opacity(0.0),
+				_1: {ctor: '[]'}
+			}),
+		styleCurrentPage: _mdgriffith$elm_style_animation$Animation$style(
+			{
+				ctor: '::',
+				_0: _mdgriffith$elm_style_animation$Animation$opacity(1.0),
+				_1: {ctor: '[]'}
+			})
+	};
+}();
+var _user$project$Adventure$init = function () {
+	var id = 1.1;
+	var currentPageData_ = A2(_user$project$Adventure$getCurrentPageData, _user$project$Adventure$model.story, id);
+	var currentPage_ = _user$project$Adventure$getCurrentPage(currentPageData_);
+	var storyLevel = _user$project$Adventure$getStoryLevel(id);
+	return A2(
+		_elm_lang$core$Platform_Cmd_ops['!'],
+		_elm_lang$core$Native_Utils.update(
+			_user$project$Adventure$model,
+			{
+				currentPage: currentPage_,
+				currentPageData: currentPageData_,
+				previousPage: currentPage_,
+				infoBox: A6(_user$project$InfoBox$init, _user$project$Adventure$model.inventory, storyLevel, _user$project$Adventure$model.storyChapter, _user$project$Adventure$model.storyPhases, _user$project$Adventure$model.storyPhaseChapters, _user$project$Adventure$model.infoPages)
+			}),
+		{ctor: '[]'});
+}();
+var _user$project$Adventure$Model = function (a) {
+	return function (b) {
+		return function (c) {
+			return function (d) {
+				return function (e) {
+					return function (f) {
+						return function (g) {
+							return function (h) {
+								return function (i) {
+									return function (j) {
+										return function (k) {
+											return function (l) {
+												return function (m) {
+													return function (n) {
+														return function (o) {
+															return {story: a, currentPageData: b, currentPageID: c, currentPage: d, previousPage: e, infoBox: f, storyLevel: g, storyPhases: h, storyChapter: i, storyPhaseChapters: j, inventory: k, infoPages: l, pageMsg: m, stylePreviousPage: n, styleCurrentPage: o};
+														};
+													};
+												};
+											};
+										};
+									};
+								};
+							};
+						};
+					};
+				};
+			};
+		};
+	};
+};
+var _user$project$Adventure$Animate = function (a) {
+	return {ctor: 'Animate', _0: a};
+};
+var _user$project$Adventure$FadeInNewPage = {ctor: 'FadeInNewPage'};
+var _user$project$Adventure$FadeOutOldPage = {ctor: 'FadeOutOldPage'};
+var _user$project$Adventure$UpdateInfoBox = function (a) {
+	return {ctor: 'UpdateInfoBox', _0: a};
+};
+var _user$project$Adventure$subscriptions = function (model) {
+	return _elm_lang$core$Platform_Sub$batch(
+		{
+			ctor: '::',
+			_0: A2(
+				_mdgriffith$elm_style_animation$Animation$subscription,
+				_user$project$Adventure$Animate,
+				{
+					ctor: '::',
+					_0: model.stylePreviousPage,
+					_1: {
+						ctor: '::',
+						_0: model.styleCurrentPage,
+						_1: {ctor: '[]'}
+					}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$core$Platform_Sub$map,
+					_user$project$Adventure$UpdateInfoBox,
+					_user$project$InfoBox$subscriptions(model.infoBox)),
+				_1: {ctor: '[]'}
+			}
+		});
+};
+var _user$project$Adventure$UpdatePage = function (a) {
+	return {ctor: 'UpdatePage', _0: a};
+};
+var _user$project$Adventure$update = F2(
+	function (msg, model) {
+		update:
+		while (true) {
+			var _p0 = msg;
+			switch (_p0.ctor) {
+				case 'Animate':
+					var _p1 = _p0._0;
+					return {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Native_Utils.update(
+							model,
+							{
+								stylePreviousPage: A2(_mdgriffith$elm_style_animation$Animation$update, _p1, model.stylePreviousPage),
+								styleCurrentPage: A2(_mdgriffith$elm_style_animation$Animation$update, _p1, model.styleCurrentPage)
+							}),
+						_1: _elm_lang$core$Platform_Cmd$none
+					};
+				case 'UpdatePage':
+					var _p2 = _p0._0;
+					var previousLink = function (_) {
+						return _.activeLink;
+					}(model.currentPage);
+					var currentPage_ = _elm_lang$core$Tuple$first(
+						A2(_user$project$Page$update, _p2, model.currentPage));
+					var activeLink = function (_) {
+						return _.activeLink;
+					}(currentPage_);
+					var newPageRequested = !_elm_lang$core$Native_Utils.eq(activeLink, previousLink);
+					var currentPageData_ = A2(_user$project$Adventure$getCurrentPageData, model.story, activeLink);
+					var newPage = newPageRequested ? _elm_lang$core$Tuple$first(
+						_user$project$Page$init(currentPageData_)) : currentPage_;
+					var storyLevel = _user$project$Adventure$getStoryLevel(
+						function (_) {
+							return _.id;
+						}(currentPageData_));
+					var inventoryQuantities = {
+						ctor: '::',
+						_0: function (_) {
+							return _.pillsLeft;
+						}(currentPageData_),
+						_1: {
+							ctor: '::',
+							_0: function (_) {
+								return _.transformations;
+							}(currentPageData_),
+							_1: {ctor: '[]'}
+						}
+					};
+					var storyPhaseChapter = function (_) {
+						return _.storyPhaseChapter;
+					}(currentPageData_);
+					var model_ = _elm_lang$core$Native_Utils.update(
+						model,
+						{currentPage: newPage, currentPageData: currentPageData_, pageMsg: _p2});
+					var model__ = _elm_lang$core$Native_Utils.update(
+						model,
+						{
+							currentPage: newPage,
+							currentPageData: currentPageData_,
+							previousPage: model.currentPage,
+							stylePreviousPage: _mdgriffith$elm_style_animation$Animation$style(
+								{
+									ctor: '::',
+									_0: _mdgriffith$elm_style_animation$Animation$opacity(1.0),
+									_1: {ctor: '[]'}
+								}),
+							styleCurrentPage: _mdgriffith$elm_style_animation$Animation$style(
+								{
+									ctor: '::',
+									_0: _mdgriffith$elm_style_animation$Animation$opacity(0.0),
+									_1: {ctor: '[]'}
+								})
+						});
+					if (newPageRequested) {
+						var _v1 = _user$project$Adventure$FadeOutOldPage,
+							_v2 = model__;
+						msg = _v1;
+						model = _v2;
+						continue update;
+					} else {
+						var _v3 = _user$project$Adventure$UpdateInfoBox(
+							A3(_user$project$InfoBox$UpdateData, storyLevel, inventoryQuantities, storyPhaseChapter)),
+							_v4 = model_;
+						msg = _v3;
+						model = _v4;
+						continue update;
+					}
+				case 'UpdateInfoBox':
+					var _p3 = A2(_user$project$InfoBox$update, _p0._0, model.infoBox);
+					var infoBox_ = _p3._0;
+					var fx = _p3._1;
+					return {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Native_Utils.update(
+							model,
+							{infoBox: infoBox_}),
+						_1: A2(_elm_lang$core$Platform_Cmd$map, _user$project$Adventure$UpdateInfoBox, fx)
+					};
+				case 'FadeOutOldPage':
+					var model_ = _elm_lang$core$Native_Utils.update(
+						model,
+						{
+							stylePreviousPage: A2(
+								_mdgriffith$elm_style_animation$Animation$interrupt,
+								{
+									ctor: '::',
+									_0: _mdgriffith$elm_style_animation$Animation$to(
+										{
+											ctor: '::',
+											_0: _mdgriffith$elm_style_animation$Animation$opacity(0),
+											_1: {ctor: '[]'}
+										}),
+									_1: {ctor: '[]'}
+								},
+								model.stylePreviousPage)
+						});
+					var _v5 = _user$project$Adventure$FadeInNewPage,
+						_v6 = model_;
+					msg = _v5;
+					model = _v6;
+					continue update;
+				default:
+					var model_ = _elm_lang$core$Native_Utils.update(
+						model,
+						{
+							styleCurrentPage: A2(
+								_mdgriffith$elm_style_animation$Animation$interrupt,
+								{
+									ctor: '::',
+									_0: _mdgriffith$elm_style_animation$Animation$to(
+										{
+											ctor: '::',
+											_0: _mdgriffith$elm_style_animation$Animation$opacity(1),
+											_1: {ctor: '[]'}
+										}),
+									_1: {ctor: '[]'}
+								},
+								model.styleCurrentPage)
+						});
+					var _v7 = _user$project$Adventure$UpdatePage(model_.pageMsg),
+						_v8 = model_;
+					msg = _v7;
+					model = _v8;
+					continue update;
+			}
+		}
+	});
+var _user$project$Adventure$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _user$project$Adventure$adventureStyle,
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$div,
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					_mdgriffith$elm_style_animation$Animation$render(model.stylePreviousPage),
+					{
+						ctor: '::',
+						_0: _user$project$Adventure$previousPageStyle,
+						_1: {ctor: '[]'}
+					}),
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$map,
+						_user$project$Adventure$UpdatePage,
+						_user$project$Page$view(model.previousPage)),
+					_1: {ctor: '[]'}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_mdgriffith$elm_style_animation$Animation$render(model.styleCurrentPage),
+						{
+							ctor: '::',
+							_0: _user$project$Adventure$currentPageStyle,
+							_1: {ctor: '[]'}
+						}),
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$map,
+							_user$project$Adventure$UpdatePage,
+							_user$project$Page$view(model.currentPage)),
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{
+							ctor: '::',
+							_0: _user$project$Adventure$infoBoxStyle,
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$map,
+								_user$project$Adventure$UpdateInfoBox,
+								_user$project$InfoBox$view(model.infoBox)),
+							_1: {ctor: '[]'}
+						}),
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};

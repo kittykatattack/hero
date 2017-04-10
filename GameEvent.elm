@@ -3,7 +3,7 @@ module GameEvent exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
-import Html.App
+import Html
 import String
 import Defaults
 import LabeledButton
@@ -118,7 +118,7 @@ view model =
             , div [ containerStyle, class "gameEventBox" ]
                 [ image
                   --, LabeledButton.view buttonAddress model.button
-                , Html.App.map UpdateButton (LabeledButton.view model.button)
+                , Html.map UpdateButton (LabeledButton.view model.button)
                 ]
             ]
 
