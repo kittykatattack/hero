@@ -1,13 +1,11 @@
-module Actions where
+module Actions exposing (..)
 
 
 type PageAction
-  = NoOp
-
-type ButtonAction 
-  = Up
-  | Over
-  | Down
+    = NoOp
 
 
-  
+type ButtonAction
+    = Up
+    | Over
+    | Down

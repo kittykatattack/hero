@@ -1,11 +1,14 @@
-module Components.Hello where
+module Components.Hello exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import String
 
+
 -- hello component
+
+
 hello model =
-  div
-    [ class "mt-h2" ]
-    [ text ( "Hello, World" ++ ( "!" |> String.repeat model ) ) ]
+    div
+        [ class "mt-h2" ]
+        [ text ("Hello, World" ++ ("!" |> String.repeat model)) ]
