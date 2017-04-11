@@ -12,6 +12,7 @@ import ImageButton
 import Task
 -- import Task.Extra
 import Markdown
+import LabeledButton
 
 
 -- For elm-html-animation
@@ -41,7 +42,8 @@ type alias Model =
     , storyPhaseChapters : List String
     , currentStoryPhaseChapter : Int
     , infoPages : List String
-    , infoButton : ImageButton.Model
+    --, infoButton : ImageButton.Model
+    , infoButton : LabeledButton.Model
     , infoBoxIsOpen : Bool
     , styleInfo : Animation.State
     , styleMeter : Animation.State
@@ -57,7 +59,7 @@ model =
     , meterHeight = 16
     , meterBorderRadius = 4
     , meterX = 38
-    , meterY = 52
+    , meterY = 72 
     , storyLevel = 1
     , storyChapter = "No Chapter Selected"
     , totalStoryLevels = 0
@@ -66,7 +68,8 @@ model =
     , storyPhaseChapters = Data.storyPhaseChapters
     , currentStoryPhaseChapter = 1
     , infoPages = Data.infoPages
-    , infoButton = ImageButton.info
+    -- , infoButton = ImageButton.info
+    , infoButton = LabeledButton.init "information" 30 50
     , infoBoxIsOpen = False
     , styleInfo =
         Animation.styleWith
@@ -165,7 +168,8 @@ currentStoryChapter level totalStoryChapters =
 
 
 type Msg
-    = UpdateButton ImageButton.Msg
+    -- = UpdateButton ImageButton.Msg
+    = UpdateButton LabeledButton.Msg
     | ShowInfo
     | HideInfo
     | Animate Animation.Msg
@@ -179,7 +183,8 @@ update msg model =
     let
         -- The current, updated version of the model's `infoButton`
         infoButton_ buttonMsg =
-            ImageButton.update buttonMsg model.infoButton
+            --ImageButton.update buttonMsg model.infoButton
+            LabeledButton.update buttonMsg model.infoButton
 
         {-
            `runCorrectEffect` will choose three possible Cmd to run:
@@ -192,7 +197,8 @@ update msg model =
         -}
         runCorrectEffect buttonMsg model =
             case
-                ( .currentMsg (infoButton_ buttonMsg) == ImageButton.Down
+                --( .currentMsg (infoButton_ buttonMsg) == ImageButton.Down
+                ( .currentMsg (infoButton_ buttonMsg) == LabeledButton.Down
                 , model.infoBoxIsOpen == False
                 )
             of
@@ -466,7 +472,8 @@ view model =
                       -- The 3 main story phase chapter headings
                     , div [ chapterHeadingContainerStyle ] storyPhaseChapters
                     ]
-                , div [ infoButtonContainerStyle ] [ Html.map UpdateButton (ImageButton.view model.infoButton) ]
+                --, div [ infoButtonContainerStyle ] [ Html.map UpdateButton (ImageButton.view model.infoButton) ]
+                , div [ infoButtonContainerStyle ] [ Html.map UpdateButton (LabeledButton.view model.infoButton) ]
                 ]
             ]
 
@@ -529,7 +536,7 @@ chapterHeadingContainerStyle =
     style
         [ "width" => "470px"
         , "position" => "absolute"
-        , "padding-top" => "75px"
+        , "padding-top" => "94px"
         , "user-select" => "none"
         , "left" => px 45
           -- , "background-color" => "pink"
@@ -553,7 +560,7 @@ meterContainerStyle =
         , "position" => "absolute"
         , "top" => "0px"
         , "right" => "0px"
-          --, "background-color" => "pink"
+        --, "background-color" => "pink"
         ]
 
 

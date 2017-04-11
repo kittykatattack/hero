@@ -32,8 +32,14 @@
       -ms-flex-direction: row;
       -ms-flex-pack: start;
     }
+    .selectableButton:focus {
+      border: 2px solid red;
+    }
   </style>
   <body>
     <div id="main"></div>
+    <script src="elm.js"></script>
+    <script>Elm.Main.embed(document.querySelector("#main"));</script>
+
   </body>
 </html>

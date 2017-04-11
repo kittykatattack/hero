@@ -95,7 +95,9 @@ view model =
         , onMouseOut Up
         , onMouseDown Down
         , onClick Click
-        ]
+        , class "selectableButton"
+        --, autofocus True
+                            ]
         [ text model.label ]
 
 
@@ -112,23 +114,20 @@ buttonStyle : Model -> Attribute msg
 buttonStyle model =
     let
         up =
-            --[ "position" => "absolute"
-            --, "top" => (toString model.y ++ "%")
-            --, "left" => (toString model.x ++ "%")
             [ "background" => "#3498db"
             , "background-image" => "webkit-linear-gradient(top, #3498db, #2980b9)"
             , "background-image" => "-moz-linear-gradient(top, #3498db, #2980b9)"
             , "background-image" => "-ms-linear-gradient(top, #3498db, #2980b9)"
             , "background-image" => "-o-linear-gradient(top, #3498db, #2980b9)"
             , "background-image" => "linear-gradient(to bottom, #3498db, #2980b9)"
-            , "height" => "3em"
+            , "height" => "2em"
             , "webkit-border-radius" => "5"
             , "-moz-border-radius" => "5"
             , "border-radius" => "5px"
             , "font-family" => "Arial, Helvetica, sans"
             , "color" => "#ffffff"
-            , "font-size" => "13px"
-            , "padding" => "10px 20px 10px 20px"
+            , "font-size" => "18px"
+            , "padding" => "0px 10px 0px 10px"
             , "text-decoration" => "none"
             , "cursor" => "pointer"
             , "-webkit-user-select" => "none"
@@ -141,24 +140,21 @@ buttonStyle model =
             ]
 
         over =
-            --[ "position" => "absolute"
-            --, "top" => toString model.y
-            --, "left" => toString model.x
             [ "background" => "#3cb0fd"
             , "background-image" => "-webkit-linear-gradient(top, #3cb0fd, #3498db)"
             , "background-image" => "-moz-linear-gradient(top, #3cb0fd, #3498db)"
             , "background-image" => "-ms-linear-gradient(top, #3cb0fd, #3498db)"
             , "background-image" => "-o-linear-gradient(top, #3cb0fd, #3498db)"
             , "background-image" => "linear-gradient(to bottom, #3cb0fd, #3498db)"
-            , "height" => "3em"
+            , "height" => "2em"
             , "text-decoration" => "none"
             , "webkit-border-radius" => "5"
             , "-moz-border-radius" => "5"
             , "border-radius" => "5px"
             , "font-family" => "Arial, Helvetica, sans"
             , "color" => "#ffffff"
-            , "font-size" => "13px"
-            , "padding" => "10px 20px 10px 20px"
+            , "font-size" => "18px"
+            , "padding" => "0px 10px 0px 10px"
             , "text-decoration" => "none"
             , "cursor" => "pointer"
             , "-webkit-user-select" => "none"

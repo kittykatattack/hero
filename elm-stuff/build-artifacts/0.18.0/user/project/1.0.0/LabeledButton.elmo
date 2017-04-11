@@ -24,7 +24,7 @@ var _user$project$LabeledButton$buttonStyle = function (model) {
 							_0: A2(_user$project$LabeledButton_ops['=>'], 'background-image', 'linear-gradient(to bottom, #3cb0fd, #3498db)'),
 							_1: {
 								ctor: '::',
-								_0: A2(_user$project$LabeledButton_ops['=>'], 'height', '3em'),
+								_0: A2(_user$project$LabeledButton_ops['=>'], 'height', '2em'),
 								_1: {
 									ctor: '::',
 									_0: A2(_user$project$LabeledButton_ops['=>'], 'text-decoration', 'none'),
@@ -45,10 +45,10 @@ var _user$project$LabeledButton$buttonStyle = function (model) {
 														_0: A2(_user$project$LabeledButton_ops['=>'], 'color', '#ffffff'),
 														_1: {
 															ctor: '::',
-															_0: A2(_user$project$LabeledButton_ops['=>'], 'font-size', '13px'),
+															_0: A2(_user$project$LabeledButton_ops['=>'], 'font-size', '18px'),
 															_1: {
 																ctor: '::',
-																_0: A2(_user$project$LabeledButton_ops['=>'], 'padding', '10px 20px 10px 20px'),
+																_0: A2(_user$project$LabeledButton_ops['=>'], 'padding', '0px 10px 0px 10px'),
 																_1: {
 																	ctor: '::',
 																	_0: A2(_user$project$LabeledButton_ops['=>'], 'text-decoration', 'none'),
@@ -121,7 +121,7 @@ var _user$project$LabeledButton$buttonStyle = function (model) {
 							_0: A2(_user$project$LabeledButton_ops['=>'], 'background-image', 'linear-gradient(to bottom, #3498db, #2980b9)'),
 							_1: {
 								ctor: '::',
-								_0: A2(_user$project$LabeledButton_ops['=>'], 'height', '3em'),
+								_0: A2(_user$project$LabeledButton_ops['=>'], 'height', '2em'),
 								_1: {
 									ctor: '::',
 									_0: A2(_user$project$LabeledButton_ops['=>'], 'webkit-border-radius', '5'),
@@ -139,10 +139,10 @@ var _user$project$LabeledButton$buttonStyle = function (model) {
 													_0: A2(_user$project$LabeledButton_ops['=>'], 'color', '#ffffff'),
 													_1: {
 														ctor: '::',
-														_0: A2(_user$project$LabeledButton_ops['=>'], 'font-size', '13px'),
+														_0: A2(_user$project$LabeledButton_ops['=>'], 'font-size', '18px'),
 														_1: {
 															ctor: '::',
-															_0: A2(_user$project$LabeledButton_ops['=>'], 'padding', '10px 20px 10px 20px'),
+															_0: A2(_user$project$LabeledButton_ops['=>'], 'padding', '0px 10px 0px 10px'),
 															_1: {
 																ctor: '::',
 																_0: A2(_user$project$LabeledButton_ops['=>'], 'text-decoration', 'none'),
@@ -269,7 +269,11 @@ var _user$project$LabeledButton$view = function (model) {
 						_1: {
 							ctor: '::',
 							_0: _elm_lang$html$Html_Events$onClick(_user$project$LabeledButton$Click),
-							_1: {ctor: '[]'}
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('selectableButton'),
+								_1: {ctor: '[]'}
+							}
 						}
 					}
 				}

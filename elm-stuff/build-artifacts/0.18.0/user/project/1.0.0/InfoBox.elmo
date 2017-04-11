@@ -134,7 +134,7 @@ var _user$project$InfoBox$chapterHeadingContainerStyle = _elm_lang$html$Html_Att
 			_0: A2(_user$project$InfoBox_ops['=>'], 'position', 'absolute'),
 			_1: {
 				ctor: '::',
-				_0: A2(_user$project$InfoBox_ops['=>'], 'padding-top', '75px'),
+				_0: A2(_user$project$InfoBox_ops['=>'], 'padding-top', '94px'),
 				_1: {
 					ctor: '::',
 					_0: A2(_user$project$InfoBox_ops['=>'], 'user-select', 'none'),
@@ -468,7 +468,7 @@ var _user$project$InfoBox$model = {
 	meterHeight: 16,
 	meterBorderRadius: 4,
 	meterX: 38,
-	meterY: 52,
+	meterY: 72,
 	storyLevel: 1,
 	storyChapter: 'No Chapter Selected',
 	totalStoryLevels: 0,
@@ -477,7 +477,7 @@ var _user$project$InfoBox$model = {
 	storyPhaseChapters: _user$project$Data$storyPhaseChapters,
 	currentStoryPhaseChapter: 1,
 	infoPages: _user$project$Data$infoPages,
-	infoButton: _user$project$ImageButton$info,
+	infoButton: A3(_user$project$LabeledButton$init, 'information', 30, 50),
 	infoBoxIsOpen: false,
 	styleInfo: A2(
 		_mdgriffith$elm_style_animation$Animation$styleWith,
@@ -600,7 +600,7 @@ var _user$project$InfoBox$ShowInfo = {ctor: 'ShowInfo'};
 var _user$project$InfoBox$update = F2(
 	function (msg, model) {
 		var infoButton_ = function (buttonMsg) {
-			return A2(_user$project$ImageButton$update, buttonMsg, model.infoButton);
+			return A2(_user$project$LabeledButton$update, buttonMsg, model.infoButton);
 		};
 		var runCorrectEffect = F2(
 			function (buttonMsg, model) {
@@ -611,7 +611,7 @@ var _user$project$InfoBox$update = F2(
 							return _.currentMsg;
 						}(
 							infoButton_(buttonMsg)),
-						_user$project$ImageButton$Down),
+						_user$project$LabeledButton$Down),
 					_1: _elm_lang$core$Native_Utils.eq(model.infoBoxIsOpen, false)
 				};
 				if ((_p1.ctor === '_Tuple2') && (_p1._0 === true)) {
@@ -1186,7 +1186,7 @@ var _user$project$InfoBox$view = function (model) {
 										_0: A2(
 											_elm_lang$html$Html$map,
 											_user$project$InfoBox$UpdateButton,
-											_user$project$ImageButton$view(model.infoButton)),
+											_user$project$LabeledButton$view(model.infoButton)),
 										_1: {ctor: '[]'}
 									}),
 								_1: {ctor: '[]'}
