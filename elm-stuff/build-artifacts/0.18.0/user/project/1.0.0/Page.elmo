@@ -588,7 +588,7 @@ var _user$project$Page$update = F2(
 						function (_) {
 							return _.button;
 						}(currentChoice_)),
-					_user$project$ImageButton$Click) ? {
+					_user$project$LabeledButton$Click) ? {
 					ctor: '_Tuple2',
 					_0: _elm_lang$core$Native_Utils.update(
 						model,
@@ -678,7 +678,7 @@ var _user$project$Page$model = function () {
 	var choiceBoxes_ = A2(
 		_elm_lang$core$List$map,
 		function (string) {
-			return _user$project$Choice$init(string);
+			return A2(_user$project$Choice$init, string, 'test');
 		},
 		choices_);
 	return {
@@ -719,7 +719,7 @@ var _user$project$Page$init = function (data) {
 	var choiceBoxes_ = A2(
 		_elm_lang$core$List$map,
 		function (string) {
-			return _user$project$Choice$init(string);
+			return A2(_user$project$Choice$init, string, 'test');
 		},
 		data.choices);
 	var typeOfPage = (_elm_lang$core$Native_Utils.cmp(

@@ -15785,312 +15785,6 @@ var _user$project$Defaults$height = 600;
 var _user$project$Defaults$width = 770;
 var _user$project$Defaults$imagesLocation = '../images/';
 
-var _user$project$ImageButton_ops = _user$project$ImageButton_ops || {};
-_user$project$ImageButton_ops['=>'] = F2(
-	function (v0, v1) {
-		return {ctor: '_Tuple2', _0: v0, _1: v1};
-	});
-var _user$project$ImageButton$buttonStyle = function (model) {
-	return _elm_lang$html$Html_Attributes$style(
-		{
-			ctor: '::',
-			_0: A2(
-				_user$project$ImageButton_ops['=>'],
-				'background-image',
-				A2(
-					_elm_lang$core$Basics_ops['++'],
-					'url(\'',
-					A2(_elm_lang$core$Basics_ops['++'], model.backgroundImage, '\')'))),
-			_1: {
-				ctor: '::',
-				_0: A2(_user$project$ImageButton_ops['=>'], 'background-repeat', 'no-repeat'),
-				_1: {
-					ctor: '::',
-					_0: A2(
-						_user$project$ImageButton_ops['=>'],
-						'height',
-						A2(
-							_elm_lang$core$Basics_ops['++'],
-							_elm_lang$core$Basics$toString(model.width),
-							'px')),
-					_1: {
-						ctor: '::',
-						_0: A2(
-							_user$project$ImageButton_ops['=>'],
-							'width',
-							A2(
-								_elm_lang$core$Basics_ops['++'],
-								_elm_lang$core$Basics$toString(model.height),
-								'px')),
-						_1: {
-							ctor: '::',
-							_0: A2(_user$project$ImageButton_ops['=>'], 'margin', 'auto'),
-							_1: {
-								ctor: '::',
-								_0: A2(_user$project$ImageButton_ops['=>'], 'cursor', 'pointer'),
-								_1: {
-									ctor: '::',
-									_0: A2(_user$project$ImageButton_ops['=>'], '-webkit-user-select', 'none'),
-									_1: {
-										ctor: '::',
-										_0: A2(_user$project$ImageButton_ops['=>'], '-moz-user-select', 'none'),
-										_1: {
-											ctor: '::',
-											_0: A2(_user$project$ImageButton_ops['=>'], '-khtml-user-select', 'none'),
-											_1: {
-												ctor: '::',
-												_0: A2(_user$project$ImageButton_ops['=>'], '-ms-user-select', 'none'),
-												_1: {
-													ctor: '::',
-													_0: A2(_user$project$ImageButton_ops['=>'], 'userSelect', 'none'),
-													_1: {ctor: '[]'}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		});
-};
-var _user$project$ImageButton$update = F2(
-	function (msg, model) {
-		var backgroundImage_ = A2(
-			_elm_lang$core$Basics_ops['++'],
-			_user$project$Defaults$imagesLocation,
-			A2(
-				_elm_lang$core$Basics_ops['++'],
-				model.baseBackgroundImage,
-				A2(
-					_elm_lang$core$Basics_ops['++'],
-					'Button',
-					A2(
-						_elm_lang$core$Basics_ops['++'],
-						_elm_lang$core$Basics$toString(msg),
-						'.png'))));
-		var _p0 = msg;
-		switch (_p0.ctor) {
-			case 'Up':
-				return _elm_lang$core$Native_Utils.update(
-					model,
-					{backgroundImage: backgroundImage_, currentMsg: msg});
-			case 'Over':
-				return _elm_lang$core$Native_Utils.update(
-					model,
-					{backgroundImage: backgroundImage_, currentMsg: msg});
-			case 'Down':
-				return _elm_lang$core$Native_Utils.update(
-					model,
-					{currentMsg: msg});
-			case 'Click':
-				return _elm_lang$core$Native_Utils.update(
-					model,
-					{currentMsg: msg});
-			default:
-				return model;
-		}
-	});
-var _user$project$ImageButton$noFx = function (model) {
-	return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
-};
-var _user$project$ImageButton$Model = F5(
-	function (a, b, c, d, e) {
-		return {width: a, height: b, currentMsg: c, baseBackgroundImage: d, backgroundImage: e};
-	});
-var _user$project$ImageButton$NoOp = {ctor: 'NoOp'};
-var _user$project$ImageButton$Click = {ctor: 'Click'};
-var _user$project$ImageButton$Down = {ctor: 'Down'};
-var _user$project$ImageButton$Over = {ctor: 'Over'};
-var _user$project$ImageButton$Up = {ctor: 'Up'};
-var _user$project$ImageButton$model = {
-	width: 32,
-	height: 32,
-	currentMsg: _user$project$ImageButton$Up,
-	baseBackgroundImage: 'next',
-	backgroundImage: A2(_elm_lang$core$Basics_ops['++'], _user$project$Defaults$imagesLocation, 'nextButtonUp.png')
-};
-var _user$project$ImageButton$init = F3(
-	function (baseBackgroundImage_, width_, height_) {
-		var backgroundImage_ = A2(
-			_elm_lang$core$Basics_ops['++'],
-			_user$project$Defaults$imagesLocation,
-			A2(
-				_elm_lang$core$Basics_ops['++'],
-				baseBackgroundImage_,
-				A2(
-					_elm_lang$core$Basics_ops['++'],
-					'Button',
-					A2(_elm_lang$core$Basics_ops['++'], 'Up', '.png'))));
-		return _elm_lang$core$Native_Utils.update(
-			_user$project$ImageButton$model,
-			{baseBackgroundImage: baseBackgroundImage_, backgroundImage: backgroundImage_, width: width_, height: width_});
-	});
-var _user$project$ImageButton$choice = A3(_user$project$ImageButton$init, 'star', 40, 20);
-var _user$project$ImageButton$next = A3(_user$project$ImageButton$init, 'next', 26, 27);
-var _user$project$ImageButton$info = A3(_user$project$ImageButton$init, 'info', 32, 32);
-var _user$project$ImageButton$view = function (model) {
-	return A2(
-		_elm_lang$html$Html$div,
-		{
-			ctor: '::',
-			_0: _user$project$ImageButton$buttonStyle(model),
-			_1: {
-				ctor: '::',
-				_0: _elm_lang$html$Html_Events$onMouseOver(_user$project$ImageButton$Over),
-				_1: {
-					ctor: '::',
-					_0: _elm_lang$html$Html_Events$onMouseOut(_user$project$ImageButton$Up),
-					_1: {
-						ctor: '::',
-						_0: _elm_lang$html$Html_Events$onMouseDown(_user$project$ImageButton$Down),
-						_1: {
-							ctor: '::',
-							_0: _elm_lang$html$Html_Events$onClick(_user$project$ImageButton$Click),
-							_1: {
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$class('selectableButton'),
-								_1: {ctor: '[]'}
-							}
-						}
-					}
-				}
-			}
-		},
-		{ctor: '[]'});
-};
-
-var _user$project$Choice_ops = _user$project$Choice_ops || {};
-_user$project$Choice_ops['=>'] = F2(
-	function (v0, v1) {
-		return {ctor: '_Tuple2', _0: v0, _1: v1};
-	});
-var _user$project$Choice$containerStyle = _elm_lang$html$Html_Attributes$style(
-	{
-		ctor: '::',
-		_0: A2(_user$project$Choice_ops['=>'], 'text-align', 'center'),
-		_1: {
-			ctor: '::',
-			_0: A2(_user$project$Choice_ops['=>'], 'width', '50%'),
-			_1: {
-				ctor: '::',
-				_0: A2(_user$project$Choice_ops['=>'], 'padding', '0 0.3em 0 0.3em'),
-				_1: {
-					ctor: '::',
-					_0: A2(_user$project$Choice_ops['=>'], '-webkit-user-select', 'none'),
-					_1: {
-						ctor: '::',
-						_0: A2(_user$project$Choice_ops['=>'], '-moz-user-select', 'none'),
-						_1: {
-							ctor: '::',
-							_0: A2(_user$project$Choice_ops['=>'], '-khtml-user-select', 'none'),
-							_1: {
-								ctor: '::',
-								_0: A2(_user$project$Choice_ops['=>'], '-ms-user-select', 'none'),
-								_1: {
-									ctor: '::',
-									_0: A2(_user$project$Choice_ops['=>'], 'userSelect', 'none'),
-									_1: {
-										ctor: '::',
-										_0: A2(_user$project$Choice_ops['=>'], 'line-height', '1.3em'),
-										_1: {ctor: '[]'}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	});
-var _user$project$Choice$paragraphStyle = _elm_lang$html$Html_Attributes$style(
-	{
-		ctor: '::',
-		_0: A2(_user$project$Choice_ops['=>'], 'font-size', '0.8em'),
-		_1: {
-			ctor: '::',
-			_0: A2(_user$project$Choice_ops['=>'], 'font-family', 'Helvetica, Arial, sans-serif'),
-			_1: {
-				ctor: '::',
-				_0: A2(_user$project$Choice_ops['=>'], 'padding', '0.2em 1em 1.3em 1em'),
-				_1: {
-					ctor: '::',
-					_0: A2(_user$project$Choice_ops['=>'], 'margin', '0'),
-					_1: {
-						ctor: '::',
-						_0: A2(_user$project$Choice_ops['=>'], 'line-height', '1.3em'),
-						_1: {ctor: '[]'}
-					}
-				}
-			}
-		}
-	});
-var _user$project$Choice$update = F2(
-	function (msg, model) {
-		var _p0 = msg;
-		var button_ = A2(_user$project$ImageButton$update, _p0._0, model.button);
-		var currentMsg_ = function (_) {
-			return _.currentMsg;
-		}(button_);
-		return _elm_lang$core$Native_Utils.update(
-			model,
-			{button: button_});
-	});
-var _user$project$Choice$noFx = function (model) {
-	return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
-};
-var _user$project$Choice$model = {label: 'X', button: _user$project$ImageButton$choice};
-var _user$project$Choice$init = function (label_) {
-	return _elm_lang$core$Native_Utils.update(
-		_user$project$Choice$model,
-		{label: label_});
-};
-var _user$project$Choice$Model = F2(
-	function (a, b) {
-		return {label: a, button: b};
-	});
-var _user$project$Choice$UpdateButton = function (a) {
-	return {ctor: 'UpdateButton', _0: a};
-};
-var _user$project$Choice$view = function (model) {
-	return A2(
-		_elm_lang$html$Html$div,
-		{
-			ctor: '::',
-			_0: _user$project$Choice$containerStyle,
-			_1: {ctor: '[]'}
-		},
-		{
-			ctor: '::',
-			_0: A2(
-				_elm_lang$html$Html$map,
-				_user$project$Choice$UpdateButton,
-				_user$project$ImageButton$view(model.button)),
-			_1: {
-				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$p,
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('choiceText'),
-						_1: {
-							ctor: '::',
-							_0: _user$project$Choice$paragraphStyle,
-							_1: {ctor: '[]'}
-						}
-					},
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html$text(model.label),
-						_1: {ctor: '[]'}
-					}),
-				_1: {ctor: '[]'}
-			}
-		});
-};
-
 var _user$project$LabeledButton_ops = _user$project$LabeledButton_ops || {};
 _user$project$LabeledButton_ops['=>'] = F2(
 	function (v0, v1) {
@@ -16376,6 +16070,155 @@ var _user$project$LabeledButton$view = function (model) {
 			ctor: '::',
 			_0: _elm_lang$html$Html$text(model.label),
 			_1: {ctor: '[]'}
+		});
+};
+
+var _user$project$Choice_ops = _user$project$Choice_ops || {};
+_user$project$Choice_ops['=>'] = F2(
+	function (v0, v1) {
+		return {ctor: '_Tuple2', _0: v0, _1: v1};
+	});
+var _user$project$Choice$containerStyle = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$Choice_ops['=>'], 'text-align', 'center'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Choice_ops['=>'], 'width', '50%'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Choice_ops['=>'], 'display', 'flex'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$Choice_ops['=>'], 'align-items', 'center'),
+					_1: {
+						ctor: '::',
+						_0: A2(_user$project$Choice_ops['=>'], 'flex-direction', 'column'),
+						_1: {
+							ctor: '::',
+							_0: A2(_user$project$Choice_ops['=>'], 'padding', '0 0.3em 0 0.3em'),
+							_1: {
+								ctor: '::',
+								_0: A2(_user$project$Choice_ops['=>'], '-webkit-user-select', 'none'),
+								_1: {
+									ctor: '::',
+									_0: A2(_user$project$Choice_ops['=>'], '-moz-user-select', 'none'),
+									_1: {
+										ctor: '::',
+										_0: A2(_user$project$Choice_ops['=>'], '-khtml-user-select', 'none'),
+										_1: {
+											ctor: '::',
+											_0: A2(_user$project$Choice_ops['=>'], '-ms-user-select', 'none'),
+											_1: {
+												ctor: '::',
+												_0: A2(_user$project$Choice_ops['=>'], 'userSelect', 'none'),
+												_1: {
+													ctor: '::',
+													_0: A2(_user$project$Choice_ops['=>'], 'line-height', '1.3em'),
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	});
+var _user$project$Choice$paragraphStyle = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: A2(_user$project$Choice_ops['=>'], 'font-size', '0.8em'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Choice_ops['=>'], 'font-family', 'Helvetica, Arial, sans-serif'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Choice_ops['=>'], 'padding', '0.2em 1em 1.3em 1em'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$Choice_ops['=>'], 'margin', '0'),
+					_1: {
+						ctor: '::',
+						_0: A2(_user$project$Choice_ops['=>'], 'line-height', '1.3em'),
+						_1: {ctor: '[]'}
+					}
+				}
+			}
+		}
+	});
+var _user$project$Choice$update = F2(
+	function (msg, model) {
+		var _p0 = msg;
+		var button_ = A2(_user$project$LabeledButton$update, _p0._0, model.button);
+		var currentMsg_ = function (_) {
+			return _.currentMsg;
+		}(button_);
+		return _elm_lang$core$Native_Utils.update(
+			model,
+			{button: button_});
+	});
+var _user$project$Choice$noFx = function (model) {
+	return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
+};
+var _user$project$Choice$model = {
+	description: 'No description',
+	label: 'Choice',
+	button: A3(_user$project$LabeledButton$init, 'X', 30, 50)
+};
+var _user$project$Choice$init = F2(
+	function (description_, label_) {
+		return _elm_lang$core$Native_Utils.update(
+			_user$project$Choice$model,
+			{
+				description: description_,
+				button: A3(_user$project$LabeledButton$init, label_, 30, 50)
+			});
+	});
+var _user$project$Choice$Model = F3(
+	function (a, b, c) {
+		return {description: a, label: b, button: c};
+	});
+var _user$project$Choice$UpdateButton = function (a) {
+	return {ctor: 'UpdateButton', _0: a};
+};
+var _user$project$Choice$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _user$project$Choice$containerStyle,
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$map,
+				_user$project$Choice$UpdateButton,
+				_user$project$LabeledButton$view(model.button)),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class('choiceText'),
+						_1: {
+							ctor: '::',
+							_0: _user$project$Choice$paragraphStyle,
+							_1: {ctor: '[]'}
+						}
+					},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text(model.description),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
 		});
 };
 
@@ -17978,6 +17821,179 @@ var _user$project$Data$Page = function (a) {
 	};
 };
 
+var _user$project$ImageButton_ops = _user$project$ImageButton_ops || {};
+_user$project$ImageButton_ops['=>'] = F2(
+	function (v0, v1) {
+		return {ctor: '_Tuple2', _0: v0, _1: v1};
+	});
+var _user$project$ImageButton$buttonStyle = function (model) {
+	return _elm_lang$html$Html_Attributes$style(
+		{
+			ctor: '::',
+			_0: A2(
+				_user$project$ImageButton_ops['=>'],
+				'background-image',
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					'url(\'',
+					A2(_elm_lang$core$Basics_ops['++'], model.backgroundImage, '\')'))),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$ImageButton_ops['=>'], 'background-repeat', 'no-repeat'),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_user$project$ImageButton_ops['=>'],
+						'height',
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							_elm_lang$core$Basics$toString(model.width),
+							'px')),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_user$project$ImageButton_ops['=>'],
+							'width',
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								_elm_lang$core$Basics$toString(model.height),
+								'px')),
+						_1: {
+							ctor: '::',
+							_0: A2(_user$project$ImageButton_ops['=>'], 'margin', 'auto'),
+							_1: {
+								ctor: '::',
+								_0: A2(_user$project$ImageButton_ops['=>'], 'cursor', 'pointer'),
+								_1: {
+									ctor: '::',
+									_0: A2(_user$project$ImageButton_ops['=>'], '-webkit-user-select', 'none'),
+									_1: {
+										ctor: '::',
+										_0: A2(_user$project$ImageButton_ops['=>'], '-moz-user-select', 'none'),
+										_1: {
+											ctor: '::',
+											_0: A2(_user$project$ImageButton_ops['=>'], '-khtml-user-select', 'none'),
+											_1: {
+												ctor: '::',
+												_0: A2(_user$project$ImageButton_ops['=>'], '-ms-user-select', 'none'),
+												_1: {
+													ctor: '::',
+													_0: A2(_user$project$ImageButton_ops['=>'], 'userSelect', 'none'),
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		});
+};
+var _user$project$ImageButton$update = F2(
+	function (msg, model) {
+		var backgroundImage_ = A2(
+			_elm_lang$core$Basics_ops['++'],
+			_user$project$Defaults$imagesLocation,
+			A2(
+				_elm_lang$core$Basics_ops['++'],
+				model.baseBackgroundImage,
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					'Button',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(msg),
+						'.png'))));
+		var _p0 = msg;
+		switch (_p0.ctor) {
+			case 'Up':
+				return _elm_lang$core$Native_Utils.update(
+					model,
+					{backgroundImage: backgroundImage_, currentMsg: msg});
+			case 'Over':
+				return _elm_lang$core$Native_Utils.update(
+					model,
+					{backgroundImage: backgroundImage_, currentMsg: msg});
+			case 'Down':
+				return _elm_lang$core$Native_Utils.update(
+					model,
+					{currentMsg: msg});
+			case 'Click':
+				return _elm_lang$core$Native_Utils.update(
+					model,
+					{currentMsg: msg});
+			default:
+				return model;
+		}
+	});
+var _user$project$ImageButton$noFx = function (model) {
+	return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
+};
+var _user$project$ImageButton$Model = F5(
+	function (a, b, c, d, e) {
+		return {width: a, height: b, currentMsg: c, baseBackgroundImage: d, backgroundImage: e};
+	});
+var _user$project$ImageButton$NoOp = {ctor: 'NoOp'};
+var _user$project$ImageButton$Click = {ctor: 'Click'};
+var _user$project$ImageButton$Down = {ctor: 'Down'};
+var _user$project$ImageButton$Over = {ctor: 'Over'};
+var _user$project$ImageButton$Up = {ctor: 'Up'};
+var _user$project$ImageButton$model = {
+	width: 32,
+	height: 32,
+	currentMsg: _user$project$ImageButton$Up,
+	baseBackgroundImage: 'next',
+	backgroundImage: A2(_elm_lang$core$Basics_ops['++'], _user$project$Defaults$imagesLocation, 'nextButtonUp.png')
+};
+var _user$project$ImageButton$init = F3(
+	function (baseBackgroundImage_, width_, height_) {
+		var backgroundImage_ = A2(
+			_elm_lang$core$Basics_ops['++'],
+			_user$project$Defaults$imagesLocation,
+			A2(
+				_elm_lang$core$Basics_ops['++'],
+				baseBackgroundImage_,
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					'Button',
+					A2(_elm_lang$core$Basics_ops['++'], 'Up', '.png'))));
+		return _elm_lang$core$Native_Utils.update(
+			_user$project$ImageButton$model,
+			{baseBackgroundImage: baseBackgroundImage_, backgroundImage: backgroundImage_, width: width_, height: width_});
+	});
+var _user$project$ImageButton$choice = A3(_user$project$ImageButton$init, 'star', 40, 20);
+var _user$project$ImageButton$next = A3(_user$project$ImageButton$init, 'next', 26, 27);
+var _user$project$ImageButton$info = A3(_user$project$ImageButton$init, 'info', 32, 32);
+var _user$project$ImageButton$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _user$project$ImageButton$buttonStyle(model),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$html$Html_Events$onMouseOver(_user$project$ImageButton$Over),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$html$Html_Events$onMouseOut(_user$project$ImageButton$Up),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html_Events$onMouseDown(_user$project$ImageButton$Down),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Events$onClick(_user$project$ImageButton$Click),
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			}
+		},
+		{ctor: '[]'});
+};
+
 var _user$project$Page_ops = _user$project$Page_ops || {};
 _user$project$Page_ops['=>'] = F2(
 	function (v0, v1) {
@@ -18568,7 +18584,7 @@ var _user$project$Page$update = F2(
 						function (_) {
 							return _.button;
 						}(currentChoice_)),
-					_user$project$ImageButton$Click) ? {
+					_user$project$LabeledButton$Click) ? {
 					ctor: '_Tuple2',
 					_0: _elm_lang$core$Native_Utils.update(
 						model,
@@ -18658,7 +18674,7 @@ var _user$project$Page$model = function () {
 	var choiceBoxes_ = A2(
 		_elm_lang$core$List$map,
 		function (string) {
-			return _user$project$Choice$init(string);
+			return A2(_user$project$Choice$init, string, 'test');
 		},
 		choices_);
 	return {
@@ -18699,7 +18715,7 @@ var _user$project$Page$init = function (data) {
 	var choiceBoxes_ = A2(
 		_elm_lang$core$List$map,
 		function (string) {
-			return _user$project$Choice$init(string);
+			return A2(_user$project$Choice$init, string, 'test');
 		},
 		data.choices);
 	var typeOfPage = (_elm_lang$core$Native_Utils.cmp(
@@ -20482,7 +20498,7 @@ var _user$project$Adventure$model = function () {
 	};
 }();
 var _user$project$Adventure$init = function () {
-	var id = 1.1;
+	var id = 1.3;
 	var currentPageData_ = A2(_user$project$Adventure$getCurrentPageData, _user$project$Adventure$model.story, id);
 	var currentPage_ = _user$project$Adventure$getCurrentPage(currentPageData_);
 	var storyLevel = _user$project$Adventure$getStoryLevel(id);

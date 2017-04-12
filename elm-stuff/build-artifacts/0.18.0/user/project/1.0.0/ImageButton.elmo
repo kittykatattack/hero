@@ -162,11 +162,7 @@ var _user$project$ImageButton$view = function (model) {
 						_1: {
 							ctor: '::',
 							_0: _elm_lang$html$Html_Events$onClick(_user$project$ImageButton$Click),
-							_1: {
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$class('selectableButton'),
-								_1: {ctor: '[]'}
-							}
+							_1: {ctor: '[]'}
 						}
 					}
 				}

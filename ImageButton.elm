@@ -148,8 +148,6 @@ view model =
         , onMouseOut Up
         , onMouseDown Down
         , onClick Click
-        , class "selectableButton"
-        , tabIndex "1"
         ]
         -- [ text model.label ]
         []

@@ -79,7 +79,7 @@ model =
             ]
 
         choiceBoxes_ =
-            List.map (\string -> Choice.init string) choices_
+            List.map (\string -> Choice.init string "test" ) choices_
     in
         { heading = "Adventure!"
         , subheading = "The Quest Begins"
@@ -128,7 +128,7 @@ init data =
                 GameEvent
 
         choiceBoxes_ =
-            List.map (\string -> Choice.init string) data.choices
+            List.map (\string -> Choice.init string "test") data.choices
 
         gameEventBox_ =
             let
@@ -225,7 +225,7 @@ update msg model =
                 -- initialize a new page. So, the code should only change the active link
                 -- if the button has been clicked
                 -- If the choice button is being clicked, set the model's `activeLink`
-                if .currentMsg (.button currentChoice_) == ImageButton.Click then
+                if .currentMsg (.button currentChoice_) == LabeledButton.Click then
                     ( { model
                         | choiceBoxes = choiceBoxes_
                         , activeLink = choiceLink_

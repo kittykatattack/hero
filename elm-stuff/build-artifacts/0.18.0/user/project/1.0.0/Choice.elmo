@@ -12,26 +12,38 @@ var _user$project$Choice$containerStyle = _elm_lang$html$Html_Attributes$style(
 			_0: A2(_user$project$Choice_ops['=>'], 'width', '50%'),
 			_1: {
 				ctor: '::',
-				_0: A2(_user$project$Choice_ops['=>'], 'padding', '0 0.3em 0 0.3em'),
+				_0: A2(_user$project$Choice_ops['=>'], 'display', 'flex'),
 				_1: {
 					ctor: '::',
-					_0: A2(_user$project$Choice_ops['=>'], '-webkit-user-select', 'none'),
+					_0: A2(_user$project$Choice_ops['=>'], 'align-items', 'center'),
 					_1: {
 						ctor: '::',
-						_0: A2(_user$project$Choice_ops['=>'], '-moz-user-select', 'none'),
+						_0: A2(_user$project$Choice_ops['=>'], 'flex-direction', 'column'),
 						_1: {
 							ctor: '::',
-							_0: A2(_user$project$Choice_ops['=>'], '-khtml-user-select', 'none'),
+							_0: A2(_user$project$Choice_ops['=>'], 'padding', '0 0.3em 0 0.3em'),
 							_1: {
 								ctor: '::',
-								_0: A2(_user$project$Choice_ops['=>'], '-ms-user-select', 'none'),
+								_0: A2(_user$project$Choice_ops['=>'], '-webkit-user-select', 'none'),
 								_1: {
 									ctor: '::',
-									_0: A2(_user$project$Choice_ops['=>'], 'userSelect', 'none'),
+									_0: A2(_user$project$Choice_ops['=>'], '-moz-user-select', 'none'),
 									_1: {
 										ctor: '::',
-										_0: A2(_user$project$Choice_ops['=>'], 'line-height', '1.3em'),
-										_1: {ctor: '[]'}
+										_0: A2(_user$project$Choice_ops['=>'], '-khtml-user-select', 'none'),
+										_1: {
+											ctor: '::',
+											_0: A2(_user$project$Choice_ops['=>'], '-ms-user-select', 'none'),
+											_1: {
+												ctor: '::',
+												_0: A2(_user$project$Choice_ops['=>'], 'userSelect', 'none'),
+												_1: {
+													ctor: '::',
+													_0: A2(_user$project$Choice_ops['=>'], 'line-height', '1.3em'),
+													_1: {ctor: '[]'}
+												}
+											}
+										}
 									}
 								}
 							}
@@ -66,7 +78,7 @@ var _user$project$Choice$paragraphStyle = _elm_lang$html$Html_Attributes$style(
 var _user$project$Choice$update = F2(
 	function (msg, model) {
 		var _p0 = msg;
-		var button_ = A2(_user$project$ImageButton$update, _p0._0, model.button);
+		var button_ = A2(_user$project$LabeledButton$update, _p0._0, model.button);
 		var currentMsg_ = function (_) {
 			return _.currentMsg;
 		}(button_);
@@ -77,15 +89,23 @@ var _user$project$Choice$update = F2(
 var _user$project$Choice$noFx = function (model) {
 	return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
 };
-var _user$project$Choice$model = {label: 'X', button: _user$project$ImageButton$choice};
-var _user$project$Choice$init = function (label_) {
-	return _elm_lang$core$Native_Utils.update(
-		_user$project$Choice$model,
-		{label: label_});
+var _user$project$Choice$model = {
+	description: 'No description',
+	label: 'Choice',
+	button: A3(_user$project$LabeledButton$init, 'X', 30, 50)
 };
-var _user$project$Choice$Model = F2(
-	function (a, b) {
-		return {label: a, button: b};
+var _user$project$Choice$init = F2(
+	function (description_, label_) {
+		return _elm_lang$core$Native_Utils.update(
+			_user$project$Choice$model,
+			{
+				description: description_,
+				button: A3(_user$project$LabeledButton$init, label_, 30, 50)
+			});
+	});
+var _user$project$Choice$Model = F3(
+	function (a, b, c) {
+		return {description: a, label: b, button: c};
 	});
 var _user$project$Choice$UpdateButton = function (a) {
 	return {ctor: 'UpdateButton', _0: a};
@@ -103,7 +123,7 @@ var _user$project$Choice$view = function (model) {
 			_0: A2(
 				_elm_lang$html$Html$map,
 				_user$project$Choice$UpdateButton,
-				_user$project$ImageButton$view(model.button)),
+				_user$project$LabeledButton$view(model.button)),
 			_1: {
 				ctor: '::',
 				_0: A2(
@@ -119,7 +139,7 @@ var _user$project$Choice$view = function (model) {
 					},
 					{
 						ctor: '::',
-						_0: _elm_lang$html$Html$text(model.label),
+						_0: _elm_lang$html$Html$text(model.description),
 						_1: {ctor: '[]'}
 					}),
 				_1: {ctor: '[]'}

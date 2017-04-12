@@ -4,11 +4,6 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 
-
--- import String
--- import Task
--- import Task.Extra
-
 import Page
 import InfoBox
 import Data
@@ -88,7 +83,7 @@ init =
     let
         -- The page id on which the story should start
         id =
-            1.1
+            1.3
 
         --3.1
         currentPageData_ =

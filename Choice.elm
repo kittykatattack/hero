@@ -9,29 +9,32 @@ import Html
 -- import String
 --import Defaults
 
-import ImageButton
+import LabeledButton
 
 
 -- MODEL
 
 
 type alias Model =
-    { label : String
-    , button : ImageButton.Model
+    { description : String
+    , label : String
+    , button : LabeledButton.Model
     }
 
 
 model =
-    { label = "X"
-    , button = ImageButton.choice
+    { description = "No description"
+    , label = "Choice"
+    , button = LabeledButton.init "X" 30 50
     }
 
 
-init : String -> Model
-init label_ =
+init : String -> String -> Model
+init description_ label_ =
     --noFx
     { model
-        | label = label_
+        | description = description_
+        , button = LabeledButton.init label_ 30 50
     }
 
 
@@ -44,7 +47,7 @@ noFx model =
 
 
 type Msg
-    = UpdateButton ImageButton.Msg
+    = UpdateButton LabeledButton.Msg
 
 
 update : Msg -> Model -> Model
@@ -53,7 +56,7 @@ update msg model =
         UpdateButton buttonMsg ->
             let
                 button_ =
-                    ImageButton.update buttonMsg model.button
+                    LabeledButton.update buttonMsg model.button
 
                 currentMsg_ =
                     .currentMsg button_
@@ -73,8 +76,8 @@ view model =
     div
         [ containerStyle ]
         --[ ImageButton.view buttonAddress model.button
-        [ Html.map UpdateButton (ImageButton.view model.button)
-        , p [ class "choiceText", paragraphStyle ] [ text model.label ]
+        [ Html.map UpdateButton (LabeledButton.view model.button)
+        , p [ class "choiceText", paragraphStyle ] [ text model.description ]
         ]
 
 
@@ -97,6 +100,10 @@ containerStyle =
           --, "float" => "left"
           --, "background-color" => "pink"
           -- , "border" => "1px dashed black"
+        , "display" => "flex"
+        , "align-items" => "center"
+        , "flex-direction" => "column"
+        --, "justify-content" => "center" 
         , "padding" => "0 0.3em 0 0.3em"
         , "-webkit-user-select" => "none"
         , "-moz-user-select" => "none"
