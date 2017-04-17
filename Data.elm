@@ -188,7 +188,7 @@ type alias Page =
         String
         -- How the content box is aligned
     , choices :
-        List String
+        List (String, String)
         -- The text label's for the choices the player has
     , choiceLinks :
         List ID
@@ -302,22 +302,22 @@ story =
       , subheading = ""
       , storyChapter = chapter1
       , storyPhaseChapter = 1
-      , description =
+      , description   =
             """\x0D
   As you wake up alone and injured in the dark forest you hear something \x0D
-  approaching. You can either try to hide from it or confront it. What do you do?\x0D
+  approaching. You constantly either try to hide from it or confront it. What do you do?\x0D
       """
       , pillsLeft = 0
       , transformations = 0
-      , image = "illustration_1-3.png"
+      , image = "illustration_1-4.png"
       , alignment =
             "left"
             -- Choices: Only add these if this is a choice type page.
-            -- Adding more than 1 choice in the array flags this as being a
+            -- Adding more than 1      choice in the array flags this as being a
             -- multiple choice type page
       , choices =
-            [ "Try to hide from it"
-            , "Confront it"
+            [ ("A", "Try to hide from it")
+            , ("B", "Confront it")
             ]
             -- The `choiceEvents` represent the story ID numbers that each choice
             -- above should link to
@@ -563,8 +563,8 @@ story =
             -- Adding more than 1 choice in the array flags this as being a
             -- multiple choice type page
       , choices =
-            [ "Run home to save your parents."
-            , "Accept the magic pills and begin journey."
+            [ ("A", "Run home to save your parents.")
+            , ("B", "Accept the magic pills and begin journey.")
             ]
             -- The `choiceEvents` represent the story ID numbers that each choice
             -- above should link to
@@ -646,8 +646,8 @@ story =
             -- Adding more than 1 choice in the array flags this as being a
             -- multiple choice type page
       , choices =
-            [ "You think the crow is trying to trick you so you tell him to leave you alone and you make your way on your own."
-            , "You accept the crow’s offer and he starts to lead you."
+            [ ("A", "You think the crow is trying to trick you so you tell him to leave you alone and you make your way on your own.")
+            , ("B", "You accept the crow’s offer and he starts to lead you.")
             ]
             -- The `choiceEvents` represent the story ID numbers that each choice
             -- above should link to
@@ -728,8 +728,8 @@ story =
             -- Adding more than 1 choice in the array flags this as being a
             -- multiple choice type page
       , choices =
-            [ "You crawl to the edge of their camp, hiding in the trees just beyond the light of their fires, to listen to them."
-            , "You decide to skirt around the camp and avoid them."
+            [ ("A", "You crawl to the edge of their camp, hiding in the trees just beyond the light of their fires, to listen to them.")
+            , ("B", "You decide to skirt around the camp and avoid them.")
             ]
             -- The `choiceEvents` represent the story ID numbers that each choice
             -- above should link to
@@ -815,8 +815,8 @@ story =
             -- Adding more than 1 choice in the array flags this as being a
             -- multiple choice type page
       , choices =
-            [ "A small bird who can fly over the walls and into the castle tower undetected by the guards."
-            , "One of the senior generals so you can walk past the guards and into the prison tower where your friends are held."
+            [ ("A", "A small bird who can fly over the walls and into the castle tower undetected by the guards.")
+            , ("B", "One of the senior generals so you can walk past the guards and into the prison tower where your friends are held.")
             ]
             -- The `choiceEvents` represent the story ID numbers that each choice
             -- above should link to
@@ -862,8 +862,8 @@ story =
             -- Adding more than 1 choice in the array flags this as being a
             -- multiple choice type page
       , choices =
-            [ "that all three of you will take a pill, become small birds, and fly out the window to the forest and safety."
-            , "only you will take a pill and become a general and walk your “prisoners” past the guards."
+            [ ("A", "that all three of you will take a pill, become small birds, and fly out the window to the forest and safety.")
+            , ("B", "only you will take a pill and become a general and walk your “prisoners” past the guards.")
             ]
             -- The `choiceEvents` represent the story ID numbers that each choice
             -- above should link to
@@ -908,8 +908,8 @@ story =
             -- Adding more than 1 choice in the array flags this as being a
             -- multiple choice type page
       , choices =
-            [ "That you will quickly walk your “prisoners” past the guards while you are still disguised as a General."
-            , "That all of you will take a pill, become birds, and fly out the window to the forest and safety."
+            [ ("A", "That you will quickly walk your “prisoners” past the guards while you are still disguised as a General.")
+            , ("B", "That all of you will take a pill, become birds, and fly out the window to the forest and safety.")
             ]
             -- The `choiceEvents` represent the story ID numbers that each choice
             -- above should link to
@@ -954,8 +954,8 @@ story =
             -- Adding more than 1 choice in the array flags this as being a
             -- multiple choice type page
       , choices =
-            [ "To walk past and continue your escape."
-            , "Transform all your friends into Generals and kill the Warlord by surprise."
+            [ ("A", "To walk past and continue your escape.")
+            , ("B", "Transform all your friends into Generals and kill the Warlord by surprise.")
             ]
             -- The `choiceEvents` represent the story ID numbers that each choice
             -- above should link to
@@ -1039,8 +1039,8 @@ story =
             -- Adding more than 1 choice in the array flags this as being a
             -- multiple choice type page
       , choices =
-            [ "To walk past and continue your escape."
-            , "Transform all your friends into Generals and kill the Warlord by surprise."
+            [ ("A", "To walk past and continue your escape.")
+            , ("B", "Transform all your friends into Generals and kill the Warlord by surprise.")
             ]
             -- The `choiceEvents` represent the story ID numbers that each choice
             -- above should link to
@@ -1085,8 +1085,8 @@ story =
             -- Adding more than 1 choice in the array flags this as being a
             -- multiple choice type page
       , choices =
-            [ "That all of you should take a pill and fly out as birds. But this would be your last transformation so you must live the rest of your life as a bird."
-            , "That your two friends should each take a pill and fly to safety as birds. You will try running out of the castle while you are still disguised as a General."
+            [ ("A", "That all of you should take a pill and fly out as birds. But this would be your last transformation so you must live the rest of your life as a bird.")
+            , ("B", "That your two friends should each take a pill and fly to safety as birds. You will try running out of the castle while you are still disguised as a General.")
             ]
             -- The `choiceEvents` represent the story ID numbers that each choice
             -- above should link to
@@ -1130,8 +1130,8 @@ story =
             -- Adding more than 1 choice in the array flags this as being a
             -- multiple choice type page
       , choices =
-            [ "To kill the guards and take the last pill and become the Warlord yourself."
-            , "To kill the guards and offer the one remaining pill to one of your two friends."
+            [ ("A", "To kill the guards and take the last pill and become the Warlord yourself.")
+            , ("B", "To kill the guards and offer the one remaining pill to one of your two friends.")
             ]
             -- The `choiceEvents` represent the story ID numbers that each choice
             -- above should link to
@@ -1175,8 +1175,8 @@ story =
             -- Adding more than 1 choice in the array flags this as being a
             -- multiple choice type page
       , choices =
-            [ "That all three of you take a pill to transform into Generals."
-            , "That all three of you take a pill to transform into birds."
+            [ ("A", "That all three of you take a pill to transform into Generals.")
+            , ("B", "That all three of you take a pill to transform into birds.")
             ]
             -- The `choiceEvents` represent the story ID numbers that each choice
             -- above should link to
@@ -1221,8 +1221,8 @@ story =
             -- Adding more than 1 choice in the array flags this as being a
             -- multiple choice type page
       , choices =
-            [ "kill the guards and take the last pill and become the Warlord yourself."
-            , "kill the guards and offer the one remaining pill to your two friends."
+            [ ("A", "kill the guards and take the last pill and become the Warlord yourself.")
+            , ("B", "kill the guards and offer the one remaining pill to your two friends.")
             ]
             -- The `choiceEvents` represent the story ID numbers that each choice
             -- above should link to
@@ -1269,8 +1269,8 @@ story =
             -- Adding more than 1 choice in the array flags this as being a
             -- multiple choice type page
       , choices =
-            [ "To become a bird and escape."
-            , "To become the Warlord, kill the Generals, and attempt to stop the evil."
+            [ ("A", "To become a bird and escape.")
+            , ("B", "To become the Warlord, kill the Generals, and attempt to stop the evil.")
             ]
             -- The `choiceEvents` represent the story ID numbers that each choice
             -- above should link to
@@ -1315,8 +1315,8 @@ story =
             -- Adding more than 1 choice in the array flags this as being a
             -- multiple choice type page
       , choices =
-            [ "Release your two friends safely back to their village."
-            , "Release your two friends safely back to their village then have the generals executed as conspirators."
+            [ ("A", "Release your two friends safely back to their village.")
+            , ("B", "Release your two friends safely back to their village then have the generals executed as conspirators.")
             ]
             -- The `choiceEvents` represent the story ID numbers that each choice
             -- above should link to
@@ -1361,8 +1361,8 @@ story =
             -- Adding more than 1 choice in the array flags this as being a
             -- multiple choice type page
       , choices =
-            [ "One of them will take the last pill and fly away to save themself."
-            , "One of them will take the last pill to become a General."
+            [ ("A", "One of them will take the last pill and fly away to save themself.")
+            , ("B", "One of them will take the last pill to become a General.")
             ]
             -- The `choiceEvents` represent the story ID numbers that each choice
             -- above should link to
@@ -1406,8 +1406,8 @@ story =
             -- Adding more than 1 choice in the array flags this as being a
             -- multiple choice type page
       , choices =
-            [ "Escape the castle and flee back to your village."
-            , "Go back and kill the Warlord in his bed, then one of your friends takes the last pill to temporarily become a General."
+            [ ("A", "Escape the castle and flee back to your village.")
+            , ("B", "Go back and kill the Warlord in his bed, then one of your friends takes the last pill to temporarily become a General.")
             ]
             -- The `choiceEvents` represent the story ID numbers that each choice
             -- above should link to
@@ -1452,8 +1452,8 @@ story =
             -- Adding more than 1 choice in the array flags this as being a
             -- multiple choice type page
       , choices =
-            [ "Not take it and journey back to your village."
-            , "Take the last pill and transform permanently into the Warlord. Your friends journey back to the village."
+            [ ("A", "Not take it and journey back to your village.")
+            , ("B", "Take the last pill and transform permanently into the Warlord. Your friends journey back to the village.")
             ]
             -- The `choiceEvents` represent the story ID numbers that each choice
             -- above should link to
@@ -1499,8 +1499,8 @@ story =
             -- Adding more than 1 choice in the array flags this as being a
             -- multiple choice type page
       , choices =
-            [ "Release your two friends safely back to their village."
-            , "Release your two friends safely back to their village then have the generals executed as conspirators."
+            [ ("A", "Release your two friends safely back to their village.")
+            , ("B", "Release your two friends safely back to their village then have the generals executed as conspirators.")
             ]
             -- The `choiceEvents` represent the story ID numbers that each choice
             -- above should link to
@@ -1545,8 +1545,8 @@ story =
             -- Adding more than 1 choice in the array flags this as being a
             -- multiple choice type page
       , choices =
-            [ "One of them will take it and fly away to save themself."
-            , "One of them will take it to become a General."
+            [ ("A", "One of them will take it and fly away to save themself.")
+            , ("B", "One of them will take it to become a General.")
             ]
             -- The `choiceEvents` represent the story ID numbers that each choice
             -- above should link to
@@ -1632,8 +1632,8 @@ story =
             -- Adding more than 1 choice in the array flags this as being a
             -- multiple choice type page
       , choices =
-            [ "To walk past and continue your escape."
-            , "Transform all your friends into Generals and kill the Warlord by surprise."
+            [ ("A", "To walk past and continue your escape.")
+            , ("B", "Transform all your friends into Generals and kill the Warlord by surprise.")
             ]
             -- The `choiceEvents` represent the story ID numbers that each choice
             -- above should link to
@@ -1990,10 +1990,9 @@ story =
       }
     ]
 
-
 pageOne : Page
 pageOne =
-    { id = 1.1
+    { id = 10.1
     , heading = "Adventure - From Data"
     , subheading = "The Quest Begins - From Data"
     , storyChapter = chapter1
@@ -2014,17 +2013,18 @@ pageOne =
         -- Adding more than 1 choice in the array flags this as being a
         -- multiple choice type page
     , choices =
-        [ "Data choice one."
-        , "Data choice two"
-        , "Data choice three"
+        [ ("A", "Data choice one.")
+        , ("B", "Data choice two")
+        , ("C", "Data choice three")
         ]
     , choiceLinks =
         [ 1.1
         , 1.2
+        , 1.3
         ]
         -- Button
     , buttonLabel = "Data label"
     , buttonEventDescription = "Data: Click the button to perform an event"
     , buttonEventType = "gameover"
-    , buttonLink = 1.1
+    , buttonLink = 0
     }

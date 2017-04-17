@@ -119,7 +119,7 @@ paragraphStyle =
     style
         [ "font-size" => "0.8em"
         , "font-family" => "Helvetica, Arial, sans-serif"
-        , "padding" => "0.2em 1em 1.3em 1em"
+        , "padding" => "1em 1em 1.3em 1em"
         , "margin" => "0"
         , "line-height" => "1.3em"
         ]

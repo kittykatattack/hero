@@ -114,13 +114,13 @@ var _user$project$InfoBox$infoButtonContainerStyle = _elm_lang$html$Html_Attribu
 			_0: A2(
 				_user$project$InfoBox_ops['=>'],
 				'top',
-				_user$project$InfoBox$px(0)),
+				_user$project$InfoBox$px(77)),
 			_1: {
 				ctor: '::',
 				_0: A2(
 					_user$project$InfoBox_ops['=>'],
 					'right',
-					_user$project$InfoBox$px(0)),
+					_user$project$InfoBox$px(200)),
 				_1: {ctor: '[]'}
 			}
 		}
@@ -134,7 +134,7 @@ var _user$project$InfoBox$chapterHeadingContainerStyle = _elm_lang$html$Html_Att
 			_0: A2(_user$project$InfoBox_ops['=>'], 'position', 'absolute'),
 			_1: {
 				ctor: '::',
-				_0: A2(_user$project$InfoBox_ops['=>'], 'padding-top', '94px'),
+				_0: A2(_user$project$InfoBox_ops['=>'], 'padding-top', '49px'),
 				_1: {
 					ctor: '::',
 					_0: A2(_user$project$InfoBox_ops['=>'], 'user-select', 'none'),
@@ -468,7 +468,7 @@ var _user$project$InfoBox$model = {
 	meterHeight: 16,
 	meterBorderRadius: 4,
 	meterX: 38,
-	meterY: 72,
+	meterY: 27,
 	storyLevel: 1,
 	storyChapter: 'No Chapter Selected',
 	totalStoryLevels: 0,
@@ -477,7 +477,7 @@ var _user$project$InfoBox$model = {
 	storyPhaseChapters: _user$project$Data$storyPhaseChapters,
 	currentStoryPhaseChapter: 1,
 	infoPages: _user$project$Data$infoPages,
-	infoButton: A3(_user$project$LabeledButton$init, 'information', 30, 50),
+	infoButton: A3(_user$project$LabeledButton$init, 'view details', 30, 50),
 	infoBoxIsOpen: false,
 	styleInfo: A2(
 		_mdgriffith$elm_style_animation$Animation$styleWith,
@@ -611,7 +611,7 @@ var _user$project$InfoBox$update = F2(
 							return _.currentMsg;
 						}(
 							infoButton_(buttonMsg)),
-						_user$project$LabeledButton$Down),
+						_user$project$LabeledButton$Click),
 					_1: _elm_lang$core$Native_Utils.eq(model.infoBoxIsOpen, false)
 				};
 				if ((_p1.ctor === '_Tuple2') && (_p1._0 === true)) {

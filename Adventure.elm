@@ -27,7 +27,7 @@ import Animation
 type alias Model =
     { story : Data.Story
     , currentPageData : Data.Page
-    , currentPageID : Data.ID
+    --, currentPageID : Data.ID
     , currentPage : Page.Model
     , previousPage : Page.Model
     , infoBox : InfoBox.Model
@@ -51,7 +51,7 @@ model =
     in
         { story = Data.story
         , currentPageData = getCurrentPageData Data.story 1.1
-        , currentPageID = 1.1
+        --, currentPageID = 1.1
         , currentPage = getCurrentPage pageData
         , previousPage = getCurrentPage pageData
         , infoBox =
@@ -83,7 +83,7 @@ init =
     let
         -- The page id on which the story should start
         id =
-            1.3
+            1.1
 
         --3.1
         currentPageData_ =

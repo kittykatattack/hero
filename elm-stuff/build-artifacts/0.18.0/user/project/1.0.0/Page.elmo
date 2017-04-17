@@ -566,7 +566,7 @@ var _user$project$Page$update = F2(
 		switch (_p0.ctor) {
 			case 'NoOp':
 				return _user$project$Page$noFx(model);
-			case 'UpdateChoices':
+			case 'ClickChoices':
 				var _p1 = _p0._0;
 				var choiceLink_ = A2(
 					_elm_lang$core$Maybe$withDefault,
@@ -606,19 +606,13 @@ var _user$project$Page$update = F2(
 				var button = function (_) {
 					return _.button;
 				}(gameEventBox_);
-				return _elm_lang$core$Native_Utils.eq(button.currentMsg, _user$project$LabeledButton$Click) ? {
+				return (_elm_lang$core$Native_Utils.eq(button.currentMsg, _user$project$LabeledButton$Click) && (!_elm_lang$core$Native_Utils.eq(model.buttonLink, 0))) ? {
 					ctor: '_Tuple2',
 					_0: _elm_lang$core$Native_Utils.update(
 						model,
 						{gameEventBox: gameEventBox_, activeLink: model.buttonLink}),
 					_1: _elm_lang$core$Platform_Cmd$none
-				} : {
-					ctor: '_Tuple2',
-					_0: _elm_lang$core$Native_Utils.update(
-						model,
-						{gameEventBox: gameEventBox_}),
-					_1: _elm_lang$core$Platform_Cmd$none
-				};
+				} : {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
 		}
 	});
 var _user$project$Page$Model = function (a) {
@@ -668,17 +662,18 @@ var _user$project$Page$model = function () {
 	};
 	var choices_ = {
 		ctor: '::',
-		_0: 'This is the first choice that the player has.',
+		_0: {ctor: '_Tuple2', _0: 'A', _1: 'This is the first choice that the player has.'},
 		_1: {
 			ctor: '::',
-			_0: 'This is the second choice that the player has.',
+			_0: {ctor: '_Tuple2', _0: 'B', _1: 'This is the second choice that the player has.'},
 			_1: {ctor: '[]'}
 		}
 	};
 	var choiceBoxes_ = A2(
 		_elm_lang$core$List$map,
-		function (string) {
-			return A2(_user$project$Choice$init, string, 'test');
+		function (_p2) {
+			var _p3 = _p2;
+			return A2(_user$project$Choice$init, _p3._1, _p3._0);
 		},
 		choices_);
 	return {
@@ -700,8 +695,8 @@ var _user$project$Page$model = function () {
 var _user$project$Page$init = function (data) {
 	var gameEventBox_ = function () {
 		var buttonEventType_ = function () {
-			var _p2 = data.buttonEventType;
-			switch (_p2) {
+			var _p4 = data.buttonEventType;
+			switch (_p4) {
 				case 'next':
 					return _user$project$GameEvent$NextPage;
 				case 'Msg':
@@ -718,16 +713,17 @@ var _user$project$Page$init = function (data) {
 	}();
 	var choiceBoxes_ = A2(
 		_elm_lang$core$List$map,
-		function (string) {
-			return A2(_user$project$Choice$init, string, 'test');
+		function (_p5) {
+			var _p6 = _p5;
+			return A2(_user$project$Choice$init, _p6._1, _p6._0);
 		},
 		data.choices);
 	var typeOfPage = (_elm_lang$core$Native_Utils.cmp(
 		_elm_lang$core$List$length(data.choices),
 		1) > 0) ? _user$project$Page$Choice : _user$project$Page$GameEvent;
 	var alignment = function () {
-		var _p3 = data.alignment;
-		switch (_p3) {
+		var _p7 = data.alignment;
+		switch (_p7) {
 			case 'top':
 				return _user$project$Page$Top;
 			case 'left':
@@ -753,18 +749,18 @@ var _user$project$Page$init = function (data) {
 				activeLink: data.id
 			}));
 };
-var _user$project$Page$UpdateGameEventBox = function (a) {
-	return {ctor: 'UpdateGameEventBox', _0: a};
+var _user$project$Page$ClickGameEventBox = function (a) {
+	return {ctor: 'ClickGameEventBox', _0: a};
 };
-var _user$project$Page$UpdateChoices = F2(
+var _user$project$Page$ClickChoices = F2(
 	function (a, b) {
-		return {ctor: 'UpdateChoices', _0: a, _1: b};
+		return {ctor: 'ClickChoices', _0: a, _1: b};
 	});
 var _user$project$Page$viewChoice = F2(
 	function (id, model) {
 		return A2(
 			_elm_lang$html$Html$map,
-			_user$project$Page$UpdateChoices(id),
+			_user$project$Page$ClickChoices(id),
 			_user$project$Choice$view(model));
 	});
 var _user$project$Page$view = function (model) {
@@ -773,15 +769,15 @@ var _user$project$Page$view = function (model) {
 	};
 	var choiceBoxes = A2(_elm_lang$core$List$indexedMap, _user$project$Page$viewChoice, model.choiceBoxes);
 	var contentBox = function () {
-		var _p4 = model.pageType;
-		if (_p4.ctor === 'Choice') {
-			if (_p4._0.ctor === 'Top') {
+		var _p8 = model.pageType;
+		if (_p8.ctor === 'Choice') {
+			if (_p8._0.ctor === 'Top') {
 				return 'contentBoxStyleTop';
 			} else {
 				return '';
 			}
 		} else {
-			if (_p4._0.ctor === 'Top') {
+			if (_p8._0.ctor === 'Top') {
 				return 'contentBoxStyleTop';
 			} else {
 				return '';
@@ -789,15 +785,15 @@ var _user$project$Page$view = function (model) {
 		}
 	}();
 	var arrowImage = function () {
-		var _p5 = model.pageType;
-		if (_p5.ctor === 'Choice') {
-			if (_p5._0.ctor === 'Top') {
+		var _p9 = model.pageType;
+		if (_p9.ctor === 'Choice') {
+			if (_p9._0.ctor === 'Top') {
 				return 'roundArrowRight.png';
 			} else {
 				return 'roundArrowDown.png';
 			}
 		} else {
-			if (_p5._0.ctor === 'Top') {
+			if (_p9._0.ctor === 'Top') {
 				return 'roundArrowRight.png';
 			} else {
 				return 'roundArrowDown.png';
@@ -805,15 +801,15 @@ var _user$project$Page$view = function (model) {
 		}
 	}();
 	var arrowStyle = function () {
-		var _p6 = model.pageType;
-		if (_p6.ctor === 'Choice') {
-			if (_p6._0.ctor === 'Top') {
+		var _p10 = model.pageType;
+		if (_p10.ctor === 'Choice') {
+			if (_p10._0.ctor === 'Top') {
 				return _user$project$Page$arrowStyleTop;
 			} else {
 				return _user$project$Page$arrowStyleLeft;
 			}
 		} else {
-			if (_p6._0.ctor === 'Top') {
+			if (_p10._0.ctor === 'Top') {
 				return _user$project$Page$arrowStyleTop;
 			} else {
 				return _user$project$Page$arrowStyleGameEventLeft;
@@ -840,7 +836,7 @@ var _user$project$Page$view = function (model) {
 				ctor: '::',
 				_0: A2(
 					_elm_lang$html$Html$map,
-					_user$project$Page$UpdateGameEventBox,
+					_user$project$Page$ClickGameEventBox,
 					_user$project$GameEvent$view(model.gameEventBox)),
 				_1: {
 					ctor: '::',
@@ -930,15 +926,15 @@ var _user$project$Page$view = function (model) {
 					}
 				}
 			});
-		var _p7 = model.pageType;
-		if (_p7.ctor === 'Choice') {
-			if (_p7._0.ctor === 'Top') {
+		var _p11 = model.pageType;
+		if (_p11.ctor === 'Choice') {
+			if (_p11._0.ctor === 'Top') {
 				return multipleChoiceBox;
 			} else {
 				return multipleChoiceBox;
 			}
 		} else {
-			if (_p7._0.ctor === 'Top') {
+			if (_p11._0.ctor === 'Top') {
 				return gameEventBox;
 			} else {
 				return gameEventBox;
@@ -946,15 +942,15 @@ var _user$project$Page$view = function (model) {
 		}
 	}();
 	var userMsgBoxStyle = function () {
-		var _p8 = model.pageType;
-		if (_p8.ctor === 'Choice') {
-			if (_p8._0.ctor === 'Top') {
+		var _p12 = model.pageType;
+		if (_p12.ctor === 'Choice') {
+			if (_p12._0.ctor === 'Top') {
 				return _user$project$Page$choiceBoxStyleTop;
 			} else {
 				return _user$project$Page$choiceBoxStyleLeft;
 			}
 		} else {
-			if (_p8._0.ctor === 'Top') {
+			if (_p12._0.ctor === 'Top') {
 				return _user$project$Page$choiceBoxStyleTop;
 			} else {
 				return _user$project$Page$choiceBoxStyleLeft;
@@ -962,15 +958,15 @@ var _user$project$Page$view = function (model) {
 		}
 	}();
 	var storyBoxStyle = function () {
-		var _p9 = model.pageType;
-		if (_p9.ctor === 'Choice') {
-			if (_p9._0.ctor === 'Top') {
+		var _p13 = model.pageType;
+		if (_p13.ctor === 'Choice') {
+			if (_p13._0.ctor === 'Top') {
 				return _user$project$Page$storyBoxStyleTop;
 			} else {
 				return _user$project$Page$storyBoxStyleLeft;
 			}
 		} else {
-			if (_p9._0.ctor === 'Top') {
+			if (_p13._0.ctor === 'Top') {
 				return _user$project$Page$storyBoxStyleTop;
 			} else {
 				return _user$project$Page$storyBoxStyleLeft;
@@ -978,15 +974,15 @@ var _user$project$Page$view = function (model) {
 		}
 	}();
 	var contentBoxStyle = function () {
-		var _p10 = model.pageType;
-		if (_p10.ctor === 'Choice') {
-			if (_p10._0.ctor === 'Top') {
+		var _p14 = model.pageType;
+		if (_p14.ctor === 'Choice') {
+			if (_p14._0.ctor === 'Top') {
 				return _user$project$Page$contentBoxStyleTop;
 			} else {
 				return _user$project$Page$contentBoxStyleLeft;
 			}
 		} else {
-			if (_p10._0.ctor === 'Left') {
+			if (_p14._0.ctor === 'Left') {
 				return _user$project$Page$contentBoxStyleLeft;
 			} else {
 				return _user$project$Page$contentBoxStyleTop;

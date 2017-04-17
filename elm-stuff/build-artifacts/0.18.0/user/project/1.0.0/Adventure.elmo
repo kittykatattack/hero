@@ -104,7 +104,6 @@ var _user$project$Adventure$model = function () {
 	return {
 		story: _user$project$Data$story,
 		currentPageData: A2(_user$project$Adventure$getCurrentPageData, _user$project$Data$story, 1.1),
-		currentPageID: 1.1,
 		currentPage: _user$project$Adventure$getCurrentPage(pageData),
 		previousPage: _user$project$Adventure$getCurrentPage(pageData),
 		infoBox: A6(
@@ -137,7 +136,7 @@ var _user$project$Adventure$model = function () {
 	};
 }();
 var _user$project$Adventure$init = function () {
-	var id = 1.3;
+	var id = 1.1;
 	var currentPageData_ = A2(_user$project$Adventure$getCurrentPageData, _user$project$Adventure$model.story, id);
 	var currentPage_ = _user$project$Adventure$getCurrentPage(currentPageData_);
 	var storyLevel = _user$project$Adventure$getStoryLevel(id);
@@ -167,9 +166,7 @@ var _user$project$Adventure$Model = function (a) {
 											return function (l) {
 												return function (m) {
 													return function (n) {
-														return function (o) {
-															return {story: a, currentPageData: b, currentPageID: c, currentPage: d, previousPage: e, infoBox: f, storyLevel: g, storyPhases: h, storyChapter: i, storyPhaseChapters: j, inventory: k, infoPages: l, pageMsg: m, stylePreviousPage: n, styleCurrentPage: o};
-														};
+														return {story: a, currentPageData: b, currentPage: c, previousPage: d, infoBox: e, storyLevel: f, storyPhases: g, storyChapter: h, storyPhaseChapters: i, inventory: j, infoPages: k, pageMsg: l, stylePreviousPage: m, styleCurrentPage: n};
 													};
 												};
 											};

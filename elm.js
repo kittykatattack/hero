@@ -16137,7 +16137,7 @@ var _user$project$Choice$paragraphStyle = _elm_lang$html$Html_Attributes$style(
 			_0: A2(_user$project$Choice_ops['=>'], 'font-family', 'Helvetica, Arial, sans-serif'),
 			_1: {
 				ctor: '::',
-				_0: A2(_user$project$Choice_ops['=>'], 'padding', '0.2em 1em 1.3em 1em'),
+				_0: A2(_user$project$Choice_ops['=>'], 'padding', '1em 1em 1.3em 1em'),
 				_1: {
 					ctor: '::',
 					_0: A2(_user$project$Choice_ops['=>'], 'margin', '0'),
@@ -16533,17 +16533,17 @@ var _user$project$Data$story = {
 				subheading: '',
 				storyChapter: _user$project$Data$chapter1,
 				storyPhaseChapter: 1,
-				description: '\r\n  As you wake up alone and injured in the dark forest you hear something \r\n  approaching. You can either try to hide from it or confront it. What do you do?\r\n      ',
+				description: '\r\n  As you wake up alone and injured in the dark forest you hear something \r\n  approaching. You constantly either try to hide from it or confront it. What do you do?\r\n      ',
 				pillsLeft: 0,
 				transformations: 0,
-				image: 'illustration_1-3.png',
+				image: 'illustration_1-4.png',
 				alignment: 'left',
 				choices: {
 					ctor: '::',
-					_0: 'Try to hide from it',
+					_0: {ctor: '_Tuple2', _0: 'A', _1: 'Try to hide from it'},
 					_1: {
 						ctor: '::',
-						_0: 'Confront it',
+						_0: {ctor: '_Tuple2', _0: 'B', _1: 'Confront it'},
 						_1: {ctor: '[]'}
 					}
 				},
@@ -16676,10 +16676,10 @@ var _user$project$Data$story = {
 										alignment: 'top',
 										choices: {
 											ctor: '::',
-											_0: 'Run home to save your parents.',
+											_0: {ctor: '_Tuple2', _0: 'A', _1: 'Run home to save your parents.'},
 											_1: {
 												ctor: '::',
-												_0: 'Accept the magic pills and begin journey.',
+												_0: {ctor: '_Tuple2', _0: 'B', _1: 'Accept the magic pills and begin journey.'},
 												_1: {ctor: '[]'}
 											}
 										},
@@ -16732,10 +16732,10 @@ var _user$project$Data$story = {
 												alignment: 'top',
 												choices: {
 													ctor: '::',
-													_0: 'You think the crow is trying to trick you so you tell him to leave you alone and you make your way on your own.',
+													_0: {ctor: '_Tuple2', _0: 'A', _1: 'You think the crow is trying to trick you so you tell him to leave you alone and you make your way on your own.'},
 													_1: {
 														ctor: '::',
-														_0: 'You accept the crow’s offer and he starts to lead you.',
+														_0: {ctor: '_Tuple2', _0: 'B', _1: 'You accept the crow’s offer and he starts to lead you.'},
 														_1: {ctor: '[]'}
 													}
 												},
@@ -16788,10 +16788,10 @@ var _user$project$Data$story = {
 														alignment: 'top',
 														choices: {
 															ctor: '::',
-															_0: 'You crawl to the edge of their camp, hiding in the trees just beyond the light of their fires, to listen to them.',
+															_0: {ctor: '_Tuple2', _0: 'A', _1: 'You crawl to the edge of their camp, hiding in the trees just beyond the light of their fires, to listen to them.'},
 															_1: {
 																ctor: '::',
-																_0: 'You decide to skirt around the camp and avoid them.',
+																_0: {ctor: '_Tuple2', _0: 'B', _1: 'You decide to skirt around the camp and avoid them.'},
 																_1: {ctor: '[]'}
 															}
 														},
@@ -16844,10 +16844,10 @@ var _user$project$Data$story = {
 																alignment: 'top',
 																choices: {
 																	ctor: '::',
-																	_0: 'A small bird who can fly over the walls and into the castle tower undetected by the guards.',
+																	_0: {ctor: '_Tuple2', _0: 'A', _1: 'A small bird who can fly over the walls and into the castle tower undetected by the guards.'},
 																	_1: {
 																		ctor: '::',
-																		_0: 'One of the senior generals so you can walk past the guards and into the prison tower where your friends are held.',
+																		_0: {ctor: '_Tuple2', _0: 'B', _1: 'One of the senior generals so you can walk past the guards and into the prison tower where your friends are held.'},
 																		_1: {ctor: '[]'}
 																	}
 																},
@@ -16880,10 +16880,10 @@ var _user$project$Data$story = {
 																	alignment: 'top',
 																	choices: {
 																		ctor: '::',
-																		_0: 'that all three of you will take a pill, become small birds, and fly out the window to the forest and safety.',
+																		_0: {ctor: '_Tuple2', _0: 'A', _1: 'that all three of you will take a pill, become small birds, and fly out the window to the forest and safety.'},
 																		_1: {
 																			ctor: '::',
-																			_0: 'only you will take a pill and become a general and walk your “prisoners” past the guards.',
+																			_0: {ctor: '_Tuple2', _0: 'B', _1: 'only you will take a pill and become a general and walk your “prisoners” past the guards.'},
 																			_1: {ctor: '[]'}
 																		}
 																	},
@@ -16916,10 +16916,10 @@ var _user$project$Data$story = {
 																		alignment: 'top',
 																		choices: {
 																			ctor: '::',
-																			_0: 'That you will quickly walk your “prisoners” past the guards while you are still disguised as a General.',
+																			_0: {ctor: '_Tuple2', _0: 'A', _1: 'That you will quickly walk your “prisoners” past the guards while you are still disguised as a General.'},
 																			_1: {
 																				ctor: '::',
-																				_0: 'That all of you will take a pill, become birds, and fly out the window to the forest and safety.',
+																				_0: {ctor: '_Tuple2', _0: 'B', _1: 'That all of you will take a pill, become birds, and fly out the window to the forest and safety.'},
 																				_1: {ctor: '[]'}
 																			}
 																		},
@@ -16952,10 +16952,10 @@ var _user$project$Data$story = {
 																			alignment: 'top',
 																			choices: {
 																				ctor: '::',
-																				_0: 'To walk past and continue your escape.',
+																				_0: {ctor: '_Tuple2', _0: 'A', _1: 'To walk past and continue your escape.'},
 																				_1: {
 																					ctor: '::',
-																					_0: 'Transform all your friends into Generals and kill the Warlord by surprise.',
+																					_0: {ctor: '_Tuple2', _0: 'B', _1: 'Transform all your friends into Generals and kill the Warlord by surprise.'},
 																					_1: {ctor: '[]'}
 																				}
 																			},
@@ -17008,10 +17008,10 @@ var _user$project$Data$story = {
 																					alignment: 'top',
 																					choices: {
 																						ctor: '::',
-																						_0: 'To walk past and continue your escape.',
+																						_0: {ctor: '_Tuple2', _0: 'A', _1: 'To walk past and continue your escape.'},
 																						_1: {
 																							ctor: '::',
-																							_0: 'Transform all your friends into Generals and kill the Warlord by surprise.',
+																							_0: {ctor: '_Tuple2', _0: 'B', _1: 'Transform all your friends into Generals and kill the Warlord by surprise.'},
 																							_1: {ctor: '[]'}
 																						}
 																					},
@@ -17044,10 +17044,10 @@ var _user$project$Data$story = {
 																						alignment: 'top',
 																						choices: {
 																							ctor: '::',
-																							_0: 'That all of you should take a pill and fly out as birds. But this would be your last transformation so you must live the rest of your life as a bird.',
+																							_0: {ctor: '_Tuple2', _0: 'A', _1: 'That all of you should take a pill and fly out as birds. But this would be your last transformation so you must live the rest of your life as a bird.'},
 																							_1: {
 																								ctor: '::',
-																								_0: 'That your two friends should each take a pill and fly to safety as birds. You will try running out of the castle while you are still disguised as a General.',
+																								_0: {ctor: '_Tuple2', _0: 'B', _1: 'That your two friends should each take a pill and fly to safety as birds. You will try running out of the castle while you are still disguised as a General.'},
 																								_1: {ctor: '[]'}
 																							}
 																						},
@@ -17080,10 +17080,10 @@ var _user$project$Data$story = {
 																							alignment: 'top',
 																							choices: {
 																								ctor: '::',
-																								_0: 'To kill the guards and take the last pill and become the Warlord yourself.',
+																								_0: {ctor: '_Tuple2', _0: 'A', _1: 'To kill the guards and take the last pill and become the Warlord yourself.'},
 																								_1: {
 																									ctor: '::',
-																									_0: 'To kill the guards and offer the one remaining pill to one of your two friends.',
+																									_0: {ctor: '_Tuple2', _0: 'B', _1: 'To kill the guards and offer the one remaining pill to one of your two friends.'},
 																									_1: {ctor: '[]'}
 																								}
 																							},
@@ -17116,10 +17116,10 @@ var _user$project$Data$story = {
 																								alignment: 'top',
 																								choices: {
 																									ctor: '::',
-																									_0: 'That all three of you take a pill to transform into Generals.',
+																									_0: {ctor: '_Tuple2', _0: 'A', _1: 'That all three of you take a pill to transform into Generals.'},
 																									_1: {
 																										ctor: '::',
-																										_0: 'That all three of you take a pill to transform into birds.',
+																										_0: {ctor: '_Tuple2', _0: 'B', _1: 'That all three of you take a pill to transform into birds.'},
 																										_1: {ctor: '[]'}
 																									}
 																								},
@@ -17152,10 +17152,10 @@ var _user$project$Data$story = {
 																									alignment: 'top',
 																									choices: {
 																										ctor: '::',
-																										_0: 'kill the guards and take the last pill and become the Warlord yourself.',
+																										_0: {ctor: '_Tuple2', _0: 'A', _1: 'kill the guards and take the last pill and become the Warlord yourself.'},
 																										_1: {
 																											ctor: '::',
-																											_0: 'kill the guards and offer the one remaining pill to your two friends.',
+																											_0: {ctor: '_Tuple2', _0: 'B', _1: 'kill the guards and offer the one remaining pill to your two friends.'},
 																											_1: {ctor: '[]'}
 																										}
 																									},
@@ -17188,10 +17188,10 @@ var _user$project$Data$story = {
 																										alignment: 'top',
 																										choices: {
 																											ctor: '::',
-																											_0: 'To become a bird and escape.',
+																											_0: {ctor: '_Tuple2', _0: 'A', _1: 'To become a bird and escape.'},
 																											_1: {
 																												ctor: '::',
-																												_0: 'To become the Warlord, kill the Generals, and attempt to stop the evil.',
+																												_0: {ctor: '_Tuple2', _0: 'B', _1: 'To become the Warlord, kill the Generals, and attempt to stop the evil.'},
 																												_1: {ctor: '[]'}
 																											}
 																										},
@@ -17224,10 +17224,10 @@ var _user$project$Data$story = {
 																											alignment: 'top',
 																											choices: {
 																												ctor: '::',
-																												_0: 'Release your two friends safely back to their village.',
+																												_0: {ctor: '_Tuple2', _0: 'A', _1: 'Release your two friends safely back to their village.'},
 																												_1: {
 																													ctor: '::',
-																													_0: 'Release your two friends safely back to their village then have the generals executed as conspirators.',
+																													_0: {ctor: '_Tuple2', _0: 'B', _1: 'Release your two friends safely back to their village then have the generals executed as conspirators.'},
 																													_1: {ctor: '[]'}
 																												}
 																											},
@@ -17260,10 +17260,10 @@ var _user$project$Data$story = {
 																												alignment: 'top',
 																												choices: {
 																													ctor: '::',
-																													_0: 'One of them will take the last pill and fly away to save themself.',
+																													_0: {ctor: '_Tuple2', _0: 'A', _1: 'One of them will take the last pill and fly away to save themself.'},
 																													_1: {
 																														ctor: '::',
-																														_0: 'One of them will take the last pill to become a General.',
+																														_0: {ctor: '_Tuple2', _0: 'B', _1: 'One of them will take the last pill to become a General.'},
 																														_1: {ctor: '[]'}
 																													}
 																												},
@@ -17296,10 +17296,10 @@ var _user$project$Data$story = {
 																													alignment: 'top',
 																													choices: {
 																														ctor: '::',
-																														_0: 'Escape the castle and flee back to your village.',
+																														_0: {ctor: '_Tuple2', _0: 'A', _1: 'Escape the castle and flee back to your village.'},
 																														_1: {
 																															ctor: '::',
-																															_0: 'Go back and kill the Warlord in his bed, then one of your friends takes the last pill to temporarily become a General.',
+																															_0: {ctor: '_Tuple2', _0: 'B', _1: 'Go back and kill the Warlord in his bed, then one of your friends takes the last pill to temporarily become a General.'},
 																															_1: {ctor: '[]'}
 																														}
 																													},
@@ -17332,10 +17332,10 @@ var _user$project$Data$story = {
 																														alignment: 'top',
 																														choices: {
 																															ctor: '::',
-																															_0: 'Not take it and journey back to your village.',
+																															_0: {ctor: '_Tuple2', _0: 'A', _1: 'Not take it and journey back to your village.'},
 																															_1: {
 																																ctor: '::',
-																																_0: 'Take the last pill and transform permanently into the Warlord. Your friends journey back to the village.',
+																																_0: {ctor: '_Tuple2', _0: 'B', _1: 'Take the last pill and transform permanently into the Warlord. Your friends journey back to the village.'},
 																																_1: {ctor: '[]'}
 																															}
 																														},
@@ -17368,10 +17368,10 @@ var _user$project$Data$story = {
 																															alignment: 'top',
 																															choices: {
 																																ctor: '::',
-																																_0: 'Release your two friends safely back to their village.',
+																																_0: {ctor: '_Tuple2', _0: 'A', _1: 'Release your two friends safely back to their village.'},
 																																_1: {
 																																	ctor: '::',
-																																	_0: 'Release your two friends safely back to their village then have the generals executed as conspirators.',
+																																	_0: {ctor: '_Tuple2', _0: 'B', _1: 'Release your two friends safely back to their village then have the generals executed as conspirators.'},
 																																	_1: {ctor: '[]'}
 																																}
 																															},
@@ -17404,10 +17404,10 @@ var _user$project$Data$story = {
 																																alignment: 'top',
 																																choices: {
 																																	ctor: '::',
-																																	_0: 'One of them will take it and fly away to save themself.',
+																																	_0: {ctor: '_Tuple2', _0: 'A', _1: 'One of them will take it and fly away to save themself.'},
 																																	_1: {
 																																		ctor: '::',
-																																		_0: 'One of them will take it to become a General.',
+																																		_0: {ctor: '_Tuple2', _0: 'B', _1: 'One of them will take it to become a General.'},
 																																		_1: {ctor: '[]'}
 																																	}
 																																},
@@ -17460,10 +17460,10 @@ var _user$project$Data$story = {
 																																		alignment: 'top',
 																																		choices: {
 																																			ctor: '::',
-																																			_0: 'To walk past and continue your escape.',
+																																			_0: {ctor: '_Tuple2', _0: 'A', _1: 'To walk past and continue your escape.'},
 																																			_1: {
 																																				ctor: '::',
-																																				_0: 'Transform all your friends into Generals and kill the Warlord by surprise.',
+																																				_0: {ctor: '_Tuple2', _0: 'B', _1: 'Transform all your friends into Generals and kill the Warlord by surprise.'},
 																																				_1: {ctor: '[]'}
 																																			}
 																																		},
@@ -17684,7 +17684,7 @@ var _user$project$Data$story = {
 	}
 };
 var _user$project$Data$pageOne = {
-	id: 1.1,
+	id: 10.1,
 	heading: 'Adventure - From Data',
 	subheading: 'The Quest Begins - From Data',
 	storyChapter: _user$project$Data$chapter1,
@@ -17696,13 +17696,13 @@ var _user$project$Data$pageOne = {
 	alignment: 'left',
 	choices: {
 		ctor: '::',
-		_0: 'Data choice one.',
+		_0: {ctor: '_Tuple2', _0: 'A', _1: 'Data choice one.'},
 		_1: {
 			ctor: '::',
-			_0: 'Data choice two',
+			_0: {ctor: '_Tuple2', _0: 'B', _1: 'Data choice two'},
 			_1: {
 				ctor: '::',
-				_0: 'Data choice three',
+				_0: {ctor: '_Tuple2', _0: 'C', _1: 'Data choice three'},
 				_1: {ctor: '[]'}
 			}
 		}
@@ -17713,13 +17713,17 @@ var _user$project$Data$pageOne = {
 		_1: {
 			ctor: '::',
 			_0: 1.2,
-			_1: {ctor: '[]'}
+			_1: {
+				ctor: '::',
+				_0: 1.3,
+				_1: {ctor: '[]'}
+			}
 		}
 	},
 	buttonLabel: 'Data label',
 	buttonEventDescription: 'Data: Click the button to perform an event',
 	buttonEventType: 'gameover',
-	buttonLink: 1.1
+	buttonLink: 0
 };
 var _user$project$Data$storyPhases = {
 	ctor: '::',
@@ -18562,7 +18566,7 @@ var _user$project$Page$update = F2(
 		switch (_p0.ctor) {
 			case 'NoOp':
 				return _user$project$Page$noFx(model);
-			case 'UpdateChoices':
+			case 'ClickChoices':
 				var _p1 = _p0._0;
 				var choiceLink_ = A2(
 					_elm_lang$core$Maybe$withDefault,
@@ -18602,19 +18606,13 @@ var _user$project$Page$update = F2(
 				var button = function (_) {
 					return _.button;
 				}(gameEventBox_);
-				return _elm_lang$core$Native_Utils.eq(button.currentMsg, _user$project$LabeledButton$Click) ? {
+				return (_elm_lang$core$Native_Utils.eq(button.currentMsg, _user$project$LabeledButton$Click) && (!_elm_lang$core$Native_Utils.eq(model.buttonLink, 0))) ? {
 					ctor: '_Tuple2',
 					_0: _elm_lang$core$Native_Utils.update(
 						model,
 						{gameEventBox: gameEventBox_, activeLink: model.buttonLink}),
 					_1: _elm_lang$core$Platform_Cmd$none
-				} : {
-					ctor: '_Tuple2',
-					_0: _elm_lang$core$Native_Utils.update(
-						model,
-						{gameEventBox: gameEventBox_}),
-					_1: _elm_lang$core$Platform_Cmd$none
-				};
+				} : {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
 		}
 	});
 var _user$project$Page$Model = function (a) {
@@ -18664,17 +18662,18 @@ var _user$project$Page$model = function () {
 	};
 	var choices_ = {
 		ctor: '::',
-		_0: 'This is the first choice that the player has.',
+		_0: {ctor: '_Tuple2', _0: 'A', _1: 'This is the first choice that the player has.'},
 		_1: {
 			ctor: '::',
-			_0: 'This is the second choice that the player has.',
+			_0: {ctor: '_Tuple2', _0: 'B', _1: 'This is the second choice that the player has.'},
 			_1: {ctor: '[]'}
 		}
 	};
 	var choiceBoxes_ = A2(
 		_elm_lang$core$List$map,
-		function (string) {
-			return A2(_user$project$Choice$init, string, 'test');
+		function (_p2) {
+			var _p3 = _p2;
+			return A2(_user$project$Choice$init, _p3._1, _p3._0);
 		},
 		choices_);
 	return {
@@ -18696,8 +18695,8 @@ var _user$project$Page$model = function () {
 var _user$project$Page$init = function (data) {
 	var gameEventBox_ = function () {
 		var buttonEventType_ = function () {
-			var _p2 = data.buttonEventType;
-			switch (_p2) {
+			var _p4 = data.buttonEventType;
+			switch (_p4) {
 				case 'next':
 					return _user$project$GameEvent$NextPage;
 				case 'Msg':
@@ -18714,16 +18713,17 @@ var _user$project$Page$init = function (data) {
 	}();
 	var choiceBoxes_ = A2(
 		_elm_lang$core$List$map,
-		function (string) {
-			return A2(_user$project$Choice$init, string, 'test');
+		function (_p5) {
+			var _p6 = _p5;
+			return A2(_user$project$Choice$init, _p6._1, _p6._0);
 		},
 		data.choices);
 	var typeOfPage = (_elm_lang$core$Native_Utils.cmp(
 		_elm_lang$core$List$length(data.choices),
 		1) > 0) ? _user$project$Page$Choice : _user$project$Page$GameEvent;
 	var alignment = function () {
-		var _p3 = data.alignment;
-		switch (_p3) {
+		var _p7 = data.alignment;
+		switch (_p7) {
 			case 'top':
 				return _user$project$Page$Top;
 			case 'left':
@@ -18749,18 +18749,18 @@ var _user$project$Page$init = function (data) {
 				activeLink: data.id
 			}));
 };
-var _user$project$Page$UpdateGameEventBox = function (a) {
-	return {ctor: 'UpdateGameEventBox', _0: a};
+var _user$project$Page$ClickGameEventBox = function (a) {
+	return {ctor: 'ClickGameEventBox', _0: a};
 };
-var _user$project$Page$UpdateChoices = F2(
+var _user$project$Page$ClickChoices = F2(
 	function (a, b) {
-		return {ctor: 'UpdateChoices', _0: a, _1: b};
+		return {ctor: 'ClickChoices', _0: a, _1: b};
 	});
 var _user$project$Page$viewChoice = F2(
 	function (id, model) {
 		return A2(
 			_elm_lang$html$Html$map,
-			_user$project$Page$UpdateChoices(id),
+			_user$project$Page$ClickChoices(id),
 			_user$project$Choice$view(model));
 	});
 var _user$project$Page$view = function (model) {
@@ -18769,15 +18769,15 @@ var _user$project$Page$view = function (model) {
 	};
 	var choiceBoxes = A2(_elm_lang$core$List$indexedMap, _user$project$Page$viewChoice, model.choiceBoxes);
 	var contentBox = function () {
-		var _p4 = model.pageType;
-		if (_p4.ctor === 'Choice') {
-			if (_p4._0.ctor === 'Top') {
+		var _p8 = model.pageType;
+		if (_p8.ctor === 'Choice') {
+			if (_p8._0.ctor === 'Top') {
 				return 'contentBoxStyleTop';
 			} else {
 				return '';
 			}
 		} else {
-			if (_p4._0.ctor === 'Top') {
+			if (_p8._0.ctor === 'Top') {
 				return 'contentBoxStyleTop';
 			} else {
 				return '';
@@ -18785,15 +18785,15 @@ var _user$project$Page$view = function (model) {
 		}
 	}();
 	var arrowImage = function () {
-		var _p5 = model.pageType;
-		if (_p5.ctor === 'Choice') {
-			if (_p5._0.ctor === 'Top') {
+		var _p9 = model.pageType;
+		if (_p9.ctor === 'Choice') {
+			if (_p9._0.ctor === 'Top') {
 				return 'roundArrowRight.png';
 			} else {
 				return 'roundArrowDown.png';
 			}
 		} else {
-			if (_p5._0.ctor === 'Top') {
+			if (_p9._0.ctor === 'Top') {
 				return 'roundArrowRight.png';
 			} else {
 				return 'roundArrowDown.png';
@@ -18801,15 +18801,15 @@ var _user$project$Page$view = function (model) {
 		}
 	}();
 	var arrowStyle = function () {
-		var _p6 = model.pageType;
-		if (_p6.ctor === 'Choice') {
-			if (_p6._0.ctor === 'Top') {
+		var _p10 = model.pageType;
+		if (_p10.ctor === 'Choice') {
+			if (_p10._0.ctor === 'Top') {
 				return _user$project$Page$arrowStyleTop;
 			} else {
 				return _user$project$Page$arrowStyleLeft;
 			}
 		} else {
-			if (_p6._0.ctor === 'Top') {
+			if (_p10._0.ctor === 'Top') {
 				return _user$project$Page$arrowStyleTop;
 			} else {
 				return _user$project$Page$arrowStyleGameEventLeft;
@@ -18836,7 +18836,7 @@ var _user$project$Page$view = function (model) {
 				ctor: '::',
 				_0: A2(
 					_elm_lang$html$Html$map,
-					_user$project$Page$UpdateGameEventBox,
+					_user$project$Page$ClickGameEventBox,
 					_user$project$GameEvent$view(model.gameEventBox)),
 				_1: {
 					ctor: '::',
@@ -18926,15 +18926,15 @@ var _user$project$Page$view = function (model) {
 					}
 				}
 			});
-		var _p7 = model.pageType;
-		if (_p7.ctor === 'Choice') {
-			if (_p7._0.ctor === 'Top') {
+		var _p11 = model.pageType;
+		if (_p11.ctor === 'Choice') {
+			if (_p11._0.ctor === 'Top') {
 				return multipleChoiceBox;
 			} else {
 				return multipleChoiceBox;
 			}
 		} else {
-			if (_p7._0.ctor === 'Top') {
+			if (_p11._0.ctor === 'Top') {
 				return gameEventBox;
 			} else {
 				return gameEventBox;
@@ -18942,15 +18942,15 @@ var _user$project$Page$view = function (model) {
 		}
 	}();
 	var userMsgBoxStyle = function () {
-		var _p8 = model.pageType;
-		if (_p8.ctor === 'Choice') {
-			if (_p8._0.ctor === 'Top') {
+		var _p12 = model.pageType;
+		if (_p12.ctor === 'Choice') {
+			if (_p12._0.ctor === 'Top') {
 				return _user$project$Page$choiceBoxStyleTop;
 			} else {
 				return _user$project$Page$choiceBoxStyleLeft;
 			}
 		} else {
-			if (_p8._0.ctor === 'Top') {
+			if (_p12._0.ctor === 'Top') {
 				return _user$project$Page$choiceBoxStyleTop;
 			} else {
 				return _user$project$Page$choiceBoxStyleLeft;
@@ -18958,15 +18958,15 @@ var _user$project$Page$view = function (model) {
 		}
 	}();
 	var storyBoxStyle = function () {
-		var _p9 = model.pageType;
-		if (_p9.ctor === 'Choice') {
-			if (_p9._0.ctor === 'Top') {
+		var _p13 = model.pageType;
+		if (_p13.ctor === 'Choice') {
+			if (_p13._0.ctor === 'Top') {
 				return _user$project$Page$storyBoxStyleTop;
 			} else {
 				return _user$project$Page$storyBoxStyleLeft;
 			}
 		} else {
-			if (_p9._0.ctor === 'Top') {
+			if (_p13._0.ctor === 'Top') {
 				return _user$project$Page$storyBoxStyleTop;
 			} else {
 				return _user$project$Page$storyBoxStyleLeft;
@@ -18974,15 +18974,15 @@ var _user$project$Page$view = function (model) {
 		}
 	}();
 	var contentBoxStyle = function () {
-		var _p10 = model.pageType;
-		if (_p10.ctor === 'Choice') {
-			if (_p10._0.ctor === 'Top') {
+		var _p14 = model.pageType;
+		if (_p14.ctor === 'Choice') {
+			if (_p14._0.ctor === 'Top') {
 				return _user$project$Page$contentBoxStyleTop;
 			} else {
 				return _user$project$Page$contentBoxStyleLeft;
 			}
 		} else {
-			if (_p10._0.ctor === 'Left') {
+			if (_p14._0.ctor === 'Left') {
 				return _user$project$Page$contentBoxStyleLeft;
 			} else {
 				return _user$project$Page$contentBoxStyleTop;
@@ -19275,13 +19275,13 @@ var _user$project$InfoBox$infoButtonContainerStyle = _elm_lang$html$Html_Attribu
 			_0: A2(
 				_user$project$InfoBox_ops['=>'],
 				'top',
-				_user$project$InfoBox$px(0)),
+				_user$project$InfoBox$px(77)),
 			_1: {
 				ctor: '::',
 				_0: A2(
 					_user$project$InfoBox_ops['=>'],
 					'right',
-					_user$project$InfoBox$px(0)),
+					_user$project$InfoBox$px(200)),
 				_1: {ctor: '[]'}
 			}
 		}
@@ -19295,7 +19295,7 @@ var _user$project$InfoBox$chapterHeadingContainerStyle = _elm_lang$html$Html_Att
 			_0: A2(_user$project$InfoBox_ops['=>'], 'position', 'absolute'),
 			_1: {
 				ctor: '::',
-				_0: A2(_user$project$InfoBox_ops['=>'], 'padding-top', '94px'),
+				_0: A2(_user$project$InfoBox_ops['=>'], 'padding-top', '49px'),
 				_1: {
 					ctor: '::',
 					_0: A2(_user$project$InfoBox_ops['=>'], 'user-select', 'none'),
@@ -19629,7 +19629,7 @@ var _user$project$InfoBox$model = {
 	meterHeight: 16,
 	meterBorderRadius: 4,
 	meterX: 38,
-	meterY: 72,
+	meterY: 27,
 	storyLevel: 1,
 	storyChapter: 'No Chapter Selected',
 	totalStoryLevels: 0,
@@ -19638,7 +19638,7 @@ var _user$project$InfoBox$model = {
 	storyPhaseChapters: _user$project$Data$storyPhaseChapters,
 	currentStoryPhaseChapter: 1,
 	infoPages: _user$project$Data$infoPages,
-	infoButton: A3(_user$project$LabeledButton$init, 'information', 30, 50),
+	infoButton: A3(_user$project$LabeledButton$init, 'view details', 30, 50),
 	infoBoxIsOpen: false,
 	styleInfo: A2(
 		_mdgriffith$elm_style_animation$Animation$styleWith,
@@ -19772,7 +19772,7 @@ var _user$project$InfoBox$update = F2(
 							return _.currentMsg;
 						}(
 							infoButton_(buttonMsg)),
-						_user$project$LabeledButton$Down),
+						_user$project$LabeledButton$Click),
 					_1: _elm_lang$core$Native_Utils.eq(model.infoBoxIsOpen, false)
 				};
 				if ((_p1.ctor === '_Tuple2') && (_p1._0 === true)) {
@@ -20465,7 +20465,6 @@ var _user$project$Adventure$model = function () {
 	return {
 		story: _user$project$Data$story,
 		currentPageData: A2(_user$project$Adventure$getCurrentPageData, _user$project$Data$story, 1.1),
-		currentPageID: 1.1,
 		currentPage: _user$project$Adventure$getCurrentPage(pageData),
 		previousPage: _user$project$Adventure$getCurrentPage(pageData),
 		infoBox: A6(
@@ -20498,7 +20497,7 @@ var _user$project$Adventure$model = function () {
 	};
 }();
 var _user$project$Adventure$init = function () {
-	var id = 1.3;
+	var id = 1.1;
 	var currentPageData_ = A2(_user$project$Adventure$getCurrentPageData, _user$project$Adventure$model.story, id);
 	var currentPage_ = _user$project$Adventure$getCurrentPage(currentPageData_);
 	var storyLevel = _user$project$Adventure$getStoryLevel(id);
@@ -20528,9 +20527,7 @@ var _user$project$Adventure$Model = function (a) {
 											return function (l) {
 												return function (m) {
 													return function (n) {
-														return function (o) {
-															return {story: a, currentPageData: b, currentPageID: c, currentPage: d, previousPage: e, infoBox: f, storyLevel: g, storyPhases: h, storyChapter: i, storyPhaseChapters: j, inventory: k, infoPages: l, pageMsg: m, stylePreviousPage: n, styleCurrentPage: o};
-														};
+														return {story: a, currentPageData: b, currentPage: c, previousPage: d, infoBox: e, storyLevel: f, storyPhases: g, storyChapter: h, storyPhaseChapters: i, inventory: j, infoPages: k, pageMsg: l, stylePreviousPage: m, styleCurrentPage: n};
 													};
 												};
 											};

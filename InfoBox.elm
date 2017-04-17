@@ -59,7 +59,7 @@ model =
     , meterHeight = 16
     , meterBorderRadius = 4
     , meterX = 38
-    , meterY = 72 
+    , meterY = 27 
     , storyLevel = 1
     , storyChapter = "No Chapter Selected"
     , totalStoryLevels = 0
@@ -69,7 +69,7 @@ model =
     , currentStoryPhaseChapter = 1
     , infoPages = Data.infoPages
     -- , infoButton = ImageButton.info
-    , infoButton = LabeledButton.init "information" 30 50
+    , infoButton = LabeledButton.init "view details" 30 50
     , infoBoxIsOpen = False
     , styleInfo =
         Animation.styleWith
@@ -196,9 +196,10 @@ update msg model =
            This forms the basis of the toggle effect
         -}
         runCorrectEffect buttonMsg model =
+            
             case
                 --( .currentMsg (infoButton_ buttonMsg) == ImageButton.Down
-                ( .currentMsg (infoButton_ buttonMsg) == LabeledButton.Down
+                ( .currentMsg (infoButton_ buttonMsg) == LabeledButton.Click
                 , model.infoBoxIsOpen == False
                 )
             of
@@ -215,6 +216,8 @@ update msg model =
                 _ ->
                     --Cmd.none
                     model ! []
+            
+
     in
         case msg of
             Animate animMsg ->
@@ -527,8 +530,8 @@ infoContainer =
 infoButtonContainerStyle =
     style
         [ "position" => "absolute"
-        , "top" => px 0
-        , "right" => px 0
+        , "top" => px 77
+        , "right" => px 200
         ]
 
 
@@ -536,7 +539,7 @@ chapterHeadingContainerStyle =
     style
         [ "width" => "470px"
         , "position" => "absolute"
-        , "padding-top" => "94px"
+        , "padding-top" => "49px"
         , "user-select" => "none"
         , "left" => px 45
           -- , "background-color" => "pink"

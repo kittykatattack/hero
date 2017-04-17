@@ -62,7 +62,7 @@ var _user$project$Choice$paragraphStyle = _elm_lang$html$Html_Attributes$style(
 			_0: A2(_user$project$Choice_ops['=>'], 'font-family', 'Helvetica, Arial, sans-serif'),
 			_1: {
 				ctor: '::',
-				_0: A2(_user$project$Choice_ops['=>'], 'padding', '0.2em 1em 1.3em 1em'),
+				_0: A2(_user$project$Choice_ops['=>'], 'padding', '1em 1em 1.3em 1em'),
 				_1: {
 					ctor: '::',
 					_0: A2(_user$project$Choice_ops['=>'], 'margin', '0'),

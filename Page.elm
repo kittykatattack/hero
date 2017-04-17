@@ -52,7 +52,7 @@ type alias Model =
     , image : String
     , width : Int
     , height : Int
-    , choices : List String
+    , choices : List (String, String)
     , choiceLinks : List Data.ID
     , choiceBoxes : List Choice.Model
     , pageType : PageType
@@ -68,8 +68,8 @@ model : Model
 model =
     let
         choices_ =
-            [ "This is the first choice that the player has."
-            , "This is the second choice that the player has."
+            [ ("A", "This is the first choice that the player has.")
+            , ("B", "This is the second choice that the player has.")
               --, "This is the third choice that the player has."
             ]
 
@@ -79,7 +79,7 @@ model =
             ]
 
         choiceBoxes_ =
-            List.map (\string -> Choice.init string "test" ) choices_
+            List.map (\(label, description) -> Choice.init description label) choices_
     in
         { heading = "Adventure!"
         , subheading = "The Quest Begins"
@@ -128,7 +128,8 @@ init data =
                 GameEvent
 
         choiceBoxes_ =
-            List.map (\string -> Choice.init string "test") data.choices
+            -- List.map (\string -> Choice.init string "test") data.choices
+            List.map (\(label, description) -> Choice.init description label) data.choices
 
         gameEventBox_ =
             let
@@ -188,8 +189,8 @@ type alias Id =
 
 type Msg
     = NoOp
-    | UpdateChoices Id Choice.Msg
-    | UpdateGameEventBox GameEvent.Msg
+    | ClickChoices Id Choice.Msg
+    | ClickGameEventBox GameEvent.Msg
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -198,7 +199,7 @@ update msg model =
         NoOp ->
             noFx model
 
-        UpdateChoices id choiceMsg ->
+        ClickChoices id choiceMsg ->
             let
                 -- An updated list of the choice boxes
                 choiceBoxes_ =
@@ -209,7 +210,7 @@ update msg model =
                     List.Extra.getAt id choiceBoxes_
                         |> Maybe.withDefault Choice.model
 
-                -- Update the current choice box if it matches the current id
+                -- Click the current choice box if it matches the current id
                 updateChoice choiceId choiceModel =
                     if choiceId == id then
                         Choice.update choiceMsg choiceModel
@@ -220,6 +221,7 @@ update msg model =
                 choiceLink_ =
                     List.Extra.getAt id model.choiceLinks
                         |> Maybe.withDefault 1.1
+
             in
                 -- Changing the model's `activeLink` flags the main `Adventure` module to
                 -- initialize a new page. So, the code should only change the active link
@@ -232,7 +234,7 @@ update msg model =
                       }
                     , Cmd.none
                     )
-                    -- If the model isn't being clicked, just retrun the model with the updated choices
+                    -- If the button isn't being clicked, just return the model with the updated choices
                     -- but don't change the `activeLink`
                 else
                     ( { model
@@ -241,16 +243,24 @@ update msg model =
                     , Cmd.none
                     )
 
-        UpdateGameEventBox gameEventMsg ->
-            -- This follows the same format as `UpdateChoices`
+        ClickGameEventBox gameEventMsg ->
+            -- This follows the same format as `ClickChoices`
             let
                 gameEventBox_ =
                     GameEvent.update gameEventMsg model.gameEventBox
 
                 button =
                     .button gameEventBox_
+
+                --_ = Debug.log "test: " (toString model.buttonLink)
+
             in
-                if button.currentMsg == LabeledButton.Click then
+                -- Checking for `model.buttonLink /= 0` in the following if statement is to prevent a 
+                -- strange bug where the Enter key will incorrectly trigger `ClickGameEventBox` when
+                -- it should be triggering `ClickChoices`. If you remove thiis additional check you'll
+                -- notice that the default `Data.pageOne` is inexplicably displayed if you tab+Enter through the button
+                -- button choices 
+                if button.currentMsg == LabeledButton.Click && model.buttonLink /= 0 then
                     ( { model
                         | gameEventBox = gameEventBox_
                         , activeLink = model.buttonLink
@@ -258,11 +268,14 @@ update msg model =
                     , Cmd.none
                     )
                 else
+                    {-
                     ( { model
                         | gameEventBox = gameEventBox_
                       }
                     , Cmd.none
                     )
+                    -}
+                    (model, Cmd.none)
 
 
 
@@ -390,7 +403,7 @@ view model =
                         [ class "multipleChoiceBox", defaultStyle, multipleChoiceBoxStyle ]
                         -- [ div [] [ GameEvent.view gameEventAddress model.gameEventBox ]
                         -- [ GameEvent.view gameEventAddress model.gameEventBox
-                        [ Html.map UpdateGameEventBox (GameEvent.view model.gameEventBox)
+                        [ Html.map ClickGameEventBox (GameEvent.view model.gameEventBox)
                         , img [ src (Defaults.imagesLocation ++ arrowImage), arrowStyle ] []
                           -- , p [] [ text <| toString model.activeLink ]
                         ]
@@ -437,14 +450,14 @@ view model =
               {-
                  , div
                    []
-                   [ InfoBox.view (forward UpdateInfoBox) InfoBox.init ]
+                   [ InfoBox.view (forward ClickInfoBox) InfoBox.init ]
               -}
             ]
 
 
 viewChoice : Id -> Choice.Model -> Html Msg
 viewChoice id model =
-    Html.map (UpdateChoices id) (Choice.view model)
+    Html.map (ClickChoices id) (Choice.view model)
 
 
 
