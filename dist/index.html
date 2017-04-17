@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hero Quest</title>
+    <meta name="description" content="Hero Quest"/>
+    <meta name="author" content="TVO"/>
+  </head>
+  <style type="text/css">
+    * {
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+    /* Fix IE 10 Flexbox bugs */
+    .gameEventBox{
+      display: -ms-flexbox;
+      -ms-flex-direction: row;
+      -ms-flex-pack: center;
+      -ms-justify-content: center;
+    }
+    .choicesContainer{
+      display: -ms-flexbox;
+      -ms-flex-direction: row;
+      -ms-flex-pack: start;
+      -ms-justify-content: center;
+    }
+    .contentBoxStyleTop{
+      display: -ms-flexbox;
+      -ms-flex-direction: row;
+      -ms-flex-pack: start;
+    }
+    .selectableButton:focus {
+      border: 2px solid red;
+    }
+  </style>
+  <body>
+    <div id="main"></div>
+    <script src="elm.js"></script>
+    <script>Elm.Main.embed(document.querySelector("#main"));</script>
+
+  </body>
+</html>
